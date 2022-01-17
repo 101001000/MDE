@@ -1,0 +1,45 @@
+struct Page{
+  field num;
+}
+
+struct Book{
+  field author;
+  field title;
+  field pageId;
+}
+
+post "book" {
+  param author;
+  param title;
+  param pageId;
+  random id;
+  create Book(author: author, title: title, pageId: pageId) with id;
+  status 201;
+  return "{id}";
+}
+
+get "books" id {
+  read Book(author, title, pageId) with id if fail {
+    status 404;
+    return "Book not found"
+  };
+  return "Title: {title}, Author: {author}";
+}
+
+get "books" id "name" {
+  read Book(author, title, pageId) with id if fail {
+    status 404;
+    return "Book not found"
+  };
+  return title;
+}
+
+put "books" id {
+  param newAuthor;
+  param newTitle;
+  update Book(author: newAuthor, title: newTitle) with id if fail {
+    status 404;
+    return "Book not found";
+  };
+  return "Book with id '{id}' updated";
+}
