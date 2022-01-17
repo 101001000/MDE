@@ -26,47 +26,47 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Request extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Route</b></em>' reference.
+	 * Returns the value of the '<em><b>Route</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Route</em>' reference.
+	 * @return the value of the '<em>Route</em>' containment reference.
 	 * @see #setRoute(Route)
 	 * @see metamodelREST.MetamodelRESTPackage#getRequest_Route()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Route getRoute();
 
 	/**
-	 * Sets the value of the '{@link metamodelREST.Request#getRoute <em>Route</em>}' reference.
+	 * Sets the value of the '{@link metamodelREST.Request#getRoute <em>Route</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Route</em>' reference.
+	 * @param value the new value of the '<em>Route</em>' containment reference.
 	 * @see #getRoute()
 	 * @generated
 	 */
 	void setRoute(Route value);
 
 	/**
-	 * Returns the value of the '<em><b>Data</b></em>' reference list.
+	 * Returns the value of the '<em><b>Data</b></em>' containment reference list.
 	 * The list contents are of type {@link metamodelREST.Data}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data</em>' reference list.
+	 * @return the value of the '<em>Data</em>' containment reference list.
 	 * @see metamodelREST.MetamodelRESTPackage#getRequest_Data()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Data> getData();
 
 	/**
-	 * Returns the value of the '<em><b>Ops</b></em>' reference list.
+	 * Returns the value of the '<em><b>Ops</b></em>' containment reference list.
 	 * The list contents are of type {@link metamodelREST.Operation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ops</em>' reference list.
+	 * @return the value of the '<em>Ops</em>' containment reference list.
 	 * @see metamodelREST.MetamodelRESTPackage#getRequest_Ops()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Operation> getOps();

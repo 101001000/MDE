@@ -10,13 +10,16 @@ import metamodelREST.OpCreate;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -54,7 +57,7 @@ public class OpCreateImpl extends OperationImpl implements OpCreate {
 	protected String id = ID_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getFieldset() <em>Fieldset</em>}' reference list.
+	 * The cached value of the '{@link #getFieldset() <em>Fieldset</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFieldset()
@@ -110,9 +113,23 @@ public class OpCreateImpl extends OperationImpl implements OpCreate {
 	 */
 	public EList<FieldSet> getFieldset() {
 		if (fieldset == null) {
-			fieldset = new EObjectResolvingEList<FieldSet>(FieldSet.class, this, MetamodelRESTPackage.OP_CREATE__FIELDSET);
+			fieldset = new EObjectContainmentEList<FieldSet>(FieldSet.class, this, MetamodelRESTPackage.OP_CREATE__FIELDSET);
 		}
 		return fieldset;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case MetamodelRESTPackage.OP_CREATE__FIELDSET:
+				return ((InternalEList<?>)getFieldset()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

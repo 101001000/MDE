@@ -45,13 +45,13 @@ public interface OpCreate extends Operation {
 	void setId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Fieldset</b></em>' reference list.
+	 * Returns the value of the '<em><b>Fieldset</b></em>' containment reference list.
 	 * The list contents are of type {@link metamodelREST.FieldSet}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fieldset</em>' reference list.
+	 * @return the value of the '<em>Fieldset</em>' containment reference list.
 	 * @see metamodelREST.MetamodelRESTPackage#getOpCreate_Fieldset()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<FieldSet> getFieldset();

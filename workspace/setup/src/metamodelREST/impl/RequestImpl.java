@@ -12,6 +12,7 @@ import metamodelREST.Route;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -20,7 +21,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +41,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public abstract class RequestImpl extends MinimalEObjectImpl.Container implements Request {
 	/**
-	 * The cached value of the '{@link #getRoute() <em>Route</em>}' reference.
+	 * The cached value of the '{@link #getRoute() <em>Route</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoute()
@@ -49,7 +51,7 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 	protected Route route;
 
 	/**
-	 * The cached value of the '{@link #getData() <em>Data</em>}' reference list.
+	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getData()
@@ -59,7 +61,7 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 	protected EList<Data> data;
 
 	/**
-	 * The cached value of the '{@link #getOps() <em>Ops</em>}' reference list.
+	 * The cached value of the '{@link #getOps() <em>Ops</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOps()
@@ -93,14 +95,6 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public Route getRoute() {
-		if (route != null && route.eIsProxy()) {
-			InternalEObject oldRoute = (InternalEObject)route;
-			route = (Route)eResolveProxy(oldRoute);
-			if (route != oldRoute) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MetamodelRESTPackage.REQUEST__ROUTE, oldRoute, route));
-			}
-		}
 		return route;
 	}
 
@@ -109,8 +103,14 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Route basicGetRoute() {
-		return route;
+	public NotificationChain basicSetRoute(Route newRoute, NotificationChain msgs) {
+		Route oldRoute = route;
+		route = newRoute;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MetamodelRESTPackage.REQUEST__ROUTE, oldRoute, newRoute);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -119,10 +119,17 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public void setRoute(Route newRoute) {
-		Route oldRoute = route;
-		route = newRoute;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelRESTPackage.REQUEST__ROUTE, oldRoute, route));
+		if (newRoute != route) {
+			NotificationChain msgs = null;
+			if (route != null)
+				msgs = ((InternalEObject)route).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MetamodelRESTPackage.REQUEST__ROUTE, null, msgs);
+			if (newRoute != null)
+				msgs = ((InternalEObject)newRoute).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MetamodelRESTPackage.REQUEST__ROUTE, null, msgs);
+			msgs = basicSetRoute(newRoute, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelRESTPackage.REQUEST__ROUTE, newRoute, newRoute));
 	}
 
 	/**
@@ -132,7 +139,7 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 	 */
 	public EList<Data> getData() {
 		if (data == null) {
-			data = new EObjectResolvingEList<Data>(Data.class, this, MetamodelRESTPackage.REQUEST__DATA);
+			data = new EObjectContainmentEList<Data>(Data.class, this, MetamodelRESTPackage.REQUEST__DATA);
 		}
 		return data;
 	}
@@ -144,9 +151,27 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 	 */
 	public EList<Operation> getOps() {
 		if (ops == null) {
-			ops = new EObjectResolvingEList<Operation>(Operation.class, this, MetamodelRESTPackage.REQUEST__OPS);
+			ops = new EObjectContainmentEList<Operation>(Operation.class, this, MetamodelRESTPackage.REQUEST__OPS);
 		}
 		return ops;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case MetamodelRESTPackage.REQUEST__ROUTE:
+				return basicSetRoute(null, msgs);
+			case MetamodelRESTPackage.REQUEST__DATA:
+				return ((InternalEList<?>)getData()).basicRemove(otherEnd, msgs);
+			case MetamodelRESTPackage.REQUEST__OPS:
+				return ((InternalEList<?>)getOps()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -158,8 +183,7 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case MetamodelRESTPackage.REQUEST__ROUTE:
-				if (resolve) return getRoute();
-				return basicGetRoute();
+				return getRoute();
 			case MetamodelRESTPackage.REQUEST__DATA:
 				return getData();
 			case MetamodelRESTPackage.REQUEST__OPS:

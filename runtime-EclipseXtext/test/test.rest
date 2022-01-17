@@ -1,9 +1,10 @@
 RestSystem
 {
 	request {
+		
 		RePost
 		{
-			route Route {}
+			route Route{segment {Segment{value test}}}
 		}
 	}
 

@@ -67,7 +67,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int REQUEST = 0;
 
 	/**
-	 * The feature id for the '<em><b>Route</b></em>' reference.
+	 * The feature id for the '<em><b>Route</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -76,7 +76,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int REQUEST__ROUTE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Data</b></em>' reference list.
+	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -85,7 +85,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int REQUEST__DATA = 1;
 
 	/**
-	 * The feature id for the '<em><b>Ops</b></em>' reference list.
+	 * The feature id for the '<em><b>Ops</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -122,7 +122,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int RE_GET = 1;
 
 	/**
-	 * The feature id for the '<em><b>Route</b></em>' reference.
+	 * The feature id for the '<em><b>Route</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -131,7 +131,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int RE_GET__ROUTE = REQUEST__ROUTE;
 
 	/**
-	 * The feature id for the '<em><b>Data</b></em>' reference list.
+	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -140,7 +140,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int RE_GET__DATA = REQUEST__DATA;
 
 	/**
-	 * The feature id for the '<em><b>Ops</b></em>' reference list.
+	 * The feature id for the '<em><b>Ops</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -177,7 +177,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int RE_POST = 2;
 
 	/**
-	 * The feature id for the '<em><b>Route</b></em>' reference.
+	 * The feature id for the '<em><b>Route</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -186,7 +186,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int RE_POST__ROUTE = REQUEST__ROUTE;
 
 	/**
-	 * The feature id for the '<em><b>Data</b></em>' reference list.
+	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -195,7 +195,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int RE_POST__DATA = REQUEST__DATA;
 
 	/**
-	 * The feature id for the '<em><b>Ops</b></em>' reference list.
+	 * The feature id for the '<em><b>Ops</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -232,7 +232,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int RE_PUT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Route</b></em>' reference.
+	 * The feature id for the '<em><b>Route</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -241,7 +241,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int RE_PUT__ROUTE = REQUEST__ROUTE;
 
 	/**
-	 * The feature id for the '<em><b>Data</b></em>' reference list.
+	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -250,7 +250,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int RE_PUT__DATA = REQUEST__DATA;
 
 	/**
-	 * The feature id for the '<em><b>Ops</b></em>' reference list.
+	 * The feature id for the '<em><b>Ops</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -287,7 +287,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int RE_DELETE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Route</b></em>' reference.
+	 * The feature id for the '<em><b>Route</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -296,7 +296,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int RE_DELETE__ROUTE = REQUEST__ROUTE;
 
 	/**
-	 * The feature id for the '<em><b>Data</b></em>' reference list.
+	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -305,7 +305,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int RE_DELETE__DATA = REQUEST__DATA;
 
 	/**
-	 * The feature id for the '<em><b>Ops</b></em>' reference list.
+	 * The feature id for the '<em><b>Ops</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -342,7 +342,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int ROUTE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Segment</b></em>' reference list.
+	 * The feature id for the '<em><b>Segment</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -379,13 +379,22 @@ public interface MetamodelRESTPackage extends EPackage {
 	int SEGMENT = 6;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEGMENT__VALUE = 0;
+
+	/**
 	 * The number of structural features of the '<em>Segment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_FEATURE_COUNT = 0;
+	int SEGMENT_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Segment</em>' class.
@@ -555,7 +564,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OPERATION = 11;
 
 	/**
-	 * The feature id for the '<em><b>Failed Answer</b></em>' reference.
+	 * The feature id for the '<em><b>Failed Answer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -564,7 +573,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OPERATION__FAILED_ANSWER = 0;
 
 	/**
-	 * The feature id for the '<em><b>Succ Answer</b></em>' reference.
+	 * The feature id for the '<em><b>Succ Answer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -573,7 +582,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OPERATION__SUCC_ANSWER = 1;
 
 	/**
-	 * The feature id for the '<em><b>Struct</b></em>' reference.
+	 * The feature id for the '<em><b>Struct</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -610,7 +619,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_CREATE = 12;
 
 	/**
-	 * The feature id for the '<em><b>Failed Answer</b></em>' reference.
+	 * The feature id for the '<em><b>Failed Answer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -619,7 +628,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_CREATE__FAILED_ANSWER = OPERATION__FAILED_ANSWER;
 
 	/**
-	 * The feature id for the '<em><b>Succ Answer</b></em>' reference.
+	 * The feature id for the '<em><b>Succ Answer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -628,7 +637,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_CREATE__SUCC_ANSWER = OPERATION__SUCC_ANSWER;
 
 	/**
-	 * The feature id for the '<em><b>Struct</b></em>' reference.
+	 * The feature id for the '<em><b>Struct</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -646,7 +655,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_CREATE__ID = OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Fieldset</b></em>' reference list.
+	 * The feature id for the '<em><b>Fieldset</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -729,7 +738,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_READ = 14;
 
 	/**
-	 * The feature id for the '<em><b>Failed Answer</b></em>' reference.
+	 * The feature id for the '<em><b>Failed Answer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -738,7 +747,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_READ__FAILED_ANSWER = OPERATION__FAILED_ANSWER;
 
 	/**
-	 * The feature id for the '<em><b>Succ Answer</b></em>' reference.
+	 * The feature id for the '<em><b>Succ Answer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -747,7 +756,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_READ__SUCC_ANSWER = OPERATION__SUCC_ANSWER;
 
 	/**
-	 * The feature id for the '<em><b>Struct</b></em>' reference.
+	 * The feature id for the '<em><b>Struct</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -802,7 +811,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_UPDATE = 15;
 
 	/**
-	 * The feature id for the '<em><b>Failed Answer</b></em>' reference.
+	 * The feature id for the '<em><b>Failed Answer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -811,7 +820,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_UPDATE__FAILED_ANSWER = OPERATION__FAILED_ANSWER;
 
 	/**
-	 * The feature id for the '<em><b>Succ Answer</b></em>' reference.
+	 * The feature id for the '<em><b>Succ Answer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -820,7 +829,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_UPDATE__SUCC_ANSWER = OPERATION__SUCC_ANSWER;
 
 	/**
-	 * The feature id for the '<em><b>Struct</b></em>' reference.
+	 * The feature id for the '<em><b>Struct</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -838,7 +847,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_UPDATE__ID = OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Fieldset</b></em>' reference list.
+	 * The feature id for the '<em><b>Fieldset</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -875,7 +884,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_DELETE = 16;
 
 	/**
-	 * The feature id for the '<em><b>Failed Answer</b></em>' reference.
+	 * The feature id for the '<em><b>Failed Answer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -884,7 +893,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_DELETE__FAILED_ANSWER = OPERATION__FAILED_ANSWER;
 
 	/**
-	 * The feature id for the '<em><b>Succ Answer</b></em>' reference.
+	 * The feature id for the '<em><b>Succ Answer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -893,7 +902,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_DELETE__SUCC_ANSWER = OPERATION__SUCC_ANSWER;
 
 	/**
-	 * The feature id for the '<em><b>Struct</b></em>' reference.
+	 * The feature id for the '<em><b>Struct</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1060,10 +1069,10 @@ public interface MetamodelRESTPackage extends EPackage {
 	EClass getRequest();
 
 	/**
-	 * Returns the meta object for the reference '{@link metamodelREST.Request#getRoute <em>Route</em>}'.
+	 * Returns the meta object for the containment reference '{@link metamodelREST.Request#getRoute <em>Route</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Route</em>'.
+	 * @return the meta object for the containment reference '<em>Route</em>'.
 	 * @see metamodelREST.Request#getRoute()
 	 * @see #getRequest()
 	 * @generated
@@ -1071,10 +1080,10 @@ public interface MetamodelRESTPackage extends EPackage {
 	EReference getRequest_Route();
 
 	/**
-	 * Returns the meta object for the reference list '{@link metamodelREST.Request#getData <em>Data</em>}'.
+	 * Returns the meta object for the containment reference list '{@link metamodelREST.Request#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Data</em>'.
+	 * @return the meta object for the containment reference list '<em>Data</em>'.
 	 * @see metamodelREST.Request#getData()
 	 * @see #getRequest()
 	 * @generated
@@ -1082,10 +1091,10 @@ public interface MetamodelRESTPackage extends EPackage {
 	EReference getRequest_Data();
 
 	/**
-	 * Returns the meta object for the reference list '{@link metamodelREST.Request#getOps <em>Ops</em>}'.
+	 * Returns the meta object for the containment reference list '{@link metamodelREST.Request#getOps <em>Ops</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Ops</em>'.
+	 * @return the meta object for the containment reference list '<em>Ops</em>'.
 	 * @see metamodelREST.Request#getOps()
 	 * @see #getRequest()
 	 * @generated
@@ -1143,10 +1152,10 @@ public interface MetamodelRESTPackage extends EPackage {
 	EClass getRoute();
 
 	/**
-	 * Returns the meta object for the reference list '{@link metamodelREST.Route#getSegment <em>Segment</em>}'.
+	 * Returns the meta object for the containment reference list '{@link metamodelREST.Route#getSegment <em>Segment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Segment</em>'.
+	 * @return the meta object for the containment reference list '<em>Segment</em>'.
 	 * @see metamodelREST.Route#getSegment()
 	 * @see #getRoute()
 	 * @generated
@@ -1162,6 +1171,17 @@ public interface MetamodelRESTPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSegment();
+
+	/**
+	 * Returns the meta object for the attribute '{@link metamodelREST.Segment#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see metamodelREST.Segment#getValue()
+	 * @see #getSegment()
+	 * @generated
+	 */
+	EAttribute getSegment_Value();
 
 	/**
 	 * Returns the meta object for class '{@link metamodelREST.Data <em>Data</em>}'.
@@ -1225,10 +1245,10 @@ public interface MetamodelRESTPackage extends EPackage {
 	EClass getOperation();
 
 	/**
-	 * Returns the meta object for the reference '{@link metamodelREST.Operation#getFailedAnswer <em>Failed Answer</em>}'.
+	 * Returns the meta object for the containment reference '{@link metamodelREST.Operation#getFailedAnswer <em>Failed Answer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Failed Answer</em>'.
+	 * @return the meta object for the containment reference '<em>Failed Answer</em>'.
 	 * @see metamodelREST.Operation#getFailedAnswer()
 	 * @see #getOperation()
 	 * @generated
@@ -1236,10 +1256,10 @@ public interface MetamodelRESTPackage extends EPackage {
 	EReference getOperation_FailedAnswer();
 
 	/**
-	 * Returns the meta object for the reference '{@link metamodelREST.Operation#getSuccAnswer <em>Succ Answer</em>}'.
+	 * Returns the meta object for the containment reference '{@link metamodelREST.Operation#getSuccAnswer <em>Succ Answer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Succ Answer</em>'.
+	 * @return the meta object for the containment reference '<em>Succ Answer</em>'.
 	 * @see metamodelREST.Operation#getSuccAnswer()
 	 * @see #getOperation()
 	 * @generated
@@ -1247,10 +1267,10 @@ public interface MetamodelRESTPackage extends EPackage {
 	EReference getOperation_SuccAnswer();
 
 	/**
-	 * Returns the meta object for the reference '{@link metamodelREST.Operation#getStruct <em>Struct</em>}'.
+	 * Returns the meta object for the containment reference '{@link metamodelREST.Operation#getStruct <em>Struct</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Struct</em>'.
+	 * @return the meta object for the containment reference '<em>Struct</em>'.
 	 * @see metamodelREST.Operation#getStruct()
 	 * @see #getOperation()
 	 * @generated
@@ -1279,10 +1299,10 @@ public interface MetamodelRESTPackage extends EPackage {
 	EAttribute getOpCreate_Id();
 
 	/**
-	 * Returns the meta object for the reference list '{@link metamodelREST.OpCreate#getFieldset <em>Fieldset</em>}'.
+	 * Returns the meta object for the containment reference list '{@link metamodelREST.OpCreate#getFieldset <em>Fieldset</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Fieldset</em>'.
+	 * @return the meta object for the containment reference list '<em>Fieldset</em>'.
 	 * @see metamodelREST.OpCreate#getFieldset()
 	 * @see #getOpCreate()
 	 * @generated
@@ -1375,10 +1395,10 @@ public interface MetamodelRESTPackage extends EPackage {
 	EAttribute getOpUpdate_Id();
 
 	/**
-	 * Returns the meta object for the reference list '{@link metamodelREST.OpUpdate#getFieldset <em>Fieldset</em>}'.
+	 * Returns the meta object for the containment reference list '{@link metamodelREST.OpUpdate#getFieldset <em>Fieldset</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Fieldset</em>'.
+	 * @return the meta object for the containment reference list '<em>Fieldset</em>'.
 	 * @see metamodelREST.OpUpdate#getFieldset()
 	 * @see #getOpUpdate()
 	 * @generated
@@ -1514,7 +1534,7 @@ public interface MetamodelRESTPackage extends EPackage {
 		EClass REQUEST = eINSTANCE.getRequest();
 
 		/**
-		 * The meta object literal for the '<em><b>Route</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Route</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1522,7 +1542,7 @@ public interface MetamodelRESTPackage extends EPackage {
 		EReference REQUEST__ROUTE = eINSTANCE.getRequest_Route();
 
 		/**
-		 * The meta object literal for the '<em><b>Data</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Data</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1530,7 +1550,7 @@ public interface MetamodelRESTPackage extends EPackage {
 		EReference REQUEST__DATA = eINSTANCE.getRequest_Data();
 
 		/**
-		 * The meta object literal for the '<em><b>Ops</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Ops</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1588,7 +1608,7 @@ public interface MetamodelRESTPackage extends EPackage {
 		EClass ROUTE = eINSTANCE.getRoute();
 
 		/**
-		 * The meta object literal for the '<em><b>Segment</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Segment</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1604,6 +1624,14 @@ public interface MetamodelRESTPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SEGMENT = eINSTANCE.getSegment();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SEGMENT__VALUE = eINSTANCE.getSegment_Value();
 
 		/**
 		 * The meta object literal for the '{@link metamodelREST.impl.DataImpl <em>Data</em>}' class.
@@ -1664,7 +1692,7 @@ public interface MetamodelRESTPackage extends EPackage {
 		EClass OPERATION = eINSTANCE.getOperation();
 
 		/**
-		 * The meta object literal for the '<em><b>Failed Answer</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Failed Answer</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1672,7 +1700,7 @@ public interface MetamodelRESTPackage extends EPackage {
 		EReference OPERATION__FAILED_ANSWER = eINSTANCE.getOperation_FailedAnswer();
 
 		/**
-		 * The meta object literal for the '<em><b>Succ Answer</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Succ Answer</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1680,7 +1708,7 @@ public interface MetamodelRESTPackage extends EPackage {
 		EReference OPERATION__SUCC_ANSWER = eINSTANCE.getOperation_SuccAnswer();
 
 		/**
-		 * The meta object literal for the '<em><b>Struct</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Struct</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1706,7 +1734,7 @@ public interface MetamodelRESTPackage extends EPackage {
 		EAttribute OP_CREATE__ID = eINSTANCE.getOpCreate_Id();
 
 		/**
-		 * The meta object literal for the '<em><b>Fieldset</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Fieldset</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1784,7 +1812,7 @@ public interface MetamodelRESTPackage extends EPackage {
 		EAttribute OP_UPDATE__ID = eINSTANCE.getOpUpdate_Id();
 
 		/**
-		 * The meta object literal for the '<em><b>Fieldset</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Fieldset</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

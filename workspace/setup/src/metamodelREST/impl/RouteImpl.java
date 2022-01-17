@@ -8,13 +8,16 @@ import metamodelREST.MetamodelRESTPackage;
 import metamodelREST.Route;
 import metamodelREST.Segment;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +34,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class RouteImpl extends MinimalEObjectImpl.Container implements Route {
 	/**
-	 * The cached value of the '{@link #getSegment() <em>Segment</em>}' reference list.
+	 * The cached value of the '{@link #getSegment() <em>Segment</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSegment()
@@ -66,9 +69,23 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route {
 	 */
 	public EList<Segment> getSegment() {
 		if (segment == null) {
-			segment = new EObjectResolvingEList<Segment>(Segment.class, this, MetamodelRESTPackage.ROUTE__SEGMENT);
+			segment = new EObjectContainmentEList<Segment>(Segment.class, this, MetamodelRESTPackage.ROUTE__SEGMENT);
 		}
 		return segment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case MetamodelRESTPackage.ROUTE__SEGMENT:
+				return ((InternalEList<?>)getSegment()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

@@ -24,13 +24,13 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Route extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Segment</b></em>' reference list.
+	 * Returns the value of the '<em><b>Segment</b></em>' containment reference list.
 	 * The list contents are of type {@link metamodelREST.Segment}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Segment</em>' reference list.
+	 * @return the value of the '<em>Segment</em>' containment reference list.
 	 * @see metamodelREST.MetamodelRESTPackage#getRoute_Segment()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<Segment> getSegment();

@@ -9,6 +9,7 @@ import metamodelREST.Struct;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -32,7 +33,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public abstract class OperationImpl extends MinimalEObjectImpl.Container implements Operation {
 	/**
-	 * The cached value of the '{@link #getFailedAnswer() <em>Failed Answer</em>}' reference.
+	 * The cached value of the '{@link #getFailedAnswer() <em>Failed Answer</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFailedAnswer()
@@ -42,7 +43,7 @@ public abstract class OperationImpl extends MinimalEObjectImpl.Container impleme
 	protected Answer failedAnswer;
 
 	/**
-	 * The cached value of the '{@link #getSuccAnswer() <em>Succ Answer</em>}' reference.
+	 * The cached value of the '{@link #getSuccAnswer() <em>Succ Answer</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSuccAnswer()
@@ -52,7 +53,7 @@ public abstract class OperationImpl extends MinimalEObjectImpl.Container impleme
 	protected Answer succAnswer;
 
 	/**
-	 * The cached value of the '{@link #getStruct() <em>Struct</em>}' reference.
+	 * The cached value of the '{@link #getStruct() <em>Struct</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStruct()
@@ -86,14 +87,6 @@ public abstract class OperationImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public Answer getFailedAnswer() {
-		if (failedAnswer != null && failedAnswer.eIsProxy()) {
-			InternalEObject oldFailedAnswer = (InternalEObject)failedAnswer;
-			failedAnswer = (Answer)eResolveProxy(oldFailedAnswer);
-			if (failedAnswer != oldFailedAnswer) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MetamodelRESTPackage.OPERATION__FAILED_ANSWER, oldFailedAnswer, failedAnswer));
-			}
-		}
 		return failedAnswer;
 	}
 
@@ -102,8 +95,14 @@ public abstract class OperationImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Answer basicGetFailedAnswer() {
-		return failedAnswer;
+	public NotificationChain basicSetFailedAnswer(Answer newFailedAnswer, NotificationChain msgs) {
+		Answer oldFailedAnswer = failedAnswer;
+		failedAnswer = newFailedAnswer;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MetamodelRESTPackage.OPERATION__FAILED_ANSWER, oldFailedAnswer, newFailedAnswer);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -112,10 +111,17 @@ public abstract class OperationImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public void setFailedAnswer(Answer newFailedAnswer) {
-		Answer oldFailedAnswer = failedAnswer;
-		failedAnswer = newFailedAnswer;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelRESTPackage.OPERATION__FAILED_ANSWER, oldFailedAnswer, failedAnswer));
+		if (newFailedAnswer != failedAnswer) {
+			NotificationChain msgs = null;
+			if (failedAnswer != null)
+				msgs = ((InternalEObject)failedAnswer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MetamodelRESTPackage.OPERATION__FAILED_ANSWER, null, msgs);
+			if (newFailedAnswer != null)
+				msgs = ((InternalEObject)newFailedAnswer).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MetamodelRESTPackage.OPERATION__FAILED_ANSWER, null, msgs);
+			msgs = basicSetFailedAnswer(newFailedAnswer, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelRESTPackage.OPERATION__FAILED_ANSWER, newFailedAnswer, newFailedAnswer));
 	}
 
 	/**
@@ -124,14 +130,6 @@ public abstract class OperationImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public Answer getSuccAnswer() {
-		if (succAnswer != null && succAnswer.eIsProxy()) {
-			InternalEObject oldSuccAnswer = (InternalEObject)succAnswer;
-			succAnswer = (Answer)eResolveProxy(oldSuccAnswer);
-			if (succAnswer != oldSuccAnswer) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MetamodelRESTPackage.OPERATION__SUCC_ANSWER, oldSuccAnswer, succAnswer));
-			}
-		}
 		return succAnswer;
 	}
 
@@ -140,8 +138,14 @@ public abstract class OperationImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Answer basicGetSuccAnswer() {
-		return succAnswer;
+	public NotificationChain basicSetSuccAnswer(Answer newSuccAnswer, NotificationChain msgs) {
+		Answer oldSuccAnswer = succAnswer;
+		succAnswer = newSuccAnswer;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MetamodelRESTPackage.OPERATION__SUCC_ANSWER, oldSuccAnswer, newSuccAnswer);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -150,10 +154,17 @@ public abstract class OperationImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public void setSuccAnswer(Answer newSuccAnswer) {
-		Answer oldSuccAnswer = succAnswer;
-		succAnswer = newSuccAnswer;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelRESTPackage.OPERATION__SUCC_ANSWER, oldSuccAnswer, succAnswer));
+		if (newSuccAnswer != succAnswer) {
+			NotificationChain msgs = null;
+			if (succAnswer != null)
+				msgs = ((InternalEObject)succAnswer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MetamodelRESTPackage.OPERATION__SUCC_ANSWER, null, msgs);
+			if (newSuccAnswer != null)
+				msgs = ((InternalEObject)newSuccAnswer).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MetamodelRESTPackage.OPERATION__SUCC_ANSWER, null, msgs);
+			msgs = basicSetSuccAnswer(newSuccAnswer, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelRESTPackage.OPERATION__SUCC_ANSWER, newSuccAnswer, newSuccAnswer));
 	}
 
 	/**
@@ -162,14 +173,6 @@ public abstract class OperationImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public Struct getStruct() {
-		if (struct != null && struct.eIsProxy()) {
-			InternalEObject oldStruct = (InternalEObject)struct;
-			struct = (Struct)eResolveProxy(oldStruct);
-			if (struct != oldStruct) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MetamodelRESTPackage.OPERATION__STRUCT, oldStruct, struct));
-			}
-		}
 		return struct;
 	}
 
@@ -178,8 +181,14 @@ public abstract class OperationImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Struct basicGetStruct() {
-		return struct;
+	public NotificationChain basicSetStruct(Struct newStruct, NotificationChain msgs) {
+		Struct oldStruct = struct;
+		struct = newStruct;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MetamodelRESTPackage.OPERATION__STRUCT, oldStruct, newStruct);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -188,10 +197,35 @@ public abstract class OperationImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public void setStruct(Struct newStruct) {
-		Struct oldStruct = struct;
-		struct = newStruct;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelRESTPackage.OPERATION__STRUCT, oldStruct, struct));
+		if (newStruct != struct) {
+			NotificationChain msgs = null;
+			if (struct != null)
+				msgs = ((InternalEObject)struct).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MetamodelRESTPackage.OPERATION__STRUCT, null, msgs);
+			if (newStruct != null)
+				msgs = ((InternalEObject)newStruct).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MetamodelRESTPackage.OPERATION__STRUCT, null, msgs);
+			msgs = basicSetStruct(newStruct, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelRESTPackage.OPERATION__STRUCT, newStruct, newStruct));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case MetamodelRESTPackage.OPERATION__FAILED_ANSWER:
+				return basicSetFailedAnswer(null, msgs);
+			case MetamodelRESTPackage.OPERATION__SUCC_ANSWER:
+				return basicSetSuccAnswer(null, msgs);
+			case MetamodelRESTPackage.OPERATION__STRUCT:
+				return basicSetStruct(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -203,14 +237,11 @@ public abstract class OperationImpl extends MinimalEObjectImpl.Container impleme
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case MetamodelRESTPackage.OPERATION__FAILED_ANSWER:
-				if (resolve) return getFailedAnswer();
-				return basicGetFailedAnswer();
+				return getFailedAnswer();
 			case MetamodelRESTPackage.OPERATION__SUCC_ANSWER:
-				if (resolve) return getSuccAnswer();
-				return basicGetSuccAnswer();
+				return getSuccAnswer();
 			case MetamodelRESTPackage.OPERATION__STRUCT:
-				if (resolve) return getStruct();
-				return basicGetStruct();
+				return getStruct();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
