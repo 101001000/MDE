@@ -1,0 +1,10 @@
+RestSystem
+{
+	request {
+		RePost
+		{
+			route Route {}
+		}
+	}
+
+}

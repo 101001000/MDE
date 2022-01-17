@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="metamodelREST" nsURI="metamodelREST" nsPrefix="metamodelREST">
+  <eClassifiers xsi:type="ecore:EClass" name="Request" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="route" lowerBound="1" eType="#//Route"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//Data"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ops" upperBound="-1" eType="#//Operation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReGet" eSuperTypes="#//Request"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RePost" eSuperTypes="#//Request"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RePut" eSuperTypes="#//Request"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReDelete" eSuperTypes="#//Request"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Route">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="segment" lowerBound="1"
+        upperBound="-1" eType="#//Segment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Segment"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Data" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//Data"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Attachments" eSuperTypes="#//Data"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Random" eSuperTypes="#//Data"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="failedAnswer" eType="#//Answer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="succAnswer" eType="#//Answer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="struct" lowerBound="1"
+        eType="#//Struct"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpCreate" eSuperTypes="#//Operation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fieldset" upperBound="-1"
+        eType="#//FieldSet"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FieldSet">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpRead" eSuperTypes="#//Operation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpUpdate" eSuperTypes="#//Operation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fieldset" upperBound="-1"
+        eType="#//FieldSet"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpDelete" eSuperTypes="#//Operation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Answer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="return" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Struct">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RestSystem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="request" upperBound="-1"
+        eType="#//Request" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

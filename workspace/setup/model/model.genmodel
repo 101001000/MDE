@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/setup/src" modelPluginID="setup" modelName="Model"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>model.ecore</foreignModel>
+  <genPackages prefix="MetamodelREST" disposableProviderFactory="true" ecorePackage="model.ecore#/">
+    <genClasses image="false" ecoreClass="model.ecore#//Request">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Request/route"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Request/data"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Request/ops"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//ReGet"/>
+    <genClasses ecoreClass="model.ecore#//RePost"/>
+    <genClasses ecoreClass="model.ecore#//RePut"/>
+    <genClasses ecoreClass="model.ecore#//ReDelete"/>
+    <genClasses ecoreClass="model.ecore#//Route">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Route/segment"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Segment"/>
+    <genClasses image="false" ecoreClass="model.ecore#//Data">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Data/name"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Parameter"/>
+    <genClasses ecoreClass="model.ecore#//Attachments"/>
+    <genClasses ecoreClass="model.ecore#//Random"/>
+    <genClasses image="false" ecoreClass="model.ecore#//Operation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Operation/failedAnswer"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Operation/succAnswer"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Operation/struct"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//OpCreate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//OpCreate/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//OpCreate/fieldset"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//FieldSet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//FieldSet/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//FieldSet/expr"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//OpRead">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//OpRead/fields"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//OpRead/id"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//OpUpdate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//OpUpdate/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//OpUpdate/fieldset"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//OpDelete">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//OpDelete/id"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Answer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Answer/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Answer/return"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Struct">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Struct/fields"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//RestSystem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//RestSystem/request"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
