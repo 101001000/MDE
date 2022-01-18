@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link metamodelREST.Operation#getFailedAnswer <em>Failed Answer</em>}</li>
- *   <li>{@link metamodelREST.Operation#getSuccAnswer <em>Succ Answer</em>}</li>
  *   <li>{@link metamodelREST.Operation#getStruct <em>Struct</em>}</li>
+ *   <li>{@link metamodelREST.Operation#getId <em>Id</em>}</li>
  * </ul>
  *
  * @see metamodelREST.MetamodelRESTPackage#getOperation()
@@ -24,69 +24,69 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Operation extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Failed Answer</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Failed Answer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Failed Answer</em>' containment reference.
+	 * @return the value of the '<em>Failed Answer</em>' reference.
 	 * @see #setFailedAnswer(Answer)
 	 * @see metamodelREST.MetamodelRESTPackage#getOperation_FailedAnswer()
-	 * @model containment="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	Answer getFailedAnswer();
 
 	/**
-	 * Sets the value of the '{@link metamodelREST.Operation#getFailedAnswer <em>Failed Answer</em>}' containment reference.
+	 * Sets the value of the '{@link metamodelREST.Operation#getFailedAnswer <em>Failed Answer</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Failed Answer</em>' containment reference.
+	 * @param value the new value of the '<em>Failed Answer</em>' reference.
 	 * @see #getFailedAnswer()
 	 * @generated
 	 */
 	void setFailedAnswer(Answer value);
 
 	/**
-	 * Returns the value of the '<em><b>Succ Answer</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Struct</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Succ Answer</em>' containment reference.
-	 * @see #setSuccAnswer(Answer)
-	 * @see metamodelREST.MetamodelRESTPackage#getOperation_SuccAnswer()
-	 * @model containment="true"
-	 * @generated
-	 */
-	Answer getSuccAnswer();
-
-	/**
-	 * Sets the value of the '{@link metamodelREST.Operation#getSuccAnswer <em>Succ Answer</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Succ Answer</em>' containment reference.
-	 * @see #getSuccAnswer()
-	 * @generated
-	 */
-	void setSuccAnswer(Answer value);
-
-	/**
-	 * Returns the value of the '<em><b>Struct</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Struct</em>' containment reference.
+	 * @return the value of the '<em>Struct</em>' reference.
 	 * @see #setStruct(Struct)
 	 * @see metamodelREST.MetamodelRESTPackage#getOperation_Struct()
-	 * @model containment="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	Struct getStruct();
 
 	/**
-	 * Sets the value of the '{@link metamodelREST.Operation#getStruct <em>Struct</em>}' containment reference.
+	 * Sets the value of the '{@link metamodelREST.Operation#getStruct <em>Struct</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Struct</em>' containment reference.
+	 * @param value the new value of the '<em>Struct</em>' reference.
 	 * @see #getStruct()
 	 * @generated
 	 */
 	void setStruct(Struct value);
+
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(String)
+	 * @see metamodelREST.MetamodelRESTPackage#getOperation_Id()
+	 * @model
+	 * @generated
+	 */
+	String getId();
+
+	/**
+	 * Sets the value of the '{@link metamodelREST.Operation#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(String value);
 
 } // Operation

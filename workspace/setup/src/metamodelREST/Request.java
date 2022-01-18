@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link metamodelREST.Request#getRoute <em>Route</em>}</li>
  *   <li>{@link metamodelREST.Request#getData <em>Data</em>}</li>
  *   <li>{@link metamodelREST.Request#getOps <em>Ops</em>}</li>
+ *   <li>{@link metamodelREST.Request#getSuccAnswer <em>Succ Answer</em>}</li>
  * </ul>
  *
  * @see metamodelREST.MetamodelRESTPackage#getRequest()
@@ -60,15 +61,37 @@ public interface Request extends EObject {
 	EList<Data> getData();
 
 	/**
-	 * Returns the value of the '<em><b>Ops</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Ops</b></em>' reference list.
 	 * The list contents are of type {@link metamodelREST.Operation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ops</em>' containment reference list.
+	 * @return the value of the '<em>Ops</em>' reference list.
 	 * @see metamodelREST.MetamodelRESTPackage#getRequest_Ops()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Operation> getOps();
+
+	/**
+	 * Returns the value of the '<em><b>Succ Answer</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Succ Answer</em>' reference.
+	 * @see #setSuccAnswer(Answer)
+	 * @see metamodelREST.MetamodelRESTPackage#getRequest_SuccAnswer()
+	 * @model required="true"
+	 * @generated
+	 */
+	Answer getSuccAnswer();
+
+	/**
+	 * Sets the value of the '{@link metamodelREST.Request#getSuccAnswer <em>Succ Answer</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Succ Answer</em>' reference.
+	 * @see #getSuccAnswer()
+	 * @generated
+	 */
+	void setSuccAnswer(Answer value);
 
 } // Request

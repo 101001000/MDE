@@ -5,6 +5,7 @@ package metamodelREST.impl;
 import metamodelREST.Answer;
 import metamodelREST.Attachments;
 import metamodelREST.Data;
+import metamodelREST.Field;
 import metamodelREST.FieldSet;
 import metamodelREST.MetamodelRESTFactory;
 import metamodelREST.MetamodelRESTPackage;
@@ -180,6 +181,13 @@ public class MetamodelRESTPackageImpl extends EPackageImpl implements MetamodelR
 	private EClass restSystemEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass fieldEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -274,6 +282,15 @@ public class MetamodelRESTPackageImpl extends EPackageImpl implements MetamodelR
 	 */
 	public EReference getRequest_Ops() {
 		return (EReference)requestEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRequest_SuccAnswer() {
+		return (EReference)requestEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -416,7 +433,7 @@ public class MetamodelRESTPackageImpl extends EPackageImpl implements MetamodelR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOperation_SuccAnswer() {
+	public EReference getOperation_Struct() {
 		return (EReference)operationEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -425,8 +442,8 @@ public class MetamodelRESTPackageImpl extends EPackageImpl implements MetamodelR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOperation_Struct() {
-		return (EReference)operationEClass.getEStructuralFeatures().get(2);
+	public EAttribute getOperation_Id() {
+		return (EAttribute)operationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -443,17 +460,8 @@ public class MetamodelRESTPackageImpl extends EPackageImpl implements MetamodelR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getOpCreate_Id() {
-		return (EAttribute)opCreateEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getOpCreate_Fieldset() {
-		return (EReference)opCreateEClass.getEStructuralFeatures().get(1);
+		return (EReference)opCreateEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -497,17 +505,8 @@ public class MetamodelRESTPackageImpl extends EPackageImpl implements MetamodelR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getOpRead_Fields() {
-		return (EAttribute)opReadEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getOpRead_Id() {
-		return (EAttribute)opReadEClass.getEStructuralFeatures().get(1);
+	public EReference getOpRead_Field() {
+		return (EReference)opReadEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -524,17 +523,8 @@ public class MetamodelRESTPackageImpl extends EPackageImpl implements MetamodelR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getOpUpdate_Id() {
-		return (EAttribute)opUpdateEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getOpUpdate_Fieldset() {
-		return (EReference)opUpdateEClass.getEStructuralFeatures().get(1);
+		return (EReference)opUpdateEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -544,15 +534,6 @@ public class MetamodelRESTPackageImpl extends EPackageImpl implements MetamodelR
 	 */
 	public EClass getOpDelete() {
 		return opDeleteEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getOpDelete_Id() {
-		return (EAttribute)opDeleteEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -623,6 +604,51 @@ public class MetamodelRESTPackageImpl extends EPackageImpl implements MetamodelR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRestSystem_Struct() {
+		return (EReference)restSystemEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRestSystem_Operation() {
+		return (EReference)restSystemEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRestSystem_Answer() {
+		return (EReference)restSystemEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getField() {
+		return fieldEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getField_Name() {
+		return (EAttribute)fieldEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MetamodelRESTFactory getMetamodelRESTFactory() {
 		return (MetamodelRESTFactory)getEFactoryInstance();
 	}
@@ -650,6 +676,7 @@ public class MetamodelRESTPackageImpl extends EPackageImpl implements MetamodelR
 		createEReference(requestEClass, REQUEST__ROUTE);
 		createEReference(requestEClass, REQUEST__DATA);
 		createEReference(requestEClass, REQUEST__OPS);
+		createEReference(requestEClass, REQUEST__SUCC_ANSWER);
 
 		reGetEClass = createEClass(RE_GET);
 
@@ -676,11 +703,10 @@ public class MetamodelRESTPackageImpl extends EPackageImpl implements MetamodelR
 
 		operationEClass = createEClass(OPERATION);
 		createEReference(operationEClass, OPERATION__FAILED_ANSWER);
-		createEReference(operationEClass, OPERATION__SUCC_ANSWER);
 		createEReference(operationEClass, OPERATION__STRUCT);
+		createEAttribute(operationEClass, OPERATION__ID);
 
 		opCreateEClass = createEClass(OP_CREATE);
-		createEAttribute(opCreateEClass, OP_CREATE__ID);
 		createEReference(opCreateEClass, OP_CREATE__FIELDSET);
 
 		fieldSetEClass = createEClass(FIELD_SET);
@@ -688,15 +714,12 @@ public class MetamodelRESTPackageImpl extends EPackageImpl implements MetamodelR
 		createEAttribute(fieldSetEClass, FIELD_SET__EXPR);
 
 		opReadEClass = createEClass(OP_READ);
-		createEAttribute(opReadEClass, OP_READ__FIELDS);
-		createEAttribute(opReadEClass, OP_READ__ID);
+		createEReference(opReadEClass, OP_READ__FIELD);
 
 		opUpdateEClass = createEClass(OP_UPDATE);
-		createEAttribute(opUpdateEClass, OP_UPDATE__ID);
 		createEReference(opUpdateEClass, OP_UPDATE__FIELDSET);
 
 		opDeleteEClass = createEClass(OP_DELETE);
-		createEAttribute(opDeleteEClass, OP_DELETE__ID);
 
 		answerEClass = createEClass(ANSWER);
 		createEAttribute(answerEClass, ANSWER__STATUS);
@@ -707,6 +730,12 @@ public class MetamodelRESTPackageImpl extends EPackageImpl implements MetamodelR
 
 		restSystemEClass = createEClass(REST_SYSTEM);
 		createEReference(restSystemEClass, REST_SYSTEM__REQUEST);
+		createEReference(restSystemEClass, REST_SYSTEM__STRUCT);
+		createEReference(restSystemEClass, REST_SYSTEM__OPERATION);
+		createEReference(restSystemEClass, REST_SYSTEM__ANSWER);
+
+		fieldEClass = createEClass(FIELD);
+		createEAttribute(fieldEClass, FIELD__NAME);
 	}
 
 	/**
@@ -753,7 +782,8 @@ public class MetamodelRESTPackageImpl extends EPackageImpl implements MetamodelR
 		initEClass(requestEClass, Request.class, "Request", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRequest_Route(), this.getRoute(), null, "route", null, 1, 1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRequest_Data(), this.getData(), null, "data", null, 0, -1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRequest_Ops(), this.getOperation(), null, "ops", null, 0, -1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequest_Ops(), this.getOperation(), null, "ops", null, 0, -1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequest_SuccAnswer(), this.getAnswer(), null, "succAnswer", null, 1, 1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reGetEClass, ReGet.class, "ReGet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -779,12 +809,11 @@ public class MetamodelRESTPackageImpl extends EPackageImpl implements MetamodelR
 		initEClass(randomEClass, Random.class, "Random", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(operationEClass, Operation.class, "Operation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOperation_FailedAnswer(), this.getAnswer(), null, "failedAnswer", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperation_SuccAnswer(), this.getAnswer(), null, "succAnswer", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperation_Struct(), this.getStruct(), null, "struct", null, 1, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperation_FailedAnswer(), this.getAnswer(), null, "failedAnswer", null, 1, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperation_Struct(), this.getStruct(), null, "struct", null, 1, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOperation_Id(), ecorePackage.getEString(), "id", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(opCreateEClass, OpCreate.class, "OpCreate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOpCreate_Id(), ecorePackage.getEString(), "id", null, 0, 1, OpCreate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOpCreate_Fieldset(), this.getFieldSet(), null, "fieldset", null, 0, -1, OpCreate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fieldSetEClass, FieldSet.class, "FieldSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -792,15 +821,12 @@ public class MetamodelRESTPackageImpl extends EPackageImpl implements MetamodelR
 		initEAttribute(getFieldSet_Expr(), ecorePackage.getEString(), "expr", null, 0, 1, FieldSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(opReadEClass, OpRead.class, "OpRead", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOpRead_Fields(), ecorePackage.getEString(), "fields", null, 0, 1, OpRead.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOpRead_Id(), ecorePackage.getEString(), "id", null, 0, 1, OpRead.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOpRead_Field(), this.getField(), null, "field", null, 0, -1, OpRead.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(opUpdateEClass, OpUpdate.class, "OpUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOpUpdate_Id(), ecorePackage.getEString(), "id", null, 0, 1, OpUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOpUpdate_Fieldset(), this.getFieldSet(), null, "fieldset", null, 0, -1, OpUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(opDeleteEClass, OpDelete.class, "OpDelete", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOpDelete_Id(), ecorePackage.getEString(), "id", null, 0, 1, OpDelete.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(answerEClass, Answer.class, "Answer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAnswer_Status(), ecorePackage.getEInt(), "status", null, 0, 1, Answer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -811,6 +837,12 @@ public class MetamodelRESTPackageImpl extends EPackageImpl implements MetamodelR
 
 		initEClass(restSystemEClass, RestSystem.class, "RestSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRestSystem_Request(), this.getRequest(), null, "request", null, 0, -1, RestSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRestSystem_Struct(), this.getStruct(), null, "struct", null, 0, -1, RestSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRestSystem_Operation(), this.getOperation(), null, "operation", null, 0, -1, RestSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRestSystem_Answer(), this.getAnswer(), null, "answer", null, 0, -1, RestSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(fieldEClass, Field.class, "Field", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getField_Name(), ecorePackage.getEString(), "name", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

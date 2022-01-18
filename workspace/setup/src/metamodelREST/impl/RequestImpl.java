@@ -4,6 +4,7 @@ package metamodelREST.impl;
 
 import java.util.Collection;
 
+import metamodelREST.Answer;
 import metamodelREST.Data;
 import metamodelREST.MetamodelRESTPackage;
 import metamodelREST.Operation;
@@ -22,6 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -35,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link metamodelREST.impl.RequestImpl#getRoute <em>Route</em>}</li>
  *   <li>{@link metamodelREST.impl.RequestImpl#getData <em>Data</em>}</li>
  *   <li>{@link metamodelREST.impl.RequestImpl#getOps <em>Ops</em>}</li>
+ *   <li>{@link metamodelREST.impl.RequestImpl#getSuccAnswer <em>Succ Answer</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,7 +64,7 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 	protected EList<Data> data;
 
 	/**
-	 * The cached value of the '{@link #getOps() <em>Ops</em>}' containment reference list.
+	 * The cached value of the '{@link #getOps() <em>Ops</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOps()
@@ -69,6 +72,16 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected EList<Operation> ops;
+
+	/**
+	 * The cached value of the '{@link #getSuccAnswer() <em>Succ Answer</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSuccAnswer()
+	 * @generated
+	 * @ordered
+	 */
+	protected Answer succAnswer;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,9 +164,47 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 	 */
 	public EList<Operation> getOps() {
 		if (ops == null) {
-			ops = new EObjectContainmentEList<Operation>(Operation.class, this, MetamodelRESTPackage.REQUEST__OPS);
+			ops = new EObjectResolvingEList<Operation>(Operation.class, this, MetamodelRESTPackage.REQUEST__OPS);
 		}
 		return ops;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Answer getSuccAnswer() {
+		if (succAnswer != null && succAnswer.eIsProxy()) {
+			InternalEObject oldSuccAnswer = (InternalEObject)succAnswer;
+			succAnswer = (Answer)eResolveProxy(oldSuccAnswer);
+			if (succAnswer != oldSuccAnswer) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MetamodelRESTPackage.REQUEST__SUCC_ANSWER, oldSuccAnswer, succAnswer));
+			}
+		}
+		return succAnswer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Answer basicGetSuccAnswer() {
+		return succAnswer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSuccAnswer(Answer newSuccAnswer) {
+		Answer oldSuccAnswer = succAnswer;
+		succAnswer = newSuccAnswer;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelRESTPackage.REQUEST__SUCC_ANSWER, oldSuccAnswer, succAnswer));
 	}
 
 	/**
@@ -168,8 +219,6 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 				return basicSetRoute(null, msgs);
 			case MetamodelRESTPackage.REQUEST__DATA:
 				return ((InternalEList<?>)getData()).basicRemove(otherEnd, msgs);
-			case MetamodelRESTPackage.REQUEST__OPS:
-				return ((InternalEList<?>)getOps()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -188,6 +237,9 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 				return getData();
 			case MetamodelRESTPackage.REQUEST__OPS:
 				return getOps();
+			case MetamodelRESTPackage.REQUEST__SUCC_ANSWER:
+				if (resolve) return getSuccAnswer();
+				return basicGetSuccAnswer();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -212,6 +264,9 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 				getOps().clear();
 				getOps().addAll((Collection<? extends Operation>)newValue);
 				return;
+			case MetamodelRESTPackage.REQUEST__SUCC_ANSWER:
+				setSuccAnswer((Answer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -233,6 +288,9 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 			case MetamodelRESTPackage.REQUEST__OPS:
 				getOps().clear();
 				return;
+			case MetamodelRESTPackage.REQUEST__SUCC_ANSWER:
+				setSuccAnswer((Answer)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -251,6 +309,8 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 				return data != null && !data.isEmpty();
 			case MetamodelRESTPackage.REQUEST__OPS:
 				return ops != null && !ops.isEmpty();
+			case MetamodelRESTPackage.REQUEST__SUCC_ANSWER:
+				return succAnswer != null;
 		}
 		return super.eIsSet(featureID);
 	}

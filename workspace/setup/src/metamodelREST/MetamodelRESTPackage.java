@@ -85,7 +85,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int REQUEST__DATA = 1;
 
 	/**
-	 * The feature id for the '<em><b>Ops</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Ops</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -94,13 +94,22 @@ public interface MetamodelRESTPackage extends EPackage {
 	int REQUEST__OPS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Succ Answer</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUEST__SUCC_ANSWER = 3;
+
+	/**
 	 * The number of structural features of the '<em>Request</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST_FEATURE_COUNT = 3;
+	int REQUEST_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Request</em>' class.
@@ -140,13 +149,22 @@ public interface MetamodelRESTPackage extends EPackage {
 	int RE_GET__DATA = REQUEST__DATA;
 
 	/**
-	 * The feature id for the '<em><b>Ops</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Ops</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int RE_GET__OPS = REQUEST__OPS;
+
+	/**
+	 * The feature id for the '<em><b>Succ Answer</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RE_GET__SUCC_ANSWER = REQUEST__SUCC_ANSWER;
 
 	/**
 	 * The number of structural features of the '<em>Re Get</em>' class.
@@ -195,13 +213,22 @@ public interface MetamodelRESTPackage extends EPackage {
 	int RE_POST__DATA = REQUEST__DATA;
 
 	/**
-	 * The feature id for the '<em><b>Ops</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Ops</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int RE_POST__OPS = REQUEST__OPS;
+
+	/**
+	 * The feature id for the '<em><b>Succ Answer</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RE_POST__SUCC_ANSWER = REQUEST__SUCC_ANSWER;
 
 	/**
 	 * The number of structural features of the '<em>Re Post</em>' class.
@@ -250,13 +277,22 @@ public interface MetamodelRESTPackage extends EPackage {
 	int RE_PUT__DATA = REQUEST__DATA;
 
 	/**
-	 * The feature id for the '<em><b>Ops</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Ops</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int RE_PUT__OPS = REQUEST__OPS;
+
+	/**
+	 * The feature id for the '<em><b>Succ Answer</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RE_PUT__SUCC_ANSWER = REQUEST__SUCC_ANSWER;
 
 	/**
 	 * The number of structural features of the '<em>Re Put</em>' class.
@@ -305,13 +341,22 @@ public interface MetamodelRESTPackage extends EPackage {
 	int RE_DELETE__DATA = REQUEST__DATA;
 
 	/**
-	 * The feature id for the '<em><b>Ops</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Ops</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int RE_DELETE__OPS = REQUEST__OPS;
+
+	/**
+	 * The feature id for the '<em><b>Succ Answer</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RE_DELETE__SUCC_ANSWER = REQUEST__SUCC_ANSWER;
 
 	/**
 	 * The number of structural features of the '<em>Re Delete</em>' class.
@@ -564,7 +609,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OPERATION = 11;
 
 	/**
-	 * The feature id for the '<em><b>Failed Answer</b></em>' containment reference.
+	 * The feature id for the '<em><b>Failed Answer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -573,22 +618,22 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OPERATION__FAILED_ANSWER = 0;
 
 	/**
-	 * The feature id for the '<em><b>Succ Answer</b></em>' containment reference.
+	 * The feature id for the '<em><b>Struct</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__SUCC_ANSWER = 1;
+	int OPERATION__STRUCT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Struct</b></em>' containment reference.
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__STRUCT = 2;
+	int OPERATION__ID = 2;
 
 	/**
 	 * The number of structural features of the '<em>Operation</em>' class.
@@ -619,7 +664,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_CREATE = 12;
 
 	/**
-	 * The feature id for the '<em><b>Failed Answer</b></em>' containment reference.
+	 * The feature id for the '<em><b>Failed Answer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -628,16 +673,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_CREATE__FAILED_ANSWER = OPERATION__FAILED_ANSWER;
 
 	/**
-	 * The feature id for the '<em><b>Succ Answer</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OP_CREATE__SUCC_ANSWER = OPERATION__SUCC_ANSWER;
-
-	/**
-	 * The feature id for the '<em><b>Struct</b></em>' containment reference.
+	 * The feature id for the '<em><b>Struct</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -652,7 +688,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OP_CREATE__ID = OPERATION_FEATURE_COUNT + 0;
+	int OP_CREATE__ID = OPERATION__ID;
 
 	/**
 	 * The feature id for the '<em><b>Fieldset</b></em>' containment reference list.
@@ -661,7 +697,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OP_CREATE__FIELDSET = OPERATION_FEATURE_COUNT + 1;
+	int OP_CREATE__FIELDSET = OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Op Create</em>' class.
@@ -670,7 +706,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OP_CREATE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 2;
+	int OP_CREATE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Op Create</em>' class.
@@ -738,7 +774,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_READ = 14;
 
 	/**
-	 * The feature id for the '<em><b>Failed Answer</b></em>' containment reference.
+	 * The feature id for the '<em><b>Failed Answer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -747,16 +783,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_READ__FAILED_ANSWER = OPERATION__FAILED_ANSWER;
 
 	/**
-	 * The feature id for the '<em><b>Succ Answer</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OP_READ__SUCC_ANSWER = OPERATION__SUCC_ANSWER;
-
-	/**
-	 * The feature id for the '<em><b>Struct</b></em>' containment reference.
+	 * The feature id for the '<em><b>Struct</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -765,22 +792,22 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_READ__STRUCT = OPERATION__STRUCT;
 
 	/**
-	 * The feature id for the '<em><b>Fields</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OP_READ__FIELDS = OPERATION_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OP_READ__ID = OPERATION_FEATURE_COUNT + 1;
+	int OP_READ__ID = OPERATION__ID;
+
+	/**
+	 * The feature id for the '<em><b>Field</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OP_READ__FIELD = OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Op Read</em>' class.
@@ -789,7 +816,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OP_READ_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 2;
+	int OP_READ_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Op Read</em>' class.
@@ -811,7 +838,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_UPDATE = 15;
 
 	/**
-	 * The feature id for the '<em><b>Failed Answer</b></em>' containment reference.
+	 * The feature id for the '<em><b>Failed Answer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -820,16 +847,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_UPDATE__FAILED_ANSWER = OPERATION__FAILED_ANSWER;
 
 	/**
-	 * The feature id for the '<em><b>Succ Answer</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OP_UPDATE__SUCC_ANSWER = OPERATION__SUCC_ANSWER;
-
-	/**
-	 * The feature id for the '<em><b>Struct</b></em>' containment reference.
+	 * The feature id for the '<em><b>Struct</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -844,7 +862,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OP_UPDATE__ID = OPERATION_FEATURE_COUNT + 0;
+	int OP_UPDATE__ID = OPERATION__ID;
 
 	/**
 	 * The feature id for the '<em><b>Fieldset</b></em>' containment reference list.
@@ -853,7 +871,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OP_UPDATE__FIELDSET = OPERATION_FEATURE_COUNT + 1;
+	int OP_UPDATE__FIELDSET = OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Op Update</em>' class.
@@ -862,7 +880,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OP_UPDATE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 2;
+	int OP_UPDATE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Op Update</em>' class.
@@ -884,7 +902,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_DELETE = 16;
 
 	/**
-	 * The feature id for the '<em><b>Failed Answer</b></em>' containment reference.
+	 * The feature id for the '<em><b>Failed Answer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -893,16 +911,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	int OP_DELETE__FAILED_ANSWER = OPERATION__FAILED_ANSWER;
 
 	/**
-	 * The feature id for the '<em><b>Succ Answer</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OP_DELETE__SUCC_ANSWER = OPERATION__SUCC_ANSWER;
-
-	/**
-	 * The feature id for the '<em><b>Struct</b></em>' containment reference.
+	 * The feature id for the '<em><b>Struct</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -917,7 +926,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OP_DELETE__ID = OPERATION_FEATURE_COUNT + 0;
+	int OP_DELETE__ID = OPERATION__ID;
 
 	/**
 	 * The number of structural features of the '<em>Op Delete</em>' class.
@@ -926,7 +935,7 @@ public interface MetamodelRESTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OP_DELETE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
+	int OP_DELETE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Op Delete</em>' class.
@@ -1040,13 +1049,40 @@ public interface MetamodelRESTPackage extends EPackage {
 	int REST_SYSTEM__REQUEST = 0;
 
 	/**
+	 * The feature id for the '<em><b>Struct</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REST_SYSTEM__STRUCT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Operation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REST_SYSTEM__OPERATION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Answer</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REST_SYSTEM__ANSWER = 3;
+
+	/**
 	 * The number of structural features of the '<em>Rest System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REST_SYSTEM_FEATURE_COUNT = 1;
+	int REST_SYSTEM_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Rest System</em>' class.
@@ -1056,6 +1092,44 @@ public interface MetamodelRESTPackage extends EPackage {
 	 * @ordered
 	 */
 	int REST_SYSTEM_OPERATION_COUNT = 0;
+
+
+	/**
+	 * The meta object id for the '{@link metamodelREST.impl.FieldImpl <em>Field</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see metamodelREST.impl.FieldImpl
+	 * @see metamodelREST.impl.MetamodelRESTPackageImpl#getField()
+	 * @generated
+	 */
+	int FIELD = 20;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Field</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Field</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD_OPERATION_COUNT = 0;
 
 
 	/**
@@ -1091,15 +1165,26 @@ public interface MetamodelRESTPackage extends EPackage {
 	EReference getRequest_Data();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link metamodelREST.Request#getOps <em>Ops</em>}'.
+	 * Returns the meta object for the reference list '{@link metamodelREST.Request#getOps <em>Ops</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Ops</em>'.
+	 * @return the meta object for the reference list '<em>Ops</em>'.
 	 * @see metamodelREST.Request#getOps()
 	 * @see #getRequest()
 	 * @generated
 	 */
 	EReference getRequest_Ops();
+
+	/**
+	 * Returns the meta object for the reference '{@link metamodelREST.Request#getSuccAnswer <em>Succ Answer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Succ Answer</em>'.
+	 * @see metamodelREST.Request#getSuccAnswer()
+	 * @see #getRequest()
+	 * @generated
+	 */
+	EReference getRequest_SuccAnswer();
 
 	/**
 	 * Returns the meta object for class '{@link metamodelREST.ReGet <em>Re Get</em>}'.
@@ -1245,10 +1330,10 @@ public interface MetamodelRESTPackage extends EPackage {
 	EClass getOperation();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link metamodelREST.Operation#getFailedAnswer <em>Failed Answer</em>}'.
+	 * Returns the meta object for the reference '{@link metamodelREST.Operation#getFailedAnswer <em>Failed Answer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Failed Answer</em>'.
+	 * @return the meta object for the reference '<em>Failed Answer</em>'.
 	 * @see metamodelREST.Operation#getFailedAnswer()
 	 * @see #getOperation()
 	 * @generated
@@ -1256,26 +1341,26 @@ public interface MetamodelRESTPackage extends EPackage {
 	EReference getOperation_FailedAnswer();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link metamodelREST.Operation#getSuccAnswer <em>Succ Answer</em>}'.
+	 * Returns the meta object for the reference '{@link metamodelREST.Operation#getStruct <em>Struct</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Succ Answer</em>'.
-	 * @see metamodelREST.Operation#getSuccAnswer()
-	 * @see #getOperation()
-	 * @generated
-	 */
-	EReference getOperation_SuccAnswer();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link metamodelREST.Operation#getStruct <em>Struct</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Struct</em>'.
+	 * @return the meta object for the reference '<em>Struct</em>'.
 	 * @see metamodelREST.Operation#getStruct()
 	 * @see #getOperation()
 	 * @generated
 	 */
 	EReference getOperation_Struct();
+
+	/**
+	 * Returns the meta object for the attribute '{@link metamodelREST.Operation#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see metamodelREST.Operation#getId()
+	 * @see #getOperation()
+	 * @generated
+	 */
+	EAttribute getOperation_Id();
 
 	/**
 	 * Returns the meta object for class '{@link metamodelREST.OpCreate <em>Op Create</em>}'.
@@ -1286,17 +1371,6 @@ public interface MetamodelRESTPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getOpCreate();
-
-	/**
-	 * Returns the meta object for the attribute '{@link metamodelREST.OpCreate#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see metamodelREST.OpCreate#getId()
-	 * @see #getOpCreate()
-	 * @generated
-	 */
-	EAttribute getOpCreate_Id();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link metamodelREST.OpCreate#getFieldset <em>Fieldset</em>}'.
@@ -1352,26 +1426,15 @@ public interface MetamodelRESTPackage extends EPackage {
 	EClass getOpRead();
 
 	/**
-	 * Returns the meta object for the attribute '{@link metamodelREST.OpRead#getFields <em>Fields</em>}'.
+	 * Returns the meta object for the containment reference list '{@link metamodelREST.OpRead#getField <em>Field</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Fields</em>'.
-	 * @see metamodelREST.OpRead#getFields()
+	 * @return the meta object for the containment reference list '<em>Field</em>'.
+	 * @see metamodelREST.OpRead#getField()
 	 * @see #getOpRead()
 	 * @generated
 	 */
-	EAttribute getOpRead_Fields();
-
-	/**
-	 * Returns the meta object for the attribute '{@link metamodelREST.OpRead#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see metamodelREST.OpRead#getId()
-	 * @see #getOpRead()
-	 * @generated
-	 */
-	EAttribute getOpRead_Id();
+	EReference getOpRead_Field();
 
 	/**
 	 * Returns the meta object for class '{@link metamodelREST.OpUpdate <em>Op Update</em>}'.
@@ -1382,17 +1445,6 @@ public interface MetamodelRESTPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getOpUpdate();
-
-	/**
-	 * Returns the meta object for the attribute '{@link metamodelREST.OpUpdate#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see metamodelREST.OpUpdate#getId()
-	 * @see #getOpUpdate()
-	 * @generated
-	 */
-	EAttribute getOpUpdate_Id();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link metamodelREST.OpUpdate#getFieldset <em>Fieldset</em>}'.
@@ -1414,17 +1466,6 @@ public interface MetamodelRESTPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getOpDelete();
-
-	/**
-	 * Returns the meta object for the attribute '{@link metamodelREST.OpDelete#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see metamodelREST.OpDelete#getId()
-	 * @see #getOpDelete()
-	 * @generated
-	 */
-	EAttribute getOpDelete_Id();
 
 	/**
 	 * Returns the meta object for class '{@link metamodelREST.Answer <em>Answer</em>}'.
@@ -1501,6 +1542,60 @@ public interface MetamodelRESTPackage extends EPackage {
 	EReference getRestSystem_Request();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link metamodelREST.RestSystem#getStruct <em>Struct</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Struct</em>'.
+	 * @see metamodelREST.RestSystem#getStruct()
+	 * @see #getRestSystem()
+	 * @generated
+	 */
+	EReference getRestSystem_Struct();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link metamodelREST.RestSystem#getOperation <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Operation</em>'.
+	 * @see metamodelREST.RestSystem#getOperation()
+	 * @see #getRestSystem()
+	 * @generated
+	 */
+	EReference getRestSystem_Operation();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link metamodelREST.RestSystem#getAnswer <em>Answer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Answer</em>'.
+	 * @see metamodelREST.RestSystem#getAnswer()
+	 * @see #getRestSystem()
+	 * @generated
+	 */
+	EReference getRestSystem_Answer();
+
+	/**
+	 * Returns the meta object for class '{@link metamodelREST.Field <em>Field</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Field</em>'.
+	 * @see metamodelREST.Field
+	 * @generated
+	 */
+	EClass getField();
+
+	/**
+	 * Returns the meta object for the attribute '{@link metamodelREST.Field#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see metamodelREST.Field#getName()
+	 * @see #getField()
+	 * @generated
+	 */
+	EAttribute getField_Name();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1550,12 +1645,20 @@ public interface MetamodelRESTPackage extends EPackage {
 		EReference REQUEST__DATA = eINSTANCE.getRequest_Data();
 
 		/**
-		 * The meta object literal for the '<em><b>Ops</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Ops</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference REQUEST__OPS = eINSTANCE.getRequest_Ops();
+
+		/**
+		 * The meta object literal for the '<em><b>Succ Answer</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUEST__SUCC_ANSWER = eINSTANCE.getRequest_SuccAnswer();
 
 		/**
 		 * The meta object literal for the '{@link metamodelREST.impl.ReGetImpl <em>Re Get</em>}' class.
@@ -1692,7 +1795,7 @@ public interface MetamodelRESTPackage extends EPackage {
 		EClass OPERATION = eINSTANCE.getOperation();
 
 		/**
-		 * The meta object literal for the '<em><b>Failed Answer</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Failed Answer</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1700,20 +1803,20 @@ public interface MetamodelRESTPackage extends EPackage {
 		EReference OPERATION__FAILED_ANSWER = eINSTANCE.getOperation_FailedAnswer();
 
 		/**
-		 * The meta object literal for the '<em><b>Succ Answer</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OPERATION__SUCC_ANSWER = eINSTANCE.getOperation_SuccAnswer();
-
-		/**
-		 * The meta object literal for the '<em><b>Struct</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Struct</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference OPERATION__STRUCT = eINSTANCE.getOperation_Struct();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPERATION__ID = eINSTANCE.getOperation_Id();
 
 		/**
 		 * The meta object literal for the '{@link metamodelREST.impl.OpCreateImpl <em>Op Create</em>}' class.
@@ -1724,14 +1827,6 @@ public interface MetamodelRESTPackage extends EPackage {
 		 * @generated
 		 */
 		EClass OP_CREATE = eINSTANCE.getOpCreate();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OP_CREATE__ID = eINSTANCE.getOpCreate_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Fieldset</b></em>' containment reference list feature.
@@ -1778,20 +1873,12 @@ public interface MetamodelRESTPackage extends EPackage {
 		EClass OP_READ = eINSTANCE.getOpRead();
 
 		/**
-		 * The meta object literal for the '<em><b>Fields</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Field</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OP_READ__FIELDS = eINSTANCE.getOpRead_Fields();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OP_READ__ID = eINSTANCE.getOpRead_Id();
+		EReference OP_READ__FIELD = eINSTANCE.getOpRead_Field();
 
 		/**
 		 * The meta object literal for the '{@link metamodelREST.impl.OpUpdateImpl <em>Op Update</em>}' class.
@@ -1802,14 +1889,6 @@ public interface MetamodelRESTPackage extends EPackage {
 		 * @generated
 		 */
 		EClass OP_UPDATE = eINSTANCE.getOpUpdate();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OP_UPDATE__ID = eINSTANCE.getOpUpdate_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Fieldset</b></em>' containment reference list feature.
@@ -1828,14 +1907,6 @@ public interface MetamodelRESTPackage extends EPackage {
 		 * @generated
 		 */
 		EClass OP_DELETE = eINSTANCE.getOpDelete();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OP_DELETE__ID = eINSTANCE.getOpDelete_Id();
 
 		/**
 		 * The meta object literal for the '{@link metamodelREST.impl.AnswerImpl <em>Answer</em>}' class.
@@ -1898,6 +1969,48 @@ public interface MetamodelRESTPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REST_SYSTEM__REQUEST = eINSTANCE.getRestSystem_Request();
+
+		/**
+		 * The meta object literal for the '<em><b>Struct</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REST_SYSTEM__STRUCT = eINSTANCE.getRestSystem_Struct();
+
+		/**
+		 * The meta object literal for the '<em><b>Operation</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REST_SYSTEM__OPERATION = eINSTANCE.getRestSystem_Operation();
+
+		/**
+		 * The meta object literal for the '<em><b>Answer</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REST_SYSTEM__ANSWER = eINSTANCE.getRestSystem_Answer();
+
+		/**
+		 * The meta object literal for the '{@link metamodelREST.impl.FieldImpl <em>Field</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see metamodelREST.impl.FieldImpl
+		 * @see metamodelREST.impl.MetamodelRESTPackageImpl#getField()
+		 * @generated
+		 */
+		EClass FIELD = eINSTANCE.getField();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIELD__NAME = eINSTANCE.getField_Name();
 
 	}
 

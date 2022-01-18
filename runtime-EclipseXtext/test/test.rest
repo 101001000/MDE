@@ -1,5 +1,12 @@
 RestSystem
 {
+	
+	answer { Answer {
+		
+	}
+		
+	}
+	
 	request {
 		
 		RePost

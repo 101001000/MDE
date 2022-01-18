@@ -73,6 +73,7 @@ public class MetamodelRESTFactoryImpl extends EFactoryImpl implements MetamodelR
 			case MetamodelRESTPackage.ANSWER: return createAnswer();
 			case MetamodelRESTPackage.STRUCT: return createStruct();
 			case MetamodelRESTPackage.REST_SYSTEM: return createRestSystem();
+			case MetamodelRESTPackage.FIELD: return createField();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -246,6 +247,16 @@ public class MetamodelRESTFactoryImpl extends EFactoryImpl implements MetamodelR
 	public RestSystem createRestSystem() {
 		RestSystemImpl restSystem = new RestSystemImpl();
 		return restSystem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Field createField() {
+		FieldImpl field = new FieldImpl();
+		return field;
 	}
 
 	/**
