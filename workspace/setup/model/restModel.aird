@@ -5,7 +5,7 @@
     <semanticResources>restModel.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_suK88HkZEey1h8NOxeHoSw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_tswFEHkZEey1h8NOxeHoSw" name="restModel class diagram" repPath="#_tssasHkZEey1h8NOxeHoSw" changeId="e6cec7df-6ab5-424a-83cf-5930322e3677">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_tswFEHkZEey1h8NOxeHoSw" name="restModel class diagram" repPath="#_tssasHkZEey1h8NOxeHoSw" changeId="c9ac9692-44d9-4abd-9fc0-b341d4a4885d">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="restModel.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -315,7 +315,7 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_uHkY1nkZEey1h8NOxeHoSw" type="4001" element="_uHJiEHkZEey1h8NOxeHoSw" source="_uHcdAHkZEey1h8NOxeHoSw" target="_uHe5RHkZEey1h8NOxeHoSw">
           <children xmi:type="notation:Node" xmi:id="_uHkY2nkZEey1h8NOxeHoSw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uHkY23kZEey1h8NOxeHoSw" x="315" y="-17"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uHkY23kZEey1h8NOxeHoSw" x="-16" y="-24"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_uHk_4HkZEey1h8NOxeHoSw" type="6002">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uHk_4XkZEey1h8NOxeHoSw" x="172" y="362"/>
