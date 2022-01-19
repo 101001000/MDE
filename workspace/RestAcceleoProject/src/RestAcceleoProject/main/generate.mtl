@@ -16,10 +16,15 @@ public class REST {
 
 	public static void main(String['['/][']'/] args) {
 	
-[for (req : RePost | aRestSystem.request)]
-		post(new Route("[ req.route.segment/] "))	
+		[for (struct : Struct | aRestSystem.struct)]
+		// @TODO CAMBIAR ESTO POR EL NOMBRE DEL STRUCT
+		private static Map<String, [struct/]> [struct.toString().toLowerCase()/]s = new HashMap<String, [struct/]>();
+		[/for] 
+		
 
-[/for] 
+		[for (req : Request | aRestSystem.request)]
+		[generateRequest(req)/]
+		[/for] 
 
 	}
 }
@@ -27,11 +32,28 @@ public class REST {
 [/file]
 [/template]
 
+[template public generateRequest(aReq : Request)]
+generateRequest(aReq)
+[/template]
+
+[template public generateRequest(aReq : RePost)]
+post([generateRoute(aReq.route)/]){
+
+	@Override
+	public Object handle(Request request, Response response){
+
+		[for (op : Operation | aReq.ops)]
+		
+	
+		[/for] 
+
+		[for (par : Parameter | aReq.data)]
+			String [par.name/] = request.queryParams("[par.name/]");
+		[/for] 
+	}
+});
+[/template]
 
 [template public generateRoute(aRoute : Route)]
-
-[for (seg : Segment | aRoute.segment)]
-
-[/for] 
-
+new Route("[for (seg : Segment | aRoute.segment)]/[seg.value/][/for]") 
 [/template]
