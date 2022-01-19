@@ -1,1 +1,17 @@
 
+import static spark.Spark.*;
+import java.util.*;
+import spark.Request;
+import spark.Response;
+import spark.Route;
+
+public class REST {
+
+	public static void main(String[] args) {
+	
+	post(new Route("restModel.impl.SegmentImpl@18230356 (value: testRoute) "))	
+
+
+	}
+}
+
