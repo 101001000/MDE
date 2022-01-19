@@ -1,0 +1,17 @@
+[comment encoding = UTF-8 /]
+[module generateRequests('/metamodel/restModel.ecore')]
+
+[import RestAcceleoProject::common::generateRoute /] 
+[import RestAcceleoProject::operations::generateOps /] 
+
+[template public generateRequests(aReq : Request)]
+[if aReq.oclIsTypeOf(RePost)]post[/if][if aReq.oclIsTypeOf(ReGet)]get[/if][if aReq.oclIsTypeOf(RePut)]put[/if][if aReq.oclIsTypeOf(ReDelete)]delete[/if]([generateRoute(aReq.route)/]{
+
+	@Override
+	public Object handle(Request request, Response response){
+		[for (op : Operation | aReq.operations)]
+		[let structNameU : String = op.struct.name][let structNameL : String = op.struct.name.toLowerCase()][let structNameLP : String = op.struct.name.toLowerCase().concat('s')][generateOps(op)/][/let][/let][/let]
+		[/for] 
+	}
+});
+[/template]

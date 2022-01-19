@@ -1,7 +1,7 @@
 [comment encoding = UTF-8 /]
 [module generate('/metamodel/restModel.ecore')]
 
-[import RestAcceleoProject::main::GenerateOperations /] 
+[import RestAcceleoProject::operations::generateOps /] 
 [import RestAcceleoProject::files::MainFile /] 
 [import RestAcceleoProject::files::StructFile /] 
 
