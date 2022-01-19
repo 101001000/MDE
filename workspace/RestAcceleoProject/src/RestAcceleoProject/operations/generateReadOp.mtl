@@ -1,7 +1,9 @@
 [comment encoding = UTF-8 /]
 [module generateReadOp('/metamodel/restModel.ecore')]
 
-[import RestAcceleoProject::operations::generateOps /] 
+[import RestAcceleoProject::common::generateAnswer /] 
+[import RestAcceleoProject::common::utilities /] 
+
 
 [template public generateReadOp(anOp : OpRead)]
 [sName(anOp)/] [oName(anOp)/] = [lName(anOp)/].get([anOp.id/]);

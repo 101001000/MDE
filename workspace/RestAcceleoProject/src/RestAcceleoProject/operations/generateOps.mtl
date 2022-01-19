@@ -5,27 +5,9 @@
 [import RestAcceleoProject::operations::generateReadOp /] 
 [import RestAcceleoProject::operations::generateUpdateOp /] 
 [import RestAcceleoProject::operations::generateDeleteOp /] 
-
-[query public sName(anOp : Operation) : String = anOp.struct.name/]
-[query public oName(anOp : Operation) : String = anOp.struct.name.toLowerCase()/]
-[query public lName(anOp : Operation) : String = anOp.struct.name.toLowerCase().concat('s')/]
-
-
-[template public generateAnswer(anAnswer : Answer)]
-response.status([anAnswer.status/]);
-return [anAnswer.return/];
-[/template]
-
+[import RestAcceleoProject::common::utilities /] 
 
 [template public generateOps(anOp : Operation)]
-[generateParams(anOp)/]
-[if anOp.oclIsTypeOf(OpCreate)][generateCreateOp(anOp.oclAsType(OpCreate))/][/if][if anOp.oclIsTypeOf(OpRead)][generateReadOp(anOp.oclAsType(OpRead))/][/if][if anOp.oclIsTypeOf(OpUpdate)][generateUpdateOp(anOp.oclAsType(OpUpdate))/][/if][if anOp.oclIsTypeOf(OpDelete)][generateDeleteOp(anOp.oclAsType(OpDelete))/][/if]
+[generateParams(anOp)/][generateQueryParams(anOp)/][if anOp.oclIsTypeOf(OpCreate)][generateCreateOp(anOp.oclAsType(OpCreate))/][/if][if anOp.oclIsTypeOf(OpRead)][generateReadOp(anOp.oclAsType(OpRead))/][/if][if anOp.oclIsTypeOf(OpUpdate)][generateUpdateOp(anOp.oclAsType(OpUpdate))/][/if][if anOp.oclIsTypeOf(OpDelete)][generateDeleteOp(anOp.oclAsType(OpDelete))/][/if]
 [/template]
 
-[template public succAnswer(anOp : Operation)]
-[generateAnswer((anOp.ancestors(Request).oclAsType(Request)).succAnswer->first())/]
-[/template]
-
-[template public generateParams(anOp : Operation)]
-[for (seg : Segment | anOp.ancestors(Request).oclAsType(Request).route.segment)][if seg.value.contains(':')]String [seg.value.substring(2)/] = request.params("[seg.value/]");[/if][/for]
-[/template]
