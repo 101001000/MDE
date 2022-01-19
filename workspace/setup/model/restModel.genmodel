@@ -8,8 +8,8 @@
     <genClasses image="false" ecoreClass="restModel.ecore#//Request">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//Request/route"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//Request/data"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference restModel.ecore#//Request/ops"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference restModel.ecore#//Request/succAnswer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//Request/operations"/>
     </genClasses>
     <genClasses ecoreClass="restModel.ecore#//ReGet"/>
     <genClasses ecoreClass="restModel.ecore#//RePost"/>
@@ -51,12 +51,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restModel.ecore#//Answer/return"/>
     </genClasses>
     <genClasses ecoreClass="restModel.ecore#//Struct">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restModel.ecore#//Struct/fields"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restModel.ecore#//Struct/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//Struct/fields"/>
     </genClasses>
     <genClasses ecoreClass="restModel.ecore#//RestSystem">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//RestSystem/request"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//RestSystem/struct"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//RestSystem/operation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//RestSystem/answer"/>
     </genClasses>
     <genClasses ecoreClass="restModel.ecore#//Field">

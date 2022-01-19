@@ -6,9 +6,10 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//Data"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ops" upperBound="-1" eType="#//Operation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="succAnswer" lowerBound="1"
         eType="#//Answer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
+        eType="#//Operation" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReGet" eSuperTypes="#//Request"/>
   <eClassifiers xsi:type="ecore:EClass" name="RePost" eSuperTypes="#//Request"/>
@@ -56,15 +57,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="return" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Struct">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+        eType="#//Field" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RestSystem">
     <eStructuralFeatures xsi:type="ecore:EReference" name="request" upperBound="-1"
         eType="#//Request" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="struct" upperBound="-1"
         eType="#//Struct" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" upperBound="-1"
-        eType="#//Operation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="answer" upperBound="-1"
         eType="#//Answer" containment="true"/>
   </eClassifiers>
