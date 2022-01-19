@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import restModel.Answer;
-import restModel.Operation;
 import restModel.Request;
 import restModel.RestModelPackage;
 import restModel.RestSystem;
@@ -33,7 +32,6 @@ import restModel.Struct;
  * <ul>
  *   <li>{@link restModel.impl.RestSystemImpl#getRequest <em>Request</em>}</li>
  *   <li>{@link restModel.impl.RestSystemImpl#getStruct <em>Struct</em>}</li>
- *   <li>{@link restModel.impl.RestSystemImpl#getOperation <em>Operation</em>}</li>
  *   <li>{@link restModel.impl.RestSystemImpl#getAnswer <em>Answer</em>}</li>
  * </ul>
  *
@@ -59,16 +57,6 @@ public class RestSystemImpl extends MinimalEObjectImpl.Container implements Rest
 	 * @ordered
 	 */
 	protected EList<Struct> struct;
-
-	/**
-	 * The cached value of the '{@link #getOperation() <em>Operation</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOperation()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Operation> operation;
 
 	/**
 	 * The cached value of the '{@link #getAnswer() <em>Answer</em>}' containment reference list.
@@ -128,18 +116,6 @@ public class RestSystemImpl extends MinimalEObjectImpl.Container implements Rest
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Operation> getOperation() {
-		if (operation == null) {
-			operation = new EObjectContainmentEList<Operation>(Operation.class, this, RestModelPackage.REST_SYSTEM__OPERATION);
-		}
-		return operation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Answer> getAnswer() {
 		if (answer == null) {
 			answer = new EObjectContainmentEList<Answer>(Answer.class, this, RestModelPackage.REST_SYSTEM__ANSWER);
@@ -159,8 +135,6 @@ public class RestSystemImpl extends MinimalEObjectImpl.Container implements Rest
 				return ((InternalEList<?>)getRequest()).basicRemove(otherEnd, msgs);
 			case RestModelPackage.REST_SYSTEM__STRUCT:
 				return ((InternalEList<?>)getStruct()).basicRemove(otherEnd, msgs);
-			case RestModelPackage.REST_SYSTEM__OPERATION:
-				return ((InternalEList<?>)getOperation()).basicRemove(otherEnd, msgs);
 			case RestModelPackage.REST_SYSTEM__ANSWER:
 				return ((InternalEList<?>)getAnswer()).basicRemove(otherEnd, msgs);
 		}
@@ -179,8 +153,6 @@ public class RestSystemImpl extends MinimalEObjectImpl.Container implements Rest
 				return getRequest();
 			case RestModelPackage.REST_SYSTEM__STRUCT:
 				return getStruct();
-			case RestModelPackage.REST_SYSTEM__OPERATION:
-				return getOperation();
 			case RestModelPackage.REST_SYSTEM__ANSWER:
 				return getAnswer();
 		}
@@ -204,10 +176,6 @@ public class RestSystemImpl extends MinimalEObjectImpl.Container implements Rest
 				getStruct().clear();
 				getStruct().addAll((Collection<? extends Struct>)newValue);
 				return;
-			case RestModelPackage.REST_SYSTEM__OPERATION:
-				getOperation().clear();
-				getOperation().addAll((Collection<? extends Operation>)newValue);
-				return;
 			case RestModelPackage.REST_SYSTEM__ANSWER:
 				getAnswer().clear();
 				getAnswer().addAll((Collection<? extends Answer>)newValue);
@@ -230,9 +198,6 @@ public class RestSystemImpl extends MinimalEObjectImpl.Container implements Rest
 			case RestModelPackage.REST_SYSTEM__STRUCT:
 				getStruct().clear();
 				return;
-			case RestModelPackage.REST_SYSTEM__OPERATION:
-				getOperation().clear();
-				return;
 			case RestModelPackage.REST_SYSTEM__ANSWER:
 				getAnswer().clear();
 				return;
@@ -252,8 +217,6 @@ public class RestSystemImpl extends MinimalEObjectImpl.Container implements Rest
 				return request != null && !request.isEmpty();
 			case RestModelPackage.REST_SYSTEM__STRUCT:
 				return struct != null && !struct.isEmpty();
-			case RestModelPackage.REST_SYSTEM__OPERATION:
-				return operation != null && !operation.isEmpty();
 			case RestModelPackage.REST_SYSTEM__ANSWER:
 				return answer != null && !answer.isEmpty();
 		}

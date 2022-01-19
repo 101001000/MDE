@@ -12,13 +12,9 @@ import org.eclipse.xtext.formatting2.IFormattableDocument;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.xbase.lib.Extension;
 import rest.services.RestGrammarAccess;
-import restModel.Answer;
-import restModel.Operation;
-import restModel.Request;
 import restModel.RestSystem;
 import restModel.Route;
 import restModel.Segment;
-import restModel.Struct;
 
 @SuppressWarnings("all")
 public class RestFormatter extends AbstractFormatter2 {
@@ -27,22 +23,9 @@ public class RestFormatter extends AbstractFormatter2 {
   private RestGrammarAccess _restGrammarAccess;
   
   protected void _format(final RestSystem restSystem, @Extension final IFormattableDocument document) {
-    EList<Request> _request = restSystem.getRequest();
-    for (final Request request : _request) {
-      document.<Request>format(request);
-    }
-    EList<Struct> _struct = restSystem.getStruct();
-    for (final Struct struct : _struct) {
-      document.<Struct>format(struct);
-    }
-    EList<Operation> _operation = restSystem.getOperation();
-    for (final Operation operation : _operation) {
-      document.<Operation>format(operation);
-    }
-    EList<Answer> _answer = restSystem.getAnswer();
-    for (final Answer answer : _answer) {
-      document.<Answer>format(answer);
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field operation is undefined for the type RestSystem"
+      + "\nformat cannot be resolved");
   }
   
   protected void _format(final Route route, @Extension final IFormattableDocument document) {

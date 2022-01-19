@@ -3,8 +3,30 @@
 
 
 [template public generateElement(aRestSystem : RestSystem)]
+
+[for (struct : Struct | aRestSystem.struct)]
+	[file (struct.name.concat('.java'), false, 'UTF-8')]
+public class [struct.name/] {
+
+	[for (field : Field | struct.fields)]
+	private String [field.name/];
+	[/for] 
+
+	public [struct.name/]([for (field : Field | struct.fields) separator (', ')]String [field.name/][/for]){
+		[for (field : Field | struct.fields)]
+		this.[field.name/] = [field.name/];
+		[/for] 
+	}
+
+}
+	[/file]
+[/for] 
+		
+
+
+
 [comment @main/]
-[file ('aRestSystem.test', false, 'UTF-8')]
+[file ('Main.java', false, 'UTF-8')]
 
 import static spark.Spark.*;
 import java.util.*;
@@ -12,18 +34,16 @@ import spark.Request;
 import spark.Response;
 import spark.Route;
 
-public class REST {
+public class Main {
 
 	public static void main(String['['/][']'/] args) {
 	
 		[for (struct : Struct | aRestSystem.struct)]
-		// @TODO CAMBIAR ESTO POR EL NOMBRE DEL STRUCT
-		private static Map<String, [struct/]> [struct.toString().toLowerCase()/]s = new HashMap<String, [struct/]>();
+		private static Map<String, [struct.name/]> [struct.name.toLowerCase()/]s = new HashMap<String, [struct.name/]>();
 		[/for] 
 		
-
 		[for (req : Request | aRestSystem.request)]
-		[generateRequest(req)/]
+		[generateRequests(req)/]
 		[/for] 
 
 	}
@@ -32,27 +52,52 @@ public class REST {
 [/file]
 [/template]
 
-[template public generateRequest(aReq : Request)]
-generateRequest(aReq)
+[template public generateAnswer(anAnswer : Answer)]
+response.status([anAnswer.status/]);
+return [anAnswer.return/];
 [/template]
 
-[template public generateRequest(aReq : RePost)]
-post([generateRoute(aReq.route)/]){
+
+[template public generateOps(anOp : OpCreate)]
+[for (par : Parameter | anOp.ancestors(Request).oclAsType(Request).data)]
+String [par.name/] = request.queryParams("[par.name/]");
+[/for]
+[anOp.struct.name/] [anOp.struct.name.toLowerCase()/] = new [anOp.struct.name/]([for (par : Parameter | anOp.ancestors(Request).oclAsType(Request).data) separator (', ')][par.name/][/for]);
+
+[generateAnswer((anOp.ancestors(Request).oclAsType(Request)).succAnswer->first())/]
+[/template]
+
+[template public generateOps(anOp : OpRead)]
+
+[if anOp.ancestors(Request).oclAsType(Request).route.segment->last().value.contains(':')]
+[anOp.struct.name/] [anOp.struct.name.toLowerCase()/] = [anOp.struct.name.toLowerCase()/]s.get(request.params("[anOp.ancestors(Request).oclAsType(Request).route.segment->last().value/]"));
+if ([anOp.struct.name.toLowerCase()/] != null) {
+	[generateAnswer(anOp.ancestors(Request).oclAsType(Request).succAnswer->first())/]
+} else {
+	[generateAnswer(anOp.failedAnswer)/]
+}
+[else]
+String ids = "";
+for(String id : [anOp.struct.name.toLowerCase()/]s.keySet())
+	ids += id + " ";
+[generateAnswer(anOp.ancestors(Request).oclAsType(Request).succAnswer->first())/]
+[/if]
+[/template]
+
+
+[template public generateOps(anOp : Operation)][/template]
+[template public generateRequests(aReq : Request)]
+[if aReq.oclIsTypeOf(RePost)]post[/if][if aReq.oclIsTypeOf(ReGet)]get[/if][if aReq.oclIsTypeOf(RePut)]put[/if][if aReq.oclIsTypeOf(ReDelete)]delete[/if]([generateRoute(aReq.route)/]){
 
 	@Override
 	public Object handle(Request request, Response response){
-
-		[for (op : Operation | aReq.ops)]
-		
-	
-		[/for] 
-
-		[for (par : Parameter | aReq.data)]
-			String [par.name/] = request.queryParams("[par.name/]");
+		[for (op : Operation | aReq.operations)]
+		[generateOps(op)/]
 		[/for] 
 	}
 });
 [/template]
+
 
 [template public generateRoute(aRoute : Route)]
 new Route("[for (seg : Segment | aRoute.segment)]/[seg.value/][/for]") 

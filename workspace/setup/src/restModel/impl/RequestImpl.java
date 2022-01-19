@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import restModel.Answer;
@@ -36,8 +35,8 @@ import restModel.Route;
  * <ul>
  *   <li>{@link restModel.impl.RequestImpl#getRoute <em>Route</em>}</li>
  *   <li>{@link restModel.impl.RequestImpl#getData <em>Data</em>}</li>
- *   <li>{@link restModel.impl.RequestImpl#getOps <em>Ops</em>}</li>
  *   <li>{@link restModel.impl.RequestImpl#getSuccAnswer <em>Succ Answer</em>}</li>
+ *   <li>{@link restModel.impl.RequestImpl#getOperations <em>Operations</em>}</li>
  * </ul>
  *
  * @generated
@@ -64,16 +63,6 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 	protected EList<Data> data;
 
 	/**
-	 * The cached value of the '{@link #getOps() <em>Ops</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOps()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Operation> ops;
-
-	/**
 	 * The cached value of the '{@link #getSuccAnswer() <em>Succ Answer</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -82,6 +71,16 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected Answer succAnswer;
+
+	/**
+	 * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Operation> operations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,18 +161,6 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Operation> getOps() {
-		if (ops == null) {
-			ops = new EObjectResolvingEList<Operation>(Operation.class, this, RestModelPackage.REQUEST__OPS);
-		}
-		return ops;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Answer getSuccAnswer() {
 		if (succAnswer != null && succAnswer.eIsProxy()) {
 			InternalEObject oldSuccAnswer = (InternalEObject)succAnswer;
@@ -212,6 +199,18 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Operation> getOperations() {
+		if (operations == null) {
+			operations = new EObjectContainmentEList<Operation>(Operation.class, this, RestModelPackage.REQUEST__OPERATIONS);
+		}
+		return operations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -219,6 +218,8 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 				return basicSetRoute(null, msgs);
 			case RestModelPackage.REQUEST__DATA:
 				return ((InternalEList<?>)getData()).basicRemove(otherEnd, msgs);
+			case RestModelPackage.REQUEST__OPERATIONS:
+				return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -235,11 +236,11 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 				return getRoute();
 			case RestModelPackage.REQUEST__DATA:
 				return getData();
-			case RestModelPackage.REQUEST__OPS:
-				return getOps();
 			case RestModelPackage.REQUEST__SUCC_ANSWER:
 				if (resolve) return getSuccAnswer();
 				return basicGetSuccAnswer();
+			case RestModelPackage.REQUEST__OPERATIONS:
+				return getOperations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,12 +261,12 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 				getData().clear();
 				getData().addAll((Collection<? extends Data>)newValue);
 				return;
-			case RestModelPackage.REQUEST__OPS:
-				getOps().clear();
-				getOps().addAll((Collection<? extends Operation>)newValue);
-				return;
 			case RestModelPackage.REQUEST__SUCC_ANSWER:
 				setSuccAnswer((Answer)newValue);
+				return;
+			case RestModelPackage.REQUEST__OPERATIONS:
+				getOperations().clear();
+				getOperations().addAll((Collection<? extends Operation>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -285,11 +286,11 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 			case RestModelPackage.REQUEST__DATA:
 				getData().clear();
 				return;
-			case RestModelPackage.REQUEST__OPS:
-				getOps().clear();
-				return;
 			case RestModelPackage.REQUEST__SUCC_ANSWER:
 				setSuccAnswer((Answer)null);
+				return;
+			case RestModelPackage.REQUEST__OPERATIONS:
+				getOperations().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -307,10 +308,10 @@ public abstract class RequestImpl extends MinimalEObjectImpl.Container implement
 				return route != null;
 			case RestModelPackage.REQUEST__DATA:
 				return data != null && !data.isEmpty();
-			case RestModelPackage.REQUEST__OPS:
-				return ops != null && !ops.isEmpty();
 			case RestModelPackage.REQUEST__SUCC_ANSWER:
 				return succAnswer != null;
+			case RestModelPackage.REQUEST__OPERATIONS:
+				return operations != null && !operations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

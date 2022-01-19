@@ -85,22 +85,22 @@ public interface RestModelPackage extends EPackage {
 	int REQUEST__DATA = 1;
 
 	/**
-	 * The feature id for the '<em><b>Ops</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REQUEST__OPS = 2;
-
-	/**
 	 * The feature id for the '<em><b>Succ Answer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__SUCC_ANSWER = 3;
+	int REQUEST__SUCC_ANSWER = 2;
+
+	/**
+	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUEST__OPERATIONS = 3;
 
 	/**
 	 * The number of structural features of the '<em>Request</em>' class.
@@ -149,15 +149,6 @@ public interface RestModelPackage extends EPackage {
 	int RE_GET__DATA = REQUEST__DATA;
 
 	/**
-	 * The feature id for the '<em><b>Ops</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RE_GET__OPS = REQUEST__OPS;
-
-	/**
 	 * The feature id for the '<em><b>Succ Answer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -165,6 +156,15 @@ public interface RestModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int RE_GET__SUCC_ANSWER = REQUEST__SUCC_ANSWER;
+
+	/**
+	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RE_GET__OPERATIONS = REQUEST__OPERATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Re Get</em>' class.
@@ -213,15 +213,6 @@ public interface RestModelPackage extends EPackage {
 	int RE_POST__DATA = REQUEST__DATA;
 
 	/**
-	 * The feature id for the '<em><b>Ops</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RE_POST__OPS = REQUEST__OPS;
-
-	/**
 	 * The feature id for the '<em><b>Succ Answer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -229,6 +220,15 @@ public interface RestModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int RE_POST__SUCC_ANSWER = REQUEST__SUCC_ANSWER;
+
+	/**
+	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RE_POST__OPERATIONS = REQUEST__OPERATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Re Post</em>' class.
@@ -277,15 +277,6 @@ public interface RestModelPackage extends EPackage {
 	int RE_PUT__DATA = REQUEST__DATA;
 
 	/**
-	 * The feature id for the '<em><b>Ops</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RE_PUT__OPS = REQUEST__OPS;
-
-	/**
 	 * The feature id for the '<em><b>Succ Answer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -293,6 +284,15 @@ public interface RestModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int RE_PUT__SUCC_ANSWER = REQUEST__SUCC_ANSWER;
+
+	/**
+	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RE_PUT__OPERATIONS = REQUEST__OPERATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Re Put</em>' class.
@@ -341,15 +341,6 @@ public interface RestModelPackage extends EPackage {
 	int RE_DELETE__DATA = REQUEST__DATA;
 
 	/**
-	 * The feature id for the '<em><b>Ops</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RE_DELETE__OPS = REQUEST__OPS;
-
-	/**
 	 * The feature id for the '<em><b>Succ Answer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -357,6 +348,15 @@ public interface RestModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int RE_DELETE__SUCC_ANSWER = REQUEST__SUCC_ANSWER;
+
+	/**
+	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RE_DELETE__OPERATIONS = REQUEST__OPERATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Re Delete</em>' class.
@@ -1003,13 +1003,22 @@ public interface RestModelPackage extends EPackage {
 	int STRUCT = 18;
 
 	/**
-	 * The feature id for the '<em><b>Fields</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT__FIELDS = 0;
+	int STRUCT__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCT__FIELDS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Struct</em>' class.
@@ -1018,7 +1027,7 @@ public interface RestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_FEATURE_COUNT = 1;
+	int STRUCT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Struct</em>' class.
@@ -1058,22 +1067,13 @@ public interface RestModelPackage extends EPackage {
 	int REST_SYSTEM__STRUCT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Operation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REST_SYSTEM__OPERATION = 2;
-
-	/**
 	 * The feature id for the '<em><b>Answer</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REST_SYSTEM__ANSWER = 3;
+	int REST_SYSTEM__ANSWER = 2;
 
 	/**
 	 * The number of structural features of the '<em>Rest System</em>' class.
@@ -1082,7 +1082,7 @@ public interface RestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REST_SYSTEM_FEATURE_COUNT = 4;
+	int REST_SYSTEM_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Rest System</em>' class.
@@ -1164,17 +1164,6 @@ public interface RestModelPackage extends EPackage {
 	EReference getRequest_Data();
 
 	/**
-	 * Returns the meta object for the reference list '{@link restModel.Request#getOps <em>Ops</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Ops</em>'.
-	 * @see restModel.Request#getOps()
-	 * @see #getRequest()
-	 * @generated
-	 */
-	EReference getRequest_Ops();
-
-	/**
 	 * Returns the meta object for the reference '{@link restModel.Request#getSuccAnswer <em>Succ Answer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1184,6 +1173,17 @@ public interface RestModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRequest_SuccAnswer();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link restModel.Request#getOperations <em>Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Operations</em>'.
+	 * @see restModel.Request#getOperations()
+	 * @see #getRequest()
+	 * @generated
+	 */
+	EReference getRequest_Operations();
 
 	/**
 	 * Returns the meta object for class '{@link restModel.ReGet <em>Re Get</em>}'.
@@ -1509,15 +1509,26 @@ public interface RestModelPackage extends EPackage {
 	EClass getStruct();
 
 	/**
-	 * Returns the meta object for the attribute '{@link restModel.Struct#getFields <em>Fields</em>}'.
+	 * Returns the meta object for the attribute '{@link restModel.Struct#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Fields</em>'.
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see restModel.Struct#getName()
+	 * @see #getStruct()
+	 * @generated
+	 */
+	EAttribute getStruct_Name();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link restModel.Struct#getFields <em>Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Fields</em>'.
 	 * @see restModel.Struct#getFields()
 	 * @see #getStruct()
 	 * @generated
 	 */
-	EAttribute getStruct_Fields();
+	EReference getStruct_Fields();
 
 	/**
 	 * Returns the meta object for class '{@link restModel.RestSystem <em>Rest System</em>}'.
@@ -1550,17 +1561,6 @@ public interface RestModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRestSystem_Struct();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link restModel.RestSystem#getOperation <em>Operation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Operation</em>'.
-	 * @see restModel.RestSystem#getOperation()
-	 * @see #getRestSystem()
-	 * @generated
-	 */
-	EReference getRestSystem_Operation();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link restModel.RestSystem#getAnswer <em>Answer</em>}'.
@@ -1644,20 +1644,20 @@ public interface RestModelPackage extends EPackage {
 		EReference REQUEST__DATA = eINSTANCE.getRequest_Data();
 
 		/**
-		 * The meta object literal for the '<em><b>Ops</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REQUEST__OPS = eINSTANCE.getRequest_Ops();
-
-		/**
 		 * The meta object literal for the '<em><b>Succ Answer</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference REQUEST__SUCC_ANSWER = eINSTANCE.getRequest_SuccAnswer();
+
+		/**
+		 * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUEST__OPERATIONS = eINSTANCE.getRequest_Operations();
 
 		/**
 		 * The meta object literal for the '{@link restModel.impl.ReGetImpl <em>Re Get</em>}' class.
@@ -1944,12 +1944,20 @@ public interface RestModelPackage extends EPackage {
 		EClass STRUCT = eINSTANCE.getStruct();
 
 		/**
-		 * The meta object literal for the '<em><b>Fields</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STRUCT__FIELDS = eINSTANCE.getStruct_Fields();
+		EAttribute STRUCT__NAME = eINSTANCE.getStruct_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRUCT__FIELDS = eINSTANCE.getStruct_Fields();
 
 		/**
 		 * The meta object literal for the '{@link restModel.impl.RestSystemImpl <em>Rest System</em>}' class.
@@ -1976,14 +1984,6 @@ public interface RestModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REST_SYSTEM__STRUCT = eINSTANCE.getRestSystem_Struct();
-
-		/**
-		 * The meta object literal for the '<em><b>Operation</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REST_SYSTEM__OPERATION = eINSTANCE.getRestSystem_Operation();
 
 		/**
 		 * The meta object literal for the '<em><b>Answer</b></em>' containment reference list feature.

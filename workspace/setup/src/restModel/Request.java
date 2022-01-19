@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link restModel.Request#getRoute <em>Route</em>}</li>
  *   <li>{@link restModel.Request#getData <em>Data</em>}</li>
- *   <li>{@link restModel.Request#getOps <em>Ops</em>}</li>
  *   <li>{@link restModel.Request#getSuccAnswer <em>Succ Answer</em>}</li>
+ *   <li>{@link restModel.Request#getOperations <em>Operations</em>}</li>
  * </ul>
  *
  * @see restModel.RestModelPackage#getRequest()
@@ -61,18 +61,6 @@ public interface Request extends EObject {
 	EList<Data> getData();
 
 	/**
-	 * Returns the value of the '<em><b>Ops</b></em>' reference list.
-	 * The list contents are of type {@link restModel.Operation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ops</em>' reference list.
-	 * @see restModel.RestModelPackage#getRequest_Ops()
-	 * @model
-	 * @generated
-	 */
-	EList<Operation> getOps();
-
-	/**
 	 * Returns the value of the '<em><b>Succ Answer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -93,5 +81,17 @@ public interface Request extends EObject {
 	 * @generated
 	 */
 	void setSuccAnswer(Answer value);
+
+	/**
+	 * Returns the value of the '<em><b>Operations</b></em>' containment reference list.
+	 * The list contents are of type {@link restModel.Operation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operations</em>' containment reference list.
+	 * @see restModel.RestModelPackage#getRequest_Operations()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Operation> getOperations();
 
 } // Request
