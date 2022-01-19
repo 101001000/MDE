@@ -1,7 +1,7 @@
 [comment encoding = UTF-8 /]
 [module generateCreateOp('/metamodel/restModel.ecore')]
 
-[import RestAcceleoProject::main::GenerateOperations /] 
+[import RestAcceleoProject::operations::generateOps /] 
 
 [template public generateCreateOp(anOp : OpCreate)]
 [for (par : Parameter | anOp.ancestors(Request).oclAsType(Request).data)]

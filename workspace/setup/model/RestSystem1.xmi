@@ -73,7 +73,8 @@
     <operations
         xsi:type="restModel:OpDelete"
         failedAnswer="//@answer.2"
-        struct="//@struct.0"/>
+        struct="//@struct.0"
+        id="id"/>
   </request>
   <struct name="Book">
     <fields
@@ -82,9 +83,9 @@
         name="title"/>
   </struct>
   <answer status="201"
-      return="&quot;id&quot;"/>
+      return="id"/>
   <answer status="200"
-      return="&quot;id&quot;"/>
+      return="id"/>
   <answer status="404"
       return="&quot;error&quot;"/>
 </restModel:RestSystem>

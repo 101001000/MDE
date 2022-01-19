@@ -1,13 +1,12 @@
 [comment encoding = UTF-8 /]
 [module generateUpdateOp('/metamodel/restModel.ecore')]
 
-[import RestAcceleoProject::main::GenerateOperations /] 
+[import RestAcceleoProject::operations::generateOps /] 
 
 [comment @TODO Ver que pasa aquí cuando no hay parámetros/]
 [template public generateUpdateOp(anOp : OpUpdate)]
 [if anOp.ancestors(Request).oclAsType(Request).route.segment->last().value.contains(':')]
 
-String id = request.params("[anOp.ancestors(Request).oclAsType(Request).route.segment->last().value/]");
 [sName(anOp)/] [oName(anOp)/] = [lName(anOp)/].get(id);
 if ([oName(anOp)/] != null) {
 
@@ -17,7 +16,7 @@ if ([oName(anOp)/] != null) {
 		[oName(anOp)/].set[par.name.toUpperFirst()/](new[par.name.toUpperFirst()/]);
 	[/for]
 
-	[generateAnswer((anOp.ancestors(Request).oclAsType(Request)).succAnswer->first())/]	
+	[succAnswer(anOp)/]
 
 } else {
 	[generateAnswer(anOp.failedAnswer)/]

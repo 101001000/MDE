@@ -1,0 +1,11 @@
+[comment encoding = UTF-8 /]
+[module generateReadAllOp('/metamodel/restModel.ecore')]
+
+[import RestAcceleoProject::operations::generateOps /] 
+
+[template public generateReadOp(anOp : OpRead)]
+String ids = "";
+for(String id : [lName(anOp)/].keySet())
+	ids += id + " ";
+[succAnswer(anOp)/]
+[/template]

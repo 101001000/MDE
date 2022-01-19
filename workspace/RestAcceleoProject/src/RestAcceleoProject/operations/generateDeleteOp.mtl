@@ -1,0 +1,13 @@
+[comment encoding = UTF-8 /]
+[module generateDeleteOp('/metamodel/restModel.ecore')]
+
+[import RestAcceleoProject::operations::generateOps /] 
+
+[template public generateDeleteOp(anOp : OpDelete)]
+[sName(anOp)/] [oName(anOp)/] = [lName(anOp)/].remove([anOp.id/]);
+if ([oName(anOp)/] != null) {
+	[succAnswer(anOp)/]
+} else {
+	[generateAnswer(anOp.failedAnswer)/]
+}
+[/template]

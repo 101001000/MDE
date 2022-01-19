@@ -1,7 +1,8 @@
 [comment encoding = UTF-8 /]
 [module MainFile('/metamodel/restModel.ecore')]
 
-[import RestAcceleoProject::main::GenerateOperations /] 
+[import RestAcceleoProject::operations::generateOps /] 
+[import RestAcceleoProject::common::generateRequests /] 
 
 [template public generateMainFile(aRestSystem : RestSystem)]
 
@@ -30,19 +31,3 @@ public class Main {
 [/file]
 [/template]
 
-[template public generateRequests(aReq : Request)]
-[if aReq.oclIsTypeOf(RePost)]post[/if][if aReq.oclIsTypeOf(ReGet)]get[/if][if aReq.oclIsTypeOf(RePut)]put[/if][if aReq.oclIsTypeOf(ReDelete)]delete[/if]([generateRoute(aReq.route)/]{
-
-	@Override
-	public Object handle(Request request, Response response){
-		[for (op : Operation | aReq.operations)]
-		[let structNameU : String = op.struct.name][let structNameL : String = op.struct.name.toLowerCase()][let structNameLP : String = op.struct.name.toLowerCase().concat('s')][generateOps(op)/][/let][/let][/let]
-		[/for] 
-	}
-});
-[/template]
-
-
-[template public generateRoute(aRoute : Route)]
-new Route("[for (seg : Segment | aRoute.segment)]/[seg.value/][/for]") 
-[/template]
