@@ -4,11 +4,11 @@
 package rest.formatting2
 
 import com.google.inject.Inject
-import metamodelREST.RestSystem
-import metamodelREST.Route
 import org.eclipse.xtext.formatting2.AbstractFormatter2
 import org.eclipse.xtext.formatting2.IFormattableDocument
 import rest.services.RestGrammarAccess
+import restModel.RestSystem
+import restModel.Route
 
 class RestFormatter extends AbstractFormatter2 {
 	

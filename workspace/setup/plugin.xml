@@ -9,9 +9,17 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated model -->
       <package
-            uri="metamodelREST"
-            class="metamodelREST.MetamodelRESTPackage"
+            uri="model.ecore"
+            class="model.ModelPackage"
             genModel="model/model.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated restModel -->
+      <package
+            uri="/metamodel/restModel.ecore"
+            class="restModel.RestModelPackage"
+            genModel="model/restModel.genmodel"/>
    </extension>
 
 </plugin>

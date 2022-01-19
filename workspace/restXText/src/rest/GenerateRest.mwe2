@@ -33,7 +33,7 @@ Workflow {
 		language = StandardLanguage {
 			name = "rest.Rest"
 			fileExtensions = "rest"
-			referencedResource = "platform:/resource/setup/model/model.genmodel"
+			referencedResource = "platform:/resource/setup/model/restModel.genmodel"
 			
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
 

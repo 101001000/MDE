@@ -5,13 +5,6 @@ package rest.formatting2;
 
 import com.google.inject.Inject;
 import java.util.Arrays;
-import metamodelREST.Answer;
-import metamodelREST.Operation;
-import metamodelREST.Request;
-import metamodelREST.RestSystem;
-import metamodelREST.Route;
-import metamodelREST.Segment;
-import metamodelREST.Struct;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.formatting2.AbstractFormatter2;
@@ -19,6 +12,13 @@ import org.eclipse.xtext.formatting2.IFormattableDocument;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.xbase.lib.Extension;
 import rest.services.RestGrammarAccess;
+import restModel.Answer;
+import restModel.Operation;
+import restModel.Request;
+import restModel.RestSystem;
+import restModel.Route;
+import restModel.Segment;
+import restModel.Struct;
 
 @SuppressWarnings("all")
 public class RestFormatter extends AbstractFormatter2 {

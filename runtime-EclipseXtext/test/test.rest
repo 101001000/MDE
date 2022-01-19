@@ -1,17 +1,13 @@
 RestSystem
 {
 	
-	answer { Answer {
-		
-	}
-		
-	}
 	
 	request {
 		
-		RePost
-		{
-			route Route{segment {Segment{value test}}}
+		RePost {
+			
+			route Route{segment {Segment{value pathtest}}}
+
 		}
 	}
 

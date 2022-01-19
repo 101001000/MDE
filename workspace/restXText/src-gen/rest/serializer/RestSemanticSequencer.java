@@ -5,24 +5,6 @@ package rest.serializer;
 
 import com.google.inject.Inject;
 import java.util.Set;
-import metamodelREST.Answer;
-import metamodelREST.Attachments;
-import metamodelREST.Field;
-import metamodelREST.FieldSet;
-import metamodelREST.MetamodelRESTPackage;
-import metamodelREST.OpCreate;
-import metamodelREST.OpDelete;
-import metamodelREST.OpRead;
-import metamodelREST.OpUpdate;
-import metamodelREST.Random;
-import metamodelREST.ReDelete;
-import metamodelREST.ReGet;
-import metamodelREST.RePost;
-import metamodelREST.RePut;
-import metamodelREST.RestSystem;
-import metamodelREST.Route;
-import metamodelREST.Segment;
-import metamodelREST.Struct;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.xtext.Action;
@@ -33,6 +15,24 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import rest.services.RestGrammarAccess;
+import restModel.Answer;
+import restModel.Attachments;
+import restModel.Field;
+import restModel.FieldSet;
+import restModel.OpCreate;
+import restModel.OpDelete;
+import restModel.OpRead;
+import restModel.OpUpdate;
+import restModel.Random;
+import restModel.ReDelete;
+import restModel.ReGet;
+import restModel.RePost;
+import restModel.RePut;
+import restModel.RestModelPackage;
+import restModel.RestSystem;
+import restModel.Route;
+import restModel.Segment;
+import restModel.Struct;
 
 @SuppressWarnings("all")
 public class RestSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -46,60 +46,60 @@ public class RestSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		ParserRule rule = context.getParserRule();
 		Action action = context.getAssignedAction();
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
-		if (epackage == MetamodelRESTPackage.eINSTANCE)
+		if (epackage == RestModelPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case MetamodelRESTPackage.ANSWER:
+			case RestModelPackage.ANSWER:
 				sequence_Answer(context, (Answer) semanticObject); 
 				return; 
-			case MetamodelRESTPackage.ATTACHMENTS:
+			case RestModelPackage.ATTACHMENTS:
 				sequence_Attachments(context, (Attachments) semanticObject); 
 				return; 
-			case MetamodelRESTPackage.FIELD:
+			case RestModelPackage.FIELD:
 				sequence_Field(context, (Field) semanticObject); 
 				return; 
-			case MetamodelRESTPackage.FIELD_SET:
+			case RestModelPackage.FIELD_SET:
 				sequence_FieldSet(context, (FieldSet) semanticObject); 
 				return; 
-			case MetamodelRESTPackage.OP_CREATE:
+			case RestModelPackage.OP_CREATE:
 				sequence_OpCreate(context, (OpCreate) semanticObject); 
 				return; 
-			case MetamodelRESTPackage.OP_DELETE:
+			case RestModelPackage.OP_DELETE:
 				sequence_OpDelete(context, (OpDelete) semanticObject); 
 				return; 
-			case MetamodelRESTPackage.OP_READ:
+			case RestModelPackage.OP_READ:
 				sequence_OpRead(context, (OpRead) semanticObject); 
 				return; 
-			case MetamodelRESTPackage.OP_UPDATE:
+			case RestModelPackage.OP_UPDATE:
 				sequence_OpUpdate(context, (OpUpdate) semanticObject); 
 				return; 
-			case MetamodelRESTPackage.PARAMETER:
-				sequence_Parameter(context, (metamodelREST.Parameter) semanticObject); 
+			case RestModelPackage.PARAMETER:
+				sequence_Parameter(context, (restModel.Parameter) semanticObject); 
 				return; 
-			case MetamodelRESTPackage.RANDOM:
+			case RestModelPackage.RANDOM:
 				sequence_Random(context, (Random) semanticObject); 
 				return; 
-			case MetamodelRESTPackage.RE_DELETE:
+			case RestModelPackage.RE_DELETE:
 				sequence_ReDelete(context, (ReDelete) semanticObject); 
 				return; 
-			case MetamodelRESTPackage.RE_GET:
+			case RestModelPackage.RE_GET:
 				sequence_ReGet(context, (ReGet) semanticObject); 
 				return; 
-			case MetamodelRESTPackage.RE_POST:
+			case RestModelPackage.RE_POST:
 				sequence_RePost(context, (RePost) semanticObject); 
 				return; 
-			case MetamodelRESTPackage.RE_PUT:
+			case RestModelPackage.RE_PUT:
 				sequence_RePut(context, (RePut) semanticObject); 
 				return; 
-			case MetamodelRESTPackage.REST_SYSTEM:
+			case RestModelPackage.REST_SYSTEM:
 				sequence_RestSystem(context, (RestSystem) semanticObject); 
 				return; 
-			case MetamodelRESTPackage.ROUTE:
+			case RestModelPackage.ROUTE:
 				sequence_Route(context, (Route) semanticObject); 
 				return; 
-			case MetamodelRESTPackage.SEGMENT:
+			case RestModelPackage.SEGMENT:
 				sequence_Segment(context, (Segment) semanticObject); 
 				return; 
-			case MetamodelRESTPackage.STRUCT:
+			case RestModelPackage.STRUCT:
 				sequence_Struct(context, (Struct) semanticObject); 
 				return; 
 			}
@@ -129,8 +129,8 @@ public class RestSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_Attachments(ISerializationContext context, Attachments semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MetamodelRESTPackage.Literals.DATA__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MetamodelRESTPackage.Literals.DATA__NAME));
+			if (transientValues.isValueTransient(semanticObject, RestModelPackage.Literals.DATA__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RestModelPackage.Literals.DATA__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAttachmentsAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());
@@ -159,8 +159,8 @@ public class RestSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_Field(ISerializationContext context, Field semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MetamodelRESTPackage.Literals.FIELD__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MetamodelRESTPackage.Literals.FIELD__NAME));
+			if (transientValues.isValueTransient(semanticObject, RestModelPackage.Literals.FIELD__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RestModelPackage.Literals.FIELD__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getFieldAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());
@@ -228,10 +228,10 @@ public class RestSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     name=EString
 	 */
-	protected void sequence_Parameter(ISerializationContext context, metamodelREST.Parameter semanticObject) {
+	protected void sequence_Parameter(ISerializationContext context, restModel.Parameter semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MetamodelRESTPackage.Literals.DATA__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MetamodelRESTPackage.Literals.DATA__NAME));
+			if (transientValues.isValueTransient(semanticObject, RestModelPackage.Literals.DATA__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RestModelPackage.Literals.DATA__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getParameterAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());
@@ -249,8 +249,8 @@ public class RestSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_Random(ISerializationContext context, Random semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MetamodelRESTPackage.Literals.DATA__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MetamodelRESTPackage.Literals.DATA__NAME));
+			if (transientValues.isValueTransient(semanticObject, RestModelPackage.Literals.DATA__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RestModelPackage.Literals.DATA__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getRandomAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());

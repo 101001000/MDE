@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<restModel:RestSystem
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:restModel="/metamodel/restModel.ecore"
+    xsi:schemaLocation="/metamodel/restModel.ecore restModel.ecore">
+  <request xsi:type="restModel:RePost"
+      ops="//@operation.0"
+      succAnswer="//@answer.0">
+    <route>
+      <segment
+          value="testRoute"/>
+    </route>
+    <data xsi:type="restModel:Parameter"
+        name="author"/>
+    <data xsi:type="restModel:Parameter"
+        name="title"/>
+  </request>
+  <struct fields="author"/>
+  <operation
+      xsi:type="restModel:OpCreate">
+    <fieldset/>
+  </operation>
+  <answer status="201"
+      return="id"/>
+</restModel:RestSystem>

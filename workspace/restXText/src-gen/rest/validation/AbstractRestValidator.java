@@ -13,7 +13,7 @@ public abstract class AbstractRestValidator extends AbstractDeclarativeValidator
 	@Override
 	protected List<EPackage> getEPackages() {
 		List<EPackage> result = new ArrayList<EPackage>();
-		result.add(EPackage.Registry.INSTANCE.getEPackage("metamodelREST"));
+		result.add(EPackage.Registry.INSTANCE.getEPackage("/metamodel/restModel.ecore"));
 		return result;
 	}
 }
