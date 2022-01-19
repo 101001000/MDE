@@ -5,7 +5,7 @@
 
 
 [comment @TODO Ver que pasa aquí cuando no hay parámetros/]
-[template public generateOps(anOp : OpDelete)]
+[template public generateDeleteOp(anOp : OpDelete)]
 [if anOp.ancestors(Request).oclAsType(Request).route.segment->last().value.contains(':')]
 String id = request.params("[anOp.ancestors(Request).oclAsType(Request).route.segment->last().value/]");
 [sName(anOp)/] [oName(anOp)/] = [lName(anOp)/].remove(id);

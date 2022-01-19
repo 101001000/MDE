@@ -3,7 +3,7 @@
 
 [import RestAcceleoProject::main::GenerateOperations /] 
 
-[template public generateOps(anOp : OpCreate)]
+[template public generateCreateOp(anOp : OpCreate)]
 [for (par : Parameter | anOp.ancestors(Request).oclAsType(Request).data)]
 String [par.name/] = request.queryParams("[par.name/]");
 [/for]

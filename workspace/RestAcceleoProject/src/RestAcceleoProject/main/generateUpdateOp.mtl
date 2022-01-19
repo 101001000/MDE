@@ -4,7 +4,7 @@
 [import RestAcceleoProject::main::GenerateOperations /] 
 
 [comment @TODO Ver que pasa aquí cuando no hay parámetros/]
-[template public generateOps(anOp : OpUpdate)]
+[template public generateUpdateOp(anOp : OpUpdate)]
 [if anOp.ancestors(Request).oclAsType(Request).route.segment->last().value.contains(':')]
 
 String id = request.params("[anOp.ancestors(Request).oclAsType(Request).route.segment->last().value/]");

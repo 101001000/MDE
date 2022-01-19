@@ -1,11 +1,14 @@
 [comment encoding = UTF-8 /]
 [module GenerateOperations('/metamodel/restModel.ecore')]
 
+[import RestAcceleoProject::main::generateCreateOp /] 
+[import RestAcceleoProject::main::generateReadOp /] 
+[import RestAcceleoProject::main::generateUpdateOp /] 
+[import RestAcceleoProject::main::generateDeleteOp /] 
 
 [query public sName(anOp : Operation) : String = anOp.struct.name/]
 [query public oName(anOp : Operation) : String = anOp.struct.name.toLowerCase()/]
 [query public lName(anOp : Operation) : String = anOp.struct.name.toLowerCase().concat('s')/]
-
 
 
 [template public generateAnswer(anAnswer : Answer)]
@@ -14,4 +17,6 @@ return [anAnswer.return/];
 [/template]
 
 
-[template public generateOps(anOp : Operation)][/template]
+[template public generateOps(anOp : Operation)]
+[if anOp.oclIsTypeOf(OpCreate)][generateCreateOp(anOp.oclAsType(OpCreate))/][/if][if anOp.oclIsTypeOf(OpRead)][generateReadOp(anOp.oclAsType(OpRead))/][/if][if anOp.oclIsTypeOf(OpUpdate)][generateUpdateOp(anOp.oclAsType(OpUpdate))/][/if][if anOp.oclIsTypeOf(OpDelete)][generateDeleteOp(anOp.oclAsType(OpDelete))/][/if]
+[/template]
