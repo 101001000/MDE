@@ -1,8 +1,8 @@
-struct Page{
+struct Page {
   field num;
 }
 
-struct Book{
+struct Book {
   field author;
   field title;
   field pageId;
