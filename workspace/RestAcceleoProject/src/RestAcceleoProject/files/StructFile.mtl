@@ -1,0 +1,29 @@
+[comment encoding = UTF-8 /]
+[module StructFile('/metamodel/restModel.ecore')]
+
+[template public generateStructFile(struct : Struct)]
+
+[file (struct.name.concat('.java'), false, 'UTF-8')]
+public class [struct.name/] {
+
+	[for (field : Field | struct.fields)]
+	private String [field.name/];
+	[/for] 
+
+	public [struct.name/]([for (field : Field | struct.fields) separator (', ')]String [field.name/][/for]){
+		[for (field : Field | struct.fields)]
+		this.[field.name/] = [field.name/];
+		[/for] 
+	}
+
+	[for (field : Field | struct.fields)]
+	public String get[field.name.toUpperFirst()/](){ return [field.name/];};
+	[/for] 
+
+	[for (field : Field | struct.fields)]
+	public void set[field.name.toUpperFirst()/](String [field.name/]){ this.[field.name/] = [field.name/];};
+	[/for] 
+}
+[/file]
+
+[/template]

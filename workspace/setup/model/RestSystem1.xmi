@@ -28,7 +28,8 @@
     <operations
         xsi:type="restModel:OpRead"
         failedAnswer="//@answer.2"
-        struct="//@struct.0"/>
+        struct="//@struct.0"
+        id="id"/>
   </request>
   <request xsi:type="restModel:ReGet"
       succAnswer="//@answer.1">
@@ -41,7 +42,8 @@
     <operations
         xsi:type="restModel:OpRead"
         failedAnswer="//@answer.2"
-        struct="//@struct.0"/>
+        struct="//@struct.0"
+        id="id"/>
   </request>
   <request xsi:type="restModel:RePut"
       succAnswer="//@answer.0">

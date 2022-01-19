@@ -1,151 +1,16 @@
 [comment encoding = UTF-8 /]
 [module generate('/metamodel/restModel.ecore')]
 
-
-[query public sName(anOp : Operation) : String = anOp.struct.name/]
-[query public oName(anOp : Operation) : String = anOp.struct.name.toLowerCase()/]
-[query public lName(anOp : Operation) : String = anOp.struct.name.toLowerCase().concat('s')/]
+[import RestAcceleoProject::main::GenerateOperations /] 
+[import RestAcceleoProject::files::MainFile /] 
+[import RestAcceleoProject::files::StructFile /] 
 
 [template public generateElement(aRestSystem : RestSystem)]
-
-[for (struct : Struct | aRestSystem.struct)]
-	[file (struct.name.concat('.java'), false, 'UTF-8')]
-public class [struct.name/] {
-
-	[for (field : Field | struct.fields)]
-	private String [field.name/];
-	[/for] 
-
-	public [struct.name/]([for (field : Field | struct.fields) separator (', ')]String [field.name/][/for]){
-		[for (field : Field | struct.fields)]
-		this.[field.name/] = [field.name/];
-		[/for] 
-	}
-
-	[for (field : Field | struct.fields)]
-	public String get[field.name.toUpperFirst()/](){ return [field.name/];};
-	[/for] 
-
-	[for (field : Field | struct.fields)]
-	public void set[field.name.toUpperFirst()/](String [field.name/]){ this.[field.name/] = [field.name/];};
-	[/for] 
-}
-	[/file]
-[/for] 
-		
-
-
 [comment @main/]
-[file ('Main.java', false, 'UTF-8')]
-
-import static spark.Spark.*;
-import java.util.*;
-import spark.Request;
-import spark.Response;
-import spark.Route;
-
-public class Main {
-
-	[for (struct : Struct | aRestSystem.struct)]
-	private static Map<String, [struct.name/]> [struct.name.toLowerCase()/]s = new HashMap<String, [struct.name/]>();
-	[/for] 
-
-	public static void main(String['['/][']'/] args) {
-		
-		[for (req : Request | aRestSystem.request)]
-		[generateRequests(req)/]
-		[/for] 
-
-	}
-}
-
-[/file]
-[/template]
-
-[template public generateAnswer(anAnswer : Answer)]
-response.status([anAnswer.status/]);
-return [anAnswer.return/];
-[/template]
-
-[comment @TODO Ver que pasa aquí cuando no hay parámetros/]
-[template public generateOps(anOp : OpDelete)]
-[if anOp.ancestors(Request).oclAsType(Request).route.segment->last().value.contains(':')]
-String id = request.params("[anOp.ancestors(Request).oclAsType(Request).route.segment->last().value/]");
-[sName(anOp)/] [oName(anOp)/] = [lName(anOp)/].remove(id);
-if ([oName(anOp)/] != null) {
-	[generateAnswer((anOp.ancestors(Request).oclAsType(Request)).succAnswer->first())/]
-} else {
-	[generateAnswer(anOp.failedAnswer)/]
-}
-[else]
-// NOT DEFINED BEHAVIOUR FOR DELETE WITH NO PARS
-[/if]
-[/template]
-
-[comment @TODO Ver que pasa aquí cuando no hay parámetros/]
-[template public generateOps(anOp : OpUpdate)]
-[if anOp.ancestors(Request).oclAsType(Request).route.segment->last().value.contains(':')]
-
-String id = request.params("[anOp.ancestors(Request).oclAsType(Request).route.segment->last().value/]");
-[sName(anOp)/] [oName(anOp)/] = [lName(anOp)/].get(id);
-if ([oName(anOp)/] != null) {
-
-	[for (par : Parameter | anOp.ancestors(Request).oclAsType(Request).data)]
-	String new[par.name.toUpperFirst()/] = request.queryParams("[par.name/]");
-	if (new[par.name.toUpperFirst()/] != null)
-		[oName(anOp)/].set[par.name.toUpperFirst()/](new[par.name.toUpperFirst()/]);
-	[/for]
-
-	[generateAnswer((anOp.ancestors(Request).oclAsType(Request)).succAnswer->first())/]	
-
-} else {
-	[generateAnswer(anOp.failedAnswer)/]
-}
-[else]
-// NOT DEFINED BEHAVIOUR FOR DELETE WITH NO PARS
-[/if]
-[/template]
-
-[template public generateOps(anOp : OpCreate)]
-[for (par : Parameter | anOp.ancestors(Request).oclAsType(Request).data)]
-String [par.name/] = request.queryParams("[par.name/]");
+[generateMainFile(aRestSystem)/]
+[for (aStruct : Struct | aRestSystem.struct)]
+[generateStructFile(aStruct)/]
 [/for]
-[sName(anOp)/] [oName(anOp)/] = new [anOp.struct.name/]([for (par : Parameter | anOp.ancestors(Request).oclAsType(Request).data) separator (', ')][par.name/][/for]);
 
-[generateAnswer((anOp.ancestors(Request).oclAsType(Request)).succAnswer->first())/]
 [/template]
 
-[template public generateOps(anOp : OpRead)]
-
-[if anOp.ancestors(Request).oclAsType(Request).route.segment->last().value.contains(':')]
-[sName(anOp)/] [oName(anOp)/] = [lName(anOp)/].get(request.params("[anOp.ancestors(Request).oclAsType(Request).route.segment->last().value/]"));
-if ([anOp.struct.name.toLowerCase()/] != null) {
-	[generateAnswer(anOp.ancestors(Request).oclAsType(Request).succAnswer->first())/]
-} else {
-	[generateAnswer(anOp.failedAnswer)/]
-}
-[else]
-String ids = "";
-for(String id : [lName(anOp)/].keySet())
-	ids += id + " ";
-[generateAnswer(anOp.ancestors(Request).oclAsType(Request).succAnswer->first())/]
-[/if]
-[/template]
-
-[template public generateOps(anOp : Operation)][/template]
-[template public generateRequests(aReq : Request)]
-[if aReq.oclIsTypeOf(RePost)]post[/if][if aReq.oclIsTypeOf(ReGet)]get[/if][if aReq.oclIsTypeOf(RePut)]put[/if][if aReq.oclIsTypeOf(ReDelete)]delete[/if]([generateRoute(aReq.route)/]{
-
-	@Override
-	public Object handle(Request request, Response response){
-		[for (op : Operation | aReq.operations)]
-		[let structNameU : String = op.struct.name][let structNameL : String = op.struct.name.toLowerCase()][let structNameLP : String = op.struct.name.toLowerCase().concat('s')][generateOps(op)/][/let][/let][/let]
-		[/for] 
-	}
-});
-[/template]
-
-
-[template public generateRoute(aRoute : Route)]
-new Route("[for (seg : Segment | aRoute.segment)]/[seg.value/][/for]") 
-[/template]

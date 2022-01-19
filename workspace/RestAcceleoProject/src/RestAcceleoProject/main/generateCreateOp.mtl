@@ -1,0 +1,13 @@
+[comment encoding = UTF-8 /]
+[module generateCreateOp('/metamodel/restModel.ecore')]
+
+[import RestAcceleoProject::main::GenerateOperations /] 
+
+[template public generateOps(anOp : OpCreate)]
+[for (par : Parameter | anOp.ancestors(Request).oclAsType(Request).data)]
+String [par.name/] = request.queryParams("[par.name/]");
+[/for]
+[sName(anOp)/] [oName(anOp)/] = new [anOp.struct.name/]([for (par : Parameter | anOp.ancestors(Request).oclAsType(Request).data) separator (', ')][par.name/][/for]);
+
+[generateAnswer((anOp.ancestors(Request).oclAsType(Request)).succAnswer->first())/]
+[/template]

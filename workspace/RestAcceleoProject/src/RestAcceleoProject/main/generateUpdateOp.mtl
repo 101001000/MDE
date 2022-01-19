@@ -1,0 +1,29 @@
+[comment encoding = UTF-8 /]
+[module generateUpdateOp('/metamodel/restModel.ecore')]
+
+[import RestAcceleoProject::main::GenerateOperations /] 
+
+[comment @TODO Ver que pasa aquí cuando no hay parámetros/]
+[template public generateOps(anOp : OpUpdate)]
+[if anOp.ancestors(Request).oclAsType(Request).route.segment->last().value.contains(':')]
+
+String id = request.params("[anOp.ancestors(Request).oclAsType(Request).route.segment->last().value/]");
+[sName(anOp)/] [oName(anOp)/] = [lName(anOp)/].get(id);
+if ([oName(anOp)/] != null) {
+
+	[for (par : Parameter | anOp.ancestors(Request).oclAsType(Request).data)]
+	String new[par.name.toUpperFirst()/] = request.queryParams("[par.name/]");
+	if (new[par.name.toUpperFirst()/] != null)
+		[oName(anOp)/].set[par.name.toUpperFirst()/](new[par.name.toUpperFirst()/]);
+	[/for]
+
+	[generateAnswer((anOp.ancestors(Request).oclAsType(Request)).succAnswer->first())/]	
+
+} else {
+	[generateAnswer(anOp.failedAnswer)/]
+}
+[else]
+// NOT DEFINED BEHAVIOUR FOR DELETE WITH NO PARS
+[/if]
+[/template]
+

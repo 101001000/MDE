@@ -1,0 +1,17 @@
+[comment encoding = UTF-8 /]
+[module GenerateOperations('/metamodel/restModel.ecore')]
+
+
+[query public sName(anOp : Operation) : String = anOp.struct.name/]
+[query public oName(anOp : Operation) : String = anOp.struct.name.toLowerCase()/]
+[query public lName(anOp : Operation) : String = anOp.struct.name.toLowerCase().concat('s')/]
+
+
+
+[template public generateAnswer(anAnswer : Answer)]
+response.status([anAnswer.status/]);
+return [anAnswer.return/];
+[/template]
+
+
+[template public generateOps(anOp : Operation)][/template]
