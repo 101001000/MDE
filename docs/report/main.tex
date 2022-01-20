@@ -9,7 +9,7 @@
 
 \title{Un DSL para crear servicios REST}
 
-\author{Enrique de la Calle Montilla\and
+\author{Enrique de la Calle Montilla y
 Jorge Blázquez Saborido}
 \authorrunning{F. Author et al.}
 \institute{Universidad Complutense de Madrid}
@@ -200,7 +200,7 @@ Ahora que ya teníamos un ejemplo sobre el que trabajar nos dispusimos
 a escribir en nuestro lenguaje la misma API. Como el lenguaje todavía
 no existía, íbamos creando la sintaxis sobre la marcha. De esta manera
 obtuvimos el primer prototipo conceptual (sin implementación) de nuestro
-DSL. El resultado está en la Figura~\ref{fig:codigo-rest} y no cumple
+DSL. El resultado está en Apéndice~\ref{app:codigo-rest} y no cumple
 exactamente la misma interfaz debido a las diferentes exploraciones que
 hacíamos sobre la sintaxis.
 
@@ -210,75 +210,14 @@ hacíamos sobre la sintaxis.
     morestring=[b]",
 }
 
-\begin{figure}
-    \begin{lstlisting}[language=rest, basicstyle=\scriptsize]
-struct Page {
-  field num;
-}
-
-struct Book {
-  field author;
-  field title;
-  field pageId;
-}
-
-post "book" {
-  param author;
-  param title;
-  param pageId;
-  random id;
-  create Book(author: author, title: title, pageId: pageId) with id;
-  status 201;
-  return "{id}";
-}
-
-get "books" id {
-  read Book(author, title, pageId) with id if fail {
-    status 404;
-    return "Book not found"
-  };
-  return "Title: {title}, Author: {author}";
-}
-
-get "books" id "name" {
-  read Book(author, title, pageId) with id if fail {
-    status 404;
-    return "Book not found"
-  };
-  return title;
-}
-
-put "books" id {
-  param newAuthor;
-  param newTitle;
-  update Book(author: newAuthor, title: newTitle) with id if fail {
-    status 404;
-    return "Book not found";
-  };
-  return "Book with id '{id}' updated";
-}
-    \end{lstlisting}
-
-\caption{Primer prototipo de API REST}
-\label{fig:codigo-rest}
-\end{figure}
-
 Con esta exploración inicial ya podíamos empezar a diseñar
 nuestro metamodelo.  Después de varias iteraciones (de los pasos
-que vendrán a continuación) se quedó en lo que aparece en la
-Figura~\ref{fig:metamodelo}. Una vez tenemos un metamodelo ya podemos
+que vendrán a continuación) se quedó en lo que aparece en el
+Apéndice~\ref{app:metamodelo}. Una vez tenemos un metamodelo ya podemos
 empezar tanto con la gramática del lenguaje como con la generación de
 código. Para lo primero usamos Xtext, que nos generó una gramática
 por defecto. Para lo segundo usamos las plantillas de Acceleo con las
 que generamos código Java que usa la biblioteca Spark.
-
-\begin{figure}
-    \centering
-    %\def\svgwidth{\columnwidth}
-    \rotatebox{90}{\scalebox{0.5}{\input{restModel.pdf_tex}}}
-    \caption{Metamodelo del DSL}
-    \label{fig:metamodelo}
-\end{figure}
 
 Hemos escrito el ejemplo con el que hemos empezado esta sección en
 nuestra sintaxis final (la generada por Xtext). Se puede ver en el
@@ -328,28 +267,14 @@ es sencillo:
 \section{Conclusiones}
 \label{sc:concl}
 
+En este trabajo hemos diseñado e implementado un DSL para la descripción
+de APIs REST que se traduce a código ejecutable en Java. El ejecutable
+producido es un servidor REST funcional al que se le pueden mandar
+peticiones y recibir respuestas.
 
-\begin{thebibliography}{8}
-\bibitem{ref_article1}
-Author, F.: Article title. Journal \textbf{2}(5), 99--110 (2016)
-
-\bibitem{ref_lncs1}
-Author, F., Author, S.: Title of a proceedings paper. In: Editor,
-F., Editor, S. (eds.) CONFERENCE 2016, LNCS, vol. 9999, pp. 1--13.
-Springer, Heidelberg (2016). \doi{10.10007/1234567890}
-
-\bibitem{ref_book1}
-Author, F., Author, S., Author, T.: Book title. 2nd edn. Publisher,
-Location (1999)
-
-\bibitem{ref_proc1}
-Author, A.-B.: Contribution title. In: 9th International Proceedings
-on Proceedings, pp. 1--2. Publisher, Location (2010)
-
-\bibitem{ref_url1}
-LNCS Homepage, \url{http://www.springer.com/lncs}. Last accessed 4
-Oct 2017
-\end{thebibliography}
+Para conseguir el resultado hemos usado Eclipse y sus herramientas
+asociadas: EMF, Xtext y Acceleo. Estas herramientas nos proporcionan un
+entorno coherente con el que realizar ingeniería dirigida por modelos.
 
 \newpage
 
@@ -454,6 +379,67 @@ public class Books {
 
 \newpage
 
+\section{Primer prototipo de API REST}
+\label{app:codigo-rest}
+
+\begin{lstlisting}[language=rest, basicstyle=\footnotesize]
+struct Page {
+  field num;
+}
+
+struct Book {
+  field author;
+  field title;
+  field pageId;
+}
+
+post "book" {
+  param author;
+  param title;
+  param pageId;
+  random id;
+  create Book(author: author, title: title, pageId: pageId) with id;
+  status 201;
+  return "{id}";
+}
+
+get "books" id {
+  read Book(author, title, pageId) with id if fail {
+    status 404;
+    return "Book not found"
+  };
+  return "Title: {title}, Author: {author}";
+}
+
+get "books" id "name" {
+  read Book(author, title, pageId) with id if fail {
+    status 404;
+    return "Book not found"
+  };
+  return title;
+}
+
+put "books" id {
+  param newAuthor;
+  param newTitle;
+  update Book(author: newAuthor, title: newTitle) with id if fail {
+    status 404;
+    return "Book not found";
+  };
+  return "Book with id '{id}' updated";
+}
+\end{lstlisting}
+
+\newpage
+
+\section{Metamodelo del DSL}
+\label{app:metamodelo}
+
+\begin{center}
+    \rotatebox{90}{\scalebox{0.5}{\input{restModel.pdf_tex}}}
+\end{center}
+
+\newpage
 \section{Código con sintaxis final}
 \label{app:ejemplo-xtext}
 
