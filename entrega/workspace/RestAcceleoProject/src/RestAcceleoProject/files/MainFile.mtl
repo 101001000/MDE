@@ -1,0 +1,33 @@
+[comment encoding = UTF-8 /]
+[module MainFile('/metamodel/restModel.ecore')]
+
+[import RestAcceleoProject::operations::generateOps /] 
+[import RestAcceleoProject::common::generateRequests /] 
+
+[template public generateMainFile(aRestSystem : RestSystem)]
+
+[file ('Main.java', false, 'UTF-8')]
+
+import static spark.Spark.*;
+import java.util.*;
+import spark.Request;
+import spark.Response;
+import spark.Route;
+
+public class Main {
+
+	[for (struct : Struct | aRestSystem.structs)]
+	private static Map<String, [struct.name/]> [struct.name.toLowerCase()/]s = new HashMap<String, [struct.name/]>();
+	[/for] 
+
+	public static void main(String['['/][']'/] args) {
+		
+		[for (req : Request | aRestSystem.requests)]
+		[generateRequests(req)/]
+		[/for] 
+	}
+}
+
+[/file]
+[/template]
+

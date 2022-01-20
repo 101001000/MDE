@@ -1,0 +1,15 @@
+[comment encoding = UTF-8 /]
+[module generateAnswer('/metamodel/restModel.ecore')]
+
+[template public generateAnswer(anAnswer : Answer)]
+response.status([anAnswer.status/]);
+return [anAnswer.return/];
+[/template]
+
+[template public succAnswer(anOp : Operation)]
+[generateAnswer((anOp.ancestors(Request).oclAsType(Request)).succAnswer->first())/]
+[/template]
+
+[template public failAnswer(anOp : Operation)]
+[generateAnswer(anOp.failedAnswer)/]
+[/template]

@@ -1,0 +1,13 @@
+[comment encoding = UTF-8 /]
+[module generateOps('/metamodel/restModel.ecore')]
+
+[import RestAcceleoProject::operations::generateCreateOp /] 
+[import RestAcceleoProject::operations::generateReadOp /] 
+[import RestAcceleoProject::operations::generateUpdateOp /] 
+[import RestAcceleoProject::operations::generateDeleteOp /] 
+[import RestAcceleoProject::common::utilities /] 
+
+[template public generateOps(anOp : Operation)]
+[generateParams(anOp)/][generateQueryParams(anOp)/][if anOp.oclIsTypeOf(OpCreate)][generateCreateOp(anOp.oclAsType(OpCreate))/][/if][if anOp.oclIsTypeOf(OpRead)][generateReadOp(anOp.oclAsType(OpRead))/][/if][if anOp.oclIsTypeOf(OpUpdate)][generateUpdateOp(anOp.oclAsType(OpUpdate))/][/if][if anOp.oclIsTypeOf(OpDelete)][generateDeleteOp(anOp.oclAsType(OpDelete))/][/if]
+[/template]
+

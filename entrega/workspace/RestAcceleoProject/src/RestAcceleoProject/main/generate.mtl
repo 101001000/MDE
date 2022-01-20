@@ -1,0 +1,16 @@
+[comment encoding = UTF-8 /]
+[module generate('/metamodel/restModel.ecore')]
+
+[import RestAcceleoProject::operations::generateOps /] 
+[import RestAcceleoProject::files::MainFile /] 
+[import RestAcceleoProject::files::StructFile /] 
+
+[template public generateElement(aRestSystem : RestSystem)]
+[comment @main/]
+[generateMainFile(aRestSystem)/]
+[for (aStruct : Struct | aRestSystem.structs)]
+[generateStructFile(aStruct)/]
+[/for]
+
+[/template]
+
