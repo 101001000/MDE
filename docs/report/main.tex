@@ -258,6 +258,72 @@ es sencillo:
 \section{Evaluación}
 \label{sc:eval}
 
+En esta sección se procede a escribir el flujo de trabajo necesario para generar un proyecto ejecutable de servidor REST.
+
+Como paso previo, hemos visto necesario registrar nuestro metamodelo dinámicamente como se indica en \url{https://github.com/martin-fleck/momot/issues/14\#issuecomment-327720552} 
+
+En primer lugar, si se quiere utilizar un editor de los ficheros \textit{.rest}, es necesario ejecutar el proyecto \textit{xtextREST.ide} como una aplicación de Eclipse. Esta acción abrirá un IDE, en el cual podremos crear un proyecto vacío con un fichero \textit{.rest}. Se ha codificado el fichero \textit{datamodel.rest} que se puede encontrar en la carpeta \textit{files} en la raíz del directorio de entrega.
+
+En segundo lugar, es necesario convertir dicho fichero en una instancia dinámica \textit{.xmi}. Para ello se hace uso de una pequeña herramienta proporcionada en el proyecto \textit{xtextREST}, dentro de \textit{src/converter}. Dentro de este paquete hay un fichero \textit{Main.java} que al ser ejecutado como aplicativo Java, abrirá un buscador de archivos. Tras localizar el archivo \textit{datamodel.rest} y aceptar, un nuevo fichero en la misma localización llamado \textit{datamodel.xmi} aparece, el cual la es instancia dinámica que utilizaremos a partir de ahora.
+
+Como paso opcional, es posible convertir esta instancia dinámica en un fichero \textit{.ecore}. Si se desea realizar esta transformación, se debe abrir el proyecto \textit{AtlM2M}. La ejecución de este proyecto depende de cuatro parámetros: El metamodelo de entrada MM, el metamodelo de salida MM2, el modelo de entrada IN y el modelo de salida OUT1. Tanto como para el metamodelo MM como para MM2, se ha elegido el metamodelo \textit{restModel}, ya que la transformación es una referencia al propio metamodelo. Para el modelo de entrada, se ha elegido \textit{datamodel.xmi} y para la salida, un nuevo fichero \textit{datamodel.ecore}. Tras ejecutar este proyecto, el fichero resultante de la transformación \textit{datamodel.ecore} es accesible desde el editor de modelos \textit{.ecore} de Eclipse.
+
+En tercer lugar, se procede a la transformación de la instancia dinámica en un proyecto Java. Se ha creado un proyecto vacío \textit{RESTServer} con las librerías necesarias incluidas y con una carpeta src. Posteriormente se ejecuta el proyecto \textit{RestAcceleoProject} con los parámetros necesarios, en concreto destacar que el \textit{Target} de salida debe ser la carpeta \textit{src} del proyecto vacío. Llegados a este punto, se deben haber creado dos archivos en dicha carpeta, uno llamado \textit{Book.java} que incluye el contenido del struct \textit{Book} y otro fichero \textit{Main.java}. Ahora es posible ejecutar dicho fichero como aplicación Java.
+
+Por último se ha probado el proyecto resultante \textit{RESTServer} ya poblado de código. Al ejecutarlo, se inicia un servidor REST en el puerto :4567. Con la consola de comandos, la primera petición realizada ha sido:
+
+\texttt{\$ curl -X POST "http://localhost:4567/books?author=FIbanez\&title=SuperHumor"}
+
+Esta petición debería ejecutar el código de request Post, que a su vez realiza la operación de inserción de un nuevo libro con los parámetros autor y título. El resultado es:
+
+\texttt{\$ 1081732467}
+
+que corresponde al id del libro añadido. Este id se utilizará en las siguientes llamadas.
+
+La siguiente petición probada ha sido GET, que debe leer el libro con id pasado a través de la ruta.
+
+\texttt{\$ curl -X GET "http://localhost:4567/books/1081732467"}
+
+el resultado es:
+
+\texttt{\$Title: SuperHumor, Author: FIbanez}
+
+Si quisieramos leer un libro que no existe como:
+
+\texttt{\$ curl -X GET "http://localhost:4567/books/1"}
+
+el resutado es simplemente
+
+\texttt{\$ error}
+
+En caso de querer editar el libro añadido, se procede a utilizar la request PUT, que a su vez está vinculada a la operación UPDATE en el DSL. Esta petición incluye los parámetros que queremos editar como parámetros de la url.
+
+\texttt{\$ curl -X PUT "http://localhost:4567/books/1081732467?author=Escobar"}
+
+como resultado obtenemos el mensaje definido en el DSL:
+
+\texttt{\$ Book with id 1081732467 updated}
+
+Vamos a comprobar si los cambios se han guardado:
+
+\texttt{\$ curl -X GET "http://localhost:4567/books/1081732467"}
+
+\texttt{\$Title: SuperHumor, Author: Escobar}
+
+Por último se ha evaluado la request DELETE, que a su vez tiene una operación de borrado asociada.
+
+\texttt{\$ curl -X DELETE "http://localhost:4567/books/1081732467"}
+
+resultado:
+
+\texttt{\$ Book with id 1081732467 deleted}
+
+y ahora al intentar acceder al libro borrado con
+
+\texttt{\$ curl -X GET "http://localhost:4567/books/1081732467"}
+
+se obtiene otro mensaje de error.
+
 % hablar de las pruebas que le hemos hecho al código
 
 %\section{Trabajo relacionado}

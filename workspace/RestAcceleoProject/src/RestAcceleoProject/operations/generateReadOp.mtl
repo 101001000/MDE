@@ -13,6 +13,6 @@ if ([oName(anOp)/] != null) {
 	[/for]
 	[succAnswer(anOp)/]
 } else {
-	[generateAnswer(anOp.failedAnswer)/]
+	[failAnswer(anOp)/]
 }
 [/template]

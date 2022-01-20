@@ -1,0 +1,13 @@
+[comment encoding = UTF-8 /]
+[module generateCreateOp('/metamodel/restModel.ecore')]
+
+[import RestAcceleoProject::common::generateAnswer /] 
+[import RestAcceleoProject::common::utilities /] 
+
+[template public generateCreateOp(anOp : OpCreate)]
+Random random = new Random();
+[sName(anOp)/] [oName(anOp)/] = new [anOp.struct.name/]([for (field : FieldSet | anOp.oclAsType(OpCreate).fieldsets) separator (', ')][field.value/][/for]);
+int id = random.nextInt(Integer.MAX_VALUE);
+books.put(String.valueOf(id), book);
+[succAnswer(anOp)/]
+[/template]

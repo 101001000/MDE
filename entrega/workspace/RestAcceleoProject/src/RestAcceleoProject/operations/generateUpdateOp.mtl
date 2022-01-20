@@ -1,0 +1,20 @@
+[comment encoding = UTF-8 /]
+[module generateUpdateOp('/metamodel/restModel.ecore')]
+
+[import RestAcceleoProject::common::generateAnswer /] 
+[import RestAcceleoProject::common::utilities /] 
+
+[template public generateUpdateOp(anOp : OpUpdate)]
+[sName(anOp)/] [oName(anOp)/] = [lName(anOp)/].get([anOp.id/]);
+if ([oName(anOp)/] != null) {
+	[for (field : FieldSet | anOp.oclAsType(OpUpdate).fieldsets)]
+	String new[field.name.toUpperFirst()/] = [field.value/];
+	if (new[field.name.toUpperFirst()/] != null)
+		[oName(anOp)/].set[field.name.toUpperFirst()/](new[field.name.toUpperFirst()/]);
+	[/for]
+	[succAnswer(anOp)/]
+} else {
+	[failAnswer(anOp)/]
+}
+[/template]
+

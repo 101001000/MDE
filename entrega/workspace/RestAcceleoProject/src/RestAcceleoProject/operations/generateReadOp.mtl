@@ -1,0 +1,18 @@
+[comment encoding = UTF-8 /]
+[module generateReadOp('/metamodel/restModel.ecore')]
+
+[import RestAcceleoProject::common::generateAnswer /] 
+[import RestAcceleoProject::common::utilities /] 
+
+
+[template public generateReadOp(anOp : OpRead)]
+[sName(anOp)/] [oName(anOp)/] = [lName(anOp)/].get([anOp.id/]);
+if ([oName(anOp)/] != null) {
+	[for (field : Field | anOp.oclAsType(OpRead).fields)]
+	String [field.name/] = [oName(anOp)/].get[field.name.toString().toUpperFirst()/]();
+	[/for]
+	[succAnswer(anOp)/]
+} else {
+	[generateAnswer(anOp.failedAnswer)/]
+}
+[/template]

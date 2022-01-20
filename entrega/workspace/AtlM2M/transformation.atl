@@ -1,0 +1,86 @@
+-- @path MM=file:/C:/Users/Kike/Desktop/MDE/MDE/workspace/AtlM2M/model/datamodel.xmi
+-- @path MM2=file:/C:/Users/Kike/Desktop/MDE/MDE/workspace/setup/model/restModel.ecore
+
+module transformation;
+create OUT1 : MM2 from IN : MM;
+
+
+rule RestSystem{
+	from i: MM!RestSystem
+	to o: MM2!RestSystem (requests <- i.requests, structs <- i.structs, answers <- i.answers)
+}
+
+rule Answer{
+	from i: MM!Answer
+	to o: MM2!Answer (name <- i.name, status <- i.status, return <- i.return)
+}
+
+rule RePut{
+	from i: MM!RePut
+	to o: MM2!RePut (parameters <- i.parameters, route <- i.route, operations <- i.operations, succAnswer <- i.succAnswer)
+}
+
+rule ReDelete{
+	from i: MM!ReDelete
+	to o: MM2!ReDelete (parameters <- i.parameters, route <- i.route, operations <- i.operations, succAnswer <- i.succAnswer)
+}
+
+rule ReGet{
+	from i: MM!ReGet
+	to o: MM2!ReGet (parameters <- i.parameters, route <- i.route, operations <- i.operations, succAnswer <- i.succAnswer)
+}
+
+rule RePost{
+	from i: MM!RePost
+	to o: MM2!RePost (parameters <- i.parameters, route <- i.route, operations <- i.operations, succAnswer <- i.succAnswer)
+}
+
+rule Route{
+	from i: MM!Route
+	to o: MM2!Route (segments <- i.segments)
+}
+
+rule Segment{
+	from i: MM!Segment
+	to o: MM2!Segment (value <- i.value)
+}
+
+rule Struct{
+	from i: MM!Struct
+	to o: MM2!Struct (name <- i.name, fields <- i.fields)
+}
+
+rule Field{
+	from i: MM!Field
+	to o: MM2!Field (name <- i.name)
+}
+
+rule FieldSet{
+	from i: MM!FieldSet
+	to o: MM2!FieldSet (name <- i.name, value <- i.value)
+}
+
+rule OpRead{
+	from i: MM!OpRead
+	to o: MM2!OpRead (struct <- i.struct, failedAnswer <- i.failedAnswer, fields <- i.fields, id <- i.id)
+}
+
+rule OpDelete{
+	from i: MM!OpDelete
+	to o: MM2!OpDelete (struct <- i.struct, failedAnswer <- i.failedAnswer, id <- i.id)
+}
+
+rule OpCreate{
+	from i: MM!OpCreate
+	to o: MM2!OpCreate (struct <- i.struct, failedAnswer <- i.failedAnswer, fieldsets <- i.fieldsets, id <- i.id)
+}
+
+rule OpUpdate{
+	from i: MM!OpUpdate
+	to o: MM2!OpUpdate (struct <- i.struct, failedAnswer <- i.failedAnswer, fieldsets <- i.fieldsets, id <- i.id)
+}
+
+rule Parameter{
+	from i: MM!Parameter
+	to o: MM2!Parameter (name <- i.name)
+}

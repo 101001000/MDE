@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<restModel:RestSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:restModel="/metamodel/restModel.ecore">
+  <requests xsi:type="restModel:RePost" succAnswer="//@answers.0">
+    <route>
+      <segments value="books"/>
+    </route>
+    <operations xsi:type="restModel:OpCreate" failedAnswer="//@answers.2" struct="//@structs.0">
+      <fieldsets name="author" value="author"/>
+      <fieldsets name="title" value="title"/>
+    </operations>
+    <parameters name="author"/>
+    <parameters name="title"/>
+  </requests>
+  <requests xsi:type="restModel:ReGet" succAnswer="//@answers.1">
+    <route>
+      <segments value="books"/>
+      <segments value=":id"/>
+    </route>
+    <operations xsi:type="restModel:OpRead" failedAnswer="//@answers.2" struct="//@structs.0"
+        id="id" fields="//@structs.0/@fields.0 //@structs.0/@fields.1"/>
+  </requests>
+  <requests xsi:type="restModel:ReDelete" succAnswer="//@answers.4">
+    <route>
+      <segments value="books"/>
+      <segments value=":id"/>
+    </route>
+    <operations xsi:type="restModel:OpDelete" failedAnswer="//@answers.2" struct="//@structs.0"
+        id="id"/>
+  </requests>
+  <requests xsi:type="restModel:RePut" succAnswer="//@answers.3">
+    <route>
+      <segments value="books"/>
+      <segments value=":id"/>
+    </route>
+    <operations xsi:type="restModel:OpUpdate" failedAnswer="//@answers.2" struct="//@structs.0"
+        id="id">
+      <fieldsets name="author" value="author"/>
+      <fieldsets name="title" value="title"/>
+    </operations>
+    <parameters name="author"/>
+    <parameters name="title"/>
+  </requests>
+  <structs name="Book">
+    <fields name="author"/>
+    <fields name="title"/>
+  </structs>
+  <answers status="201" return="id" name="post"/>
+  <answers status="200" return="&quot;Title: &quot; + title + &quot;, Author: &quot; + author"
+      name="read"/>
+  <answers status="404" return="&quot;error&quot;" name="fail"/>
+  <answers status="200" return="&quot;Book with id &quot; + id + &quot; updated&quot;"
+      name="up"/>
+  <answers status="200" return="&quot;Book with id &quot; + id + &quot; deleted&quot;"
+      name="del"/>
+</restModel:RestSystem>
