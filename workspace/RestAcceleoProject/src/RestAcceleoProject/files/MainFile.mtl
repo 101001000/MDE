@@ -16,13 +16,13 @@ import spark.Route;
 
 public class Main {
 
-	[for (struct : Struct | aRestSystem.struct)]
+	[for (struct : Struct | aRestSystem.structs)]
 	private static Map<String, [struct.name/]> [struct.name.toLowerCase()/]s = new HashMap<String, [struct.name/]>();
 	[/for] 
 
 	public static void main(String['['/][']'/] args) {
 		
-		[for (req : Request | aRestSystem.request)]
+		[for (req : Request | aRestSystem.requests)]
 		[generateRequests(req)/]
 		[/for] 
 	}

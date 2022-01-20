@@ -30,43 +30,43 @@ import restModel.Struct;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link restModel.impl.RestSystemImpl#getRequest <em>Request</em>}</li>
- *   <li>{@link restModel.impl.RestSystemImpl#getStruct <em>Struct</em>}</li>
- *   <li>{@link restModel.impl.RestSystemImpl#getAnswer <em>Answer</em>}</li>
+ *   <li>{@link restModel.impl.RestSystemImpl#getRequests <em>Requests</em>}</li>
+ *   <li>{@link restModel.impl.RestSystemImpl#getStructs <em>Structs</em>}</li>
+ *   <li>{@link restModel.impl.RestSystemImpl#getAnswers <em>Answers</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class RestSystemImpl extends MinimalEObjectImpl.Container implements RestSystem {
 	/**
-	 * The cached value of the '{@link #getRequest() <em>Request</em>}' containment reference list.
+	 * The cached value of the '{@link #getRequests() <em>Requests</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRequest()
+	 * @see #getRequests()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Request> request;
+	protected EList<Request> requests;
 
 	/**
-	 * The cached value of the '{@link #getStruct() <em>Struct</em>}' containment reference list.
+	 * The cached value of the '{@link #getStructs() <em>Structs</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStruct()
+	 * @see #getStructs()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Struct> struct;
+	protected EList<Struct> structs;
 
 	/**
-	 * The cached value of the '{@link #getAnswer() <em>Answer</em>}' containment reference list.
+	 * The cached value of the '{@link #getAnswers() <em>Answers</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAnswer()
+	 * @see #getAnswers()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Answer> answer;
+	protected EList<Answer> answers;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,11 +92,11 @@ public class RestSystemImpl extends MinimalEObjectImpl.Container implements Rest
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Request> getRequest() {
-		if (request == null) {
-			request = new EObjectContainmentEList<Request>(Request.class, this, RestModelPackage.REST_SYSTEM__REQUEST);
+	public EList<Request> getRequests() {
+		if (requests == null) {
+			requests = new EObjectContainmentEList<Request>(Request.class, this, RestModelPackage.REST_SYSTEM__REQUESTS);
 		}
-		return request;
+		return requests;
 	}
 
 	/**
@@ -104,11 +104,11 @@ public class RestSystemImpl extends MinimalEObjectImpl.Container implements Rest
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Struct> getStruct() {
-		if (struct == null) {
-			struct = new EObjectContainmentEList<Struct>(Struct.class, this, RestModelPackage.REST_SYSTEM__STRUCT);
+	public EList<Struct> getStructs() {
+		if (structs == null) {
+			structs = new EObjectContainmentEList<Struct>(Struct.class, this, RestModelPackage.REST_SYSTEM__STRUCTS);
 		}
-		return struct;
+		return structs;
 	}
 
 	/**
@@ -116,11 +116,11 @@ public class RestSystemImpl extends MinimalEObjectImpl.Container implements Rest
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Answer> getAnswer() {
-		if (answer == null) {
-			answer = new EObjectContainmentEList<Answer>(Answer.class, this, RestModelPackage.REST_SYSTEM__ANSWER);
+	public EList<Answer> getAnswers() {
+		if (answers == null) {
+			answers = new EObjectContainmentEList<Answer>(Answer.class, this, RestModelPackage.REST_SYSTEM__ANSWERS);
 		}
-		return answer;
+		return answers;
 	}
 
 	/**
@@ -131,12 +131,12 @@ public class RestSystemImpl extends MinimalEObjectImpl.Container implements Rest
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RestModelPackage.REST_SYSTEM__REQUEST:
-				return ((InternalEList<?>)getRequest()).basicRemove(otherEnd, msgs);
-			case RestModelPackage.REST_SYSTEM__STRUCT:
-				return ((InternalEList<?>)getStruct()).basicRemove(otherEnd, msgs);
-			case RestModelPackage.REST_SYSTEM__ANSWER:
-				return ((InternalEList<?>)getAnswer()).basicRemove(otherEnd, msgs);
+			case RestModelPackage.REST_SYSTEM__REQUESTS:
+				return ((InternalEList<?>)getRequests()).basicRemove(otherEnd, msgs);
+			case RestModelPackage.REST_SYSTEM__STRUCTS:
+				return ((InternalEList<?>)getStructs()).basicRemove(otherEnd, msgs);
+			case RestModelPackage.REST_SYSTEM__ANSWERS:
+				return ((InternalEList<?>)getAnswers()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -149,12 +149,12 @@ public class RestSystemImpl extends MinimalEObjectImpl.Container implements Rest
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RestModelPackage.REST_SYSTEM__REQUEST:
-				return getRequest();
-			case RestModelPackage.REST_SYSTEM__STRUCT:
-				return getStruct();
-			case RestModelPackage.REST_SYSTEM__ANSWER:
-				return getAnswer();
+			case RestModelPackage.REST_SYSTEM__REQUESTS:
+				return getRequests();
+			case RestModelPackage.REST_SYSTEM__STRUCTS:
+				return getStructs();
+			case RestModelPackage.REST_SYSTEM__ANSWERS:
+				return getAnswers();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,17 +168,17 @@ public class RestSystemImpl extends MinimalEObjectImpl.Container implements Rest
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RestModelPackage.REST_SYSTEM__REQUEST:
-				getRequest().clear();
-				getRequest().addAll((Collection<? extends Request>)newValue);
+			case RestModelPackage.REST_SYSTEM__REQUESTS:
+				getRequests().clear();
+				getRequests().addAll((Collection<? extends Request>)newValue);
 				return;
-			case RestModelPackage.REST_SYSTEM__STRUCT:
-				getStruct().clear();
-				getStruct().addAll((Collection<? extends Struct>)newValue);
+			case RestModelPackage.REST_SYSTEM__STRUCTS:
+				getStructs().clear();
+				getStructs().addAll((Collection<? extends Struct>)newValue);
 				return;
-			case RestModelPackage.REST_SYSTEM__ANSWER:
-				getAnswer().clear();
-				getAnswer().addAll((Collection<? extends Answer>)newValue);
+			case RestModelPackage.REST_SYSTEM__ANSWERS:
+				getAnswers().clear();
+				getAnswers().addAll((Collection<? extends Answer>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -192,14 +192,14 @@ public class RestSystemImpl extends MinimalEObjectImpl.Container implements Rest
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RestModelPackage.REST_SYSTEM__REQUEST:
-				getRequest().clear();
+			case RestModelPackage.REST_SYSTEM__REQUESTS:
+				getRequests().clear();
 				return;
-			case RestModelPackage.REST_SYSTEM__STRUCT:
-				getStruct().clear();
+			case RestModelPackage.REST_SYSTEM__STRUCTS:
+				getStructs().clear();
 				return;
-			case RestModelPackage.REST_SYSTEM__ANSWER:
-				getAnswer().clear();
+			case RestModelPackage.REST_SYSTEM__ANSWERS:
+				getAnswers().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -213,12 +213,12 @@ public class RestSystemImpl extends MinimalEObjectImpl.Container implements Rest
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RestModelPackage.REST_SYSTEM__REQUEST:
-				return request != null && !request.isEmpty();
-			case RestModelPackage.REST_SYSTEM__STRUCT:
-				return struct != null && !struct.isEmpty();
-			case RestModelPackage.REST_SYSTEM__ANSWER:
-				return answer != null && !answer.isEmpty();
+			case RestModelPackage.REST_SYSTEM__REQUESTS:
+				return requests != null && !requests.isEmpty();
+			case RestModelPackage.REST_SYSTEM__STRUCTS:
+				return structs != null && !structs.isEmpty();
+			case RestModelPackage.REST_SYSTEM__ANSWERS:
+				return answers != null && !answers.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

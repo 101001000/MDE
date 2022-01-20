@@ -7,12 +7,11 @@
 [template public generateUpdateOp(anOp : OpUpdate)]
 [sName(anOp)/] [oName(anOp)/] = [lName(anOp)/].get([anOp.id/]);
 if ([oName(anOp)/] != null) {
-	[for (par : Parameter | anOp.ancestors(Request).oclAsType(Request).data)]
-	String new[par.name.toUpperFirst()/] = request.queryParams("[par.name/]");
-	if (new[par.name.toUpperFirst()/] != null)
-		[oName(anOp)/].set[par.name.toUpperFirst()/](new[par.name.toUpperFirst()/]);
+	[for (field : FieldSet | anOp.oclAsType(OpUpdate).fieldsets)]
+	String new[field.name.toUpperFirst()/] = [field.value/];
+	if (new[field.name.toUpperFirst()/] != null)
+		[oName(anOp)/].set[field.name.toUpperFirst()/](new[field.name.toUpperFirst()/]);
 	[/for]
-
 	[succAnswer(anOp)/]
 } else {
 	[failAnswer(anOp)/]

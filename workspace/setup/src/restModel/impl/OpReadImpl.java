@@ -4,15 +4,11 @@ package restModel.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import restModel.Field;
 import restModel.OpRead;
@@ -26,21 +22,21 @@ import restModel.RestModelPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link restModel.impl.OpReadImpl#getField <em>Field</em>}</li>
+ *   <li>{@link restModel.impl.OpReadImpl#getFields <em>Fields</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class OpReadImpl extends OperationImpl implements OpRead {
 	/**
-	 * The cached value of the '{@link #getField() <em>Field</em>}' containment reference list.
+	 * The cached value of the '{@link #getFields() <em>Fields</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getField()
+	 * @see #getFields()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Field> field;
+	protected EList<Field> fields;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -66,25 +62,11 @@ public class OpReadImpl extends OperationImpl implements OpRead {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Field> getField() {
-		if (field == null) {
-			field = new EObjectContainmentEList<Field>(Field.class, this, RestModelPackage.OP_READ__FIELD);
+	public EList<Field> getFields() {
+		if (fields == null) {
+			fields = new EObjectResolvingEList<Field>(Field.class, this, RestModelPackage.OP_READ__FIELDS);
 		}
-		return field;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case RestModelPackage.OP_READ__FIELD:
-				return ((InternalEList<?>)getField()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+		return fields;
 	}
 
 	/**
@@ -95,8 +77,8 @@ public class OpReadImpl extends OperationImpl implements OpRead {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RestModelPackage.OP_READ__FIELD:
-				return getField();
+			case RestModelPackage.OP_READ__FIELDS:
+				return getFields();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,9 +92,9 @@ public class OpReadImpl extends OperationImpl implements OpRead {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RestModelPackage.OP_READ__FIELD:
-				getField().clear();
-				getField().addAll((Collection<? extends Field>)newValue);
+			case RestModelPackage.OP_READ__FIELDS:
+				getFields().clear();
+				getFields().addAll((Collection<? extends Field>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,8 +108,8 @@ public class OpReadImpl extends OperationImpl implements OpRead {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RestModelPackage.OP_READ__FIELD:
-				getField().clear();
+			case RestModelPackage.OP_READ__FIELDS:
+				getFields().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -141,8 +123,8 @@ public class OpReadImpl extends OperationImpl implements OpRead {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RestModelPackage.OP_READ__FIELD:
-				return field != null && !field.isEmpty();
+			case RestModelPackage.OP_READ__FIELDS:
+				return fields != null && !fields.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

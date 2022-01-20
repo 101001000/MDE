@@ -85,24 +85,6 @@ public interface RestModelFactory extends EFactory {
 	Parameter createParameter();
 
 	/**
-	 * Returns a new object of class '<em>Attachments</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Attachments</em>'.
-	 * @generated
-	 */
-	Attachments createAttachments();
-
-	/**
-	 * Returns a new object of class '<em>Random</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Random</em>'.
-	 * @generated
-	 */
-	Random createRandom();
-
-	/**
 	 * Returns a new object of class '<em>Op Create</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

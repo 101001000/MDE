@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link restModel.OpUpdate#getFieldset <em>Fieldset</em>}</li>
+ *   <li>{@link restModel.OpUpdate#getFieldsets <em>Fieldsets</em>}</li>
  * </ul>
  *
  * @see restModel.RestModelPackage#getOpUpdate()
@@ -22,15 +22,15 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface OpUpdate extends Operation {
 	/**
-	 * Returns the value of the '<em><b>Fieldset</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Fieldsets</b></em>' containment reference list.
 	 * The list contents are of type {@link restModel.FieldSet}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fieldset</em>' containment reference list.
-	 * @see restModel.RestModelPackage#getOpUpdate_Fieldset()
+	 * @return the value of the '<em>Fieldsets</em>' containment reference list.
+	 * @see restModel.RestModelPackage#getOpUpdate_Fieldsets()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<FieldSet> getFieldset();
+	EList<FieldSet> getFieldsets();
 
 } // OpUpdate

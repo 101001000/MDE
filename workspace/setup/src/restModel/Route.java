@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link restModel.Route#getSegment <em>Segment</em>}</li>
+ *   <li>{@link restModel.Route#getSegments <em>Segments</em>}</li>
  * </ul>
  *
  * @see restModel.RestModelPackage#getRoute()
@@ -24,15 +24,15 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Route extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Segment</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Segments</b></em>' containment reference list.
 	 * The list contents are of type {@link restModel.Segment}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Segment</em>' containment reference list.
-	 * @see restModel.RestModelPackage#getRoute_Segment()
+	 * @return the value of the '<em>Segments</em>' containment reference list.
+	 * @see restModel.RestModelPackage#getRoute_Segments()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Segment> getSegment();
+	EList<Segment> getSegments();
 
 } // Route

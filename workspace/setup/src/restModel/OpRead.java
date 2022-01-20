@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link restModel.OpRead#getField <em>Field</em>}</li>
+ *   <li>{@link restModel.OpRead#getFields <em>Fields</em>}</li>
  * </ul>
  *
  * @see restModel.RestModelPackage#getOpRead()
@@ -22,15 +22,15 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface OpRead extends Operation {
 	/**
-	 * Returns the value of the '<em><b>Field</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Fields</b></em>' reference list.
 	 * The list contents are of type {@link restModel.Field}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Field</em>' containment reference list.
-	 * @see restModel.RestModelPackage#getOpRead_Field()
-	 * @model containment="true"
+	 * @return the value of the '<em>Fields</em>' reference list.
+	 * @see restModel.RestModelPackage#getOpRead_Fields()
+	 * @model
 	 * @generated
 	 */
-	EList<Field> getField();
+	EList<Field> getFields();
 
 } // OpRead

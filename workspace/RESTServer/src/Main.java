@@ -11,33 +11,19 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		post(new Route("/testRoute") {
+		post(new Route("/books") {
 		
 			@Override
 			public Object handle(Request request, Response response){
 				
 				String author = request.queryParams("author");
 				String title = request.queryParams("title");
+				Random random = new Random();
 				Book book = new Book(author, title);
+				int id = random.nextInt(Integer.MAX_VALUE);
+				books.put(String.valueOf(id), book);
 				response.status(201);
 				return id;
-			}
-		});
-		get(new Route("/books") {
-		
-			@Override
-			public Object handle(Request request, Response response){
-				
-				Book book = books.get(id);
-				if (book != null) {
-					String author = book.getAuthor();
-					String title = book.getTitle();
-					response.status(200);
-					return id;
-				} else {
-					response.status(404);
-					return "error";
-				}
 			}
 		});
 		get(new Route("/books/:id") {
@@ -51,32 +37,7 @@ public class Main {
 					String author = book.getAuthor();
 					String title = book.getTitle();
 					response.status(200);
-					return id;
-				} else {
-					response.status(404);
-					return "error";
-				}
-			}
-		});
-		put(new Route("/books/:id") {
-		
-			@Override
-			public Object handle(Request request, Response response){
-				
-				String id = request.params(":id");
-				String author = request.queryParams("author");
-				String title = request.queryParams("title");
-				Book book = books.get();
-				if (book != null) {
-					String newAuthor = request.queryParams("author");
-					if (newAuthor != null)
-						book.setAuthor(newAuthor);
-					String newTitle = request.queryParams("title");
-					if (newTitle != null)
-						book.setTitle(newTitle);
-				
-					response.status(201);
-					return id;
+					return "Title: " + title + ", Author: " + author;
 				} else {
 					response.status(404);
 					return "error";
@@ -92,7 +53,31 @@ public class Main {
 				Book book = books.remove(id);
 				if (book != null) {
 					response.status(200);
-					return id;
+					return "Book with id " + id + " deleted";
+				} else {
+					response.status(404);
+					return "error";
+				}
+			}
+		});
+		put(new Route("/books/:id") {
+		
+			@Override
+			public Object handle(Request request, Response response){
+				
+				String id = request.params(":id");
+				String author = request.queryParams("author");
+				String title = request.queryParams("title");
+				Book book = books.get(id);
+				if (book != null) {
+					String newAuthor = author;
+					if (newAuthor != null)
+						book.setAuthor(newAuthor);
+					String newTitle = title;
+					if (newTitle != null)
+						book.setTitle(newTitle);
+					response.status(200);
+					return "Book with id " + id + " updated";
 				} else {
 					response.status(404);
 					return "error";

@@ -26,21 +26,21 @@ import restModel.RestModelPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link restModel.impl.OpUpdateImpl#getFieldset <em>Fieldset</em>}</li>
+ *   <li>{@link restModel.impl.OpUpdateImpl#getFieldsets <em>Fieldsets</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class OpUpdateImpl extends OperationImpl implements OpUpdate {
 	/**
-	 * The cached value of the '{@link #getFieldset() <em>Fieldset</em>}' containment reference list.
+	 * The cached value of the '{@link #getFieldsets() <em>Fieldsets</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFieldset()
+	 * @see #getFieldsets()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<FieldSet> fieldset;
+	protected EList<FieldSet> fieldsets;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -66,11 +66,11 @@ public class OpUpdateImpl extends OperationImpl implements OpUpdate {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<FieldSet> getFieldset() {
-		if (fieldset == null) {
-			fieldset = new EObjectContainmentEList<FieldSet>(FieldSet.class, this, RestModelPackage.OP_UPDATE__FIELDSET);
+	public EList<FieldSet> getFieldsets() {
+		if (fieldsets == null) {
+			fieldsets = new EObjectContainmentEList<FieldSet>(FieldSet.class, this, RestModelPackage.OP_UPDATE__FIELDSETS);
 		}
-		return fieldset;
+		return fieldsets;
 	}
 
 	/**
@@ -81,8 +81,8 @@ public class OpUpdateImpl extends OperationImpl implements OpUpdate {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RestModelPackage.OP_UPDATE__FIELDSET:
-				return ((InternalEList<?>)getFieldset()).basicRemove(otherEnd, msgs);
+			case RestModelPackage.OP_UPDATE__FIELDSETS:
+				return ((InternalEList<?>)getFieldsets()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -95,8 +95,8 @@ public class OpUpdateImpl extends OperationImpl implements OpUpdate {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RestModelPackage.OP_UPDATE__FIELDSET:
-				return getFieldset();
+			case RestModelPackage.OP_UPDATE__FIELDSETS:
+				return getFieldsets();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,9 +110,9 @@ public class OpUpdateImpl extends OperationImpl implements OpUpdate {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RestModelPackage.OP_UPDATE__FIELDSET:
-				getFieldset().clear();
-				getFieldset().addAll((Collection<? extends FieldSet>)newValue);
+			case RestModelPackage.OP_UPDATE__FIELDSETS:
+				getFieldsets().clear();
+				getFieldsets().addAll((Collection<? extends FieldSet>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,8 +126,8 @@ public class OpUpdateImpl extends OperationImpl implements OpUpdate {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RestModelPackage.OP_UPDATE__FIELDSET:
-				getFieldset().clear();
+			case RestModelPackage.OP_UPDATE__FIELDSETS:
+				getFieldsets().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -141,8 +141,8 @@ public class OpUpdateImpl extends OperationImpl implements OpUpdate {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RestModelPackage.OP_UPDATE__FIELDSET:
-				return fieldset != null && !fieldset.isEmpty();
+			case RestModelPackage.OP_UPDATE__FIELDSETS:
+				return fieldsets != null && !fieldsets.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

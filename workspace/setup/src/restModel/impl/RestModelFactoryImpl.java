@@ -63,8 +63,6 @@ public class RestModelFactoryImpl extends EFactoryImpl implements RestModelFacto
 			case RestModelPackage.ROUTE: return createRoute();
 			case RestModelPackage.SEGMENT: return createSegment();
 			case RestModelPackage.PARAMETER: return createParameter();
-			case RestModelPackage.ATTACHMENTS: return createAttachments();
-			case RestModelPackage.RANDOM: return createRandom();
 			case RestModelPackage.OP_CREATE: return createOpCreate();
 			case RestModelPackage.FIELD_SET: return createFieldSet();
 			case RestModelPackage.OP_READ: return createOpRead();
@@ -147,26 +145,6 @@ public class RestModelFactoryImpl extends EFactoryImpl implements RestModelFacto
 	public Parameter createParameter() {
 		ParameterImpl parameter = new ParameterImpl();
 		return parameter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Attachments createAttachments() {
-		AttachmentsImpl attachments = new AttachmentsImpl();
-		return attachments;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Random createRandom() {
-		RandomImpl random = new RandomImpl();
-		return random;
 	}
 
 	/**

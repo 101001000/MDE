@@ -28,21 +28,21 @@ import restModel.Segment;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link restModel.impl.RouteImpl#getSegment <em>Segment</em>}</li>
+ *   <li>{@link restModel.impl.RouteImpl#getSegments <em>Segments</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class RouteImpl extends MinimalEObjectImpl.Container implements Route {
 	/**
-	 * The cached value of the '{@link #getSegment() <em>Segment</em>}' containment reference list.
+	 * The cached value of the '{@link #getSegments() <em>Segments</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSegment()
+	 * @see #getSegments()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Segment> segment;
+	protected EList<Segment> segments;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,11 +68,11 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Segment> getSegment() {
-		if (segment == null) {
-			segment = new EObjectContainmentEList<Segment>(Segment.class, this, RestModelPackage.ROUTE__SEGMENT);
+	public EList<Segment> getSegments() {
+		if (segments == null) {
+			segments = new EObjectContainmentEList<Segment>(Segment.class, this, RestModelPackage.ROUTE__SEGMENTS);
 		}
-		return segment;
+		return segments;
 	}
 
 	/**
@@ -83,8 +83,8 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RestModelPackage.ROUTE__SEGMENT:
-				return ((InternalEList<?>)getSegment()).basicRemove(otherEnd, msgs);
+			case RestModelPackage.ROUTE__SEGMENTS:
+				return ((InternalEList<?>)getSegments()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -97,8 +97,8 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RestModelPackage.ROUTE__SEGMENT:
-				return getSegment();
+			case RestModelPackage.ROUTE__SEGMENTS:
+				return getSegments();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -112,9 +112,9 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RestModelPackage.ROUTE__SEGMENT:
-				getSegment().clear();
-				getSegment().addAll((Collection<? extends Segment>)newValue);
+			case RestModelPackage.ROUTE__SEGMENTS:
+				getSegments().clear();
+				getSegments().addAll((Collection<? extends Segment>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -128,8 +128,8 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RestModelPackage.ROUTE__SEGMENT:
-				getSegment().clear();
+			case RestModelPackage.ROUTE__SEGMENTS:
+				getSegments().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -143,8 +143,8 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RestModelPackage.ROUTE__SEGMENT:
-				return segment != null && !segment.isEmpty();
+			case RestModelPackage.ROUTE__SEGMENTS:
+				return segments != null && !segments.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -2,6 +2,6 @@
 [module generateRoute('/metamodel/restModel.ecore')]
 
 [template public generateRoute(aRoute : Route)]
-new Route("[for (seg : Segment | aRoute.segment)]/[seg.value/][/for]") 
+new Route("[for (seg : Segment | aRoute.segments)]/[seg.value/][/for]") 
 [/template]
 

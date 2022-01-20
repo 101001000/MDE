@@ -112,30 +112,9 @@ public class RestModelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RestModelPackage.DATA: {
-				Data data = (Data)theEObject;
-				T result = caseData(data);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case RestModelPackage.PARAMETER: {
 				Parameter parameter = (Parameter)theEObject;
 				T result = caseParameter(parameter);
-				if (result == null) result = caseData(parameter);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RestModelPackage.ATTACHMENTS: {
-				Attachments attachments = (Attachments)theEObject;
-				T result = caseAttachments(attachments);
-				if (result == null) result = caseData(attachments);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RestModelPackage.RANDOM: {
-				Random random = (Random)theEObject;
-				T result = caseRandom(random);
-				if (result == null) result = caseData(random);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -313,21 +292,6 @@ public class RestModelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseData(Data object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Parameter</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -339,36 +303,6 @@ public class RestModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseParameter(Parameter object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Attachments</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Attachments</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAttachments(Attachments object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Random</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Random</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRandom(Random object) {
 		return null;
 	}
 

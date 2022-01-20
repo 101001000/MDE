@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link restModel.Answer#getStatus <em>Status</em>}</li>
  *   <li>{@link restModel.Answer#getReturn <em>Return</em>}</li>
+ *   <li>{@link restModel.Answer#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see restModel.RestModelPackage#getAnswer()
@@ -29,7 +30,7 @@ public interface Answer extends EObject {
 	 * @return the value of the '<em>Status</em>' attribute.
 	 * @see #setStatus(int)
 	 * @see restModel.RestModelPackage#getAnswer_Status()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getStatus();
@@ -65,5 +66,27 @@ public interface Answer extends EObject {
 	 * @generated
 	 */
 	void setReturn(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see restModel.RestModelPackage#getAnswer_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link restModel.Answer#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // Answer

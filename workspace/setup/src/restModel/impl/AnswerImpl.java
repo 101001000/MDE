@@ -22,6 +22,7 @@ import restModel.RestModelPackage;
  * <ul>
  *   <li>{@link restModel.impl.AnswerImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link restModel.impl.AnswerImpl#getReturn <em>Return</em>}</li>
+ *   <li>{@link restModel.impl.AnswerImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +67,26 @@ public class AnswerImpl extends MinimalEObjectImpl.Container implements Answer {
 	 * @ordered
 	 */
 	protected String return_ = RETURN_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +154,27 @@ public class AnswerImpl extends MinimalEObjectImpl.Container implements Answer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RestModelPackage.ANSWER__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,6 +182,8 @@ public class AnswerImpl extends MinimalEObjectImpl.Container implements Answer {
 				return getStatus();
 			case RestModelPackage.ANSWER__RETURN:
 				return getReturn();
+			case RestModelPackage.ANSWER__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,6 +201,9 @@ public class AnswerImpl extends MinimalEObjectImpl.Container implements Answer {
 				return;
 			case RestModelPackage.ANSWER__RETURN:
 				setReturn((String)newValue);
+				return;
+			case RestModelPackage.ANSWER__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +223,9 @@ public class AnswerImpl extends MinimalEObjectImpl.Container implements Answer {
 			case RestModelPackage.ANSWER__RETURN:
 				setReturn(RETURN_EDEFAULT);
 				return;
+			case RestModelPackage.ANSWER__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +242,8 @@ public class AnswerImpl extends MinimalEObjectImpl.Container implements Answer {
 				return status != STATUS_EDEFAULT;
 			case RestModelPackage.ANSWER__RETURN:
 				return RETURN_EDEFAULT == null ? return_ != null : !RETURN_EDEFAULT.equals(return_);
+			case RestModelPackage.ANSWER__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -210,6 +262,8 @@ public class AnswerImpl extends MinimalEObjectImpl.Container implements Answer {
 		result.append(status);
 		result.append(", return: ");
 		result.append(return_);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

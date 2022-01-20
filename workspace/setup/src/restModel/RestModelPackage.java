@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see restModel.RestModelFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/OCL/Import ecore='http://www.eclipse.org/emf/2002/Ecore'"
  * @generated
  */
 public interface RestModelPackage extends EPackage {
@@ -76,22 +77,13 @@ public interface RestModelPackage extends EPackage {
 	int REQUEST__ROUTE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REQUEST__DATA = 1;
-
-	/**
 	 * The feature id for the '<em><b>Succ Answer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__SUCC_ANSWER = 2;
+	int REQUEST__SUCC_ANSWER = 1;
 
 	/**
 	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
@@ -100,7 +92,16 @@ public interface RestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__OPERATIONS = 3;
+	int REQUEST__OPERATIONS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUEST__PARAMETERS = 3;
 
 	/**
 	 * The number of structural features of the '<em>Request</em>' class.
@@ -140,15 +141,6 @@ public interface RestModelPackage extends EPackage {
 	int RE_GET__ROUTE = REQUEST__ROUTE;
 
 	/**
-	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RE_GET__DATA = REQUEST__DATA;
-
-	/**
 	 * The feature id for the '<em><b>Succ Answer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -165,6 +157,15 @@ public interface RestModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int RE_GET__OPERATIONS = REQUEST__OPERATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RE_GET__PARAMETERS = REQUEST__PARAMETERS;
 
 	/**
 	 * The number of structural features of the '<em>Re Get</em>' class.
@@ -204,15 +205,6 @@ public interface RestModelPackage extends EPackage {
 	int RE_POST__ROUTE = REQUEST__ROUTE;
 
 	/**
-	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RE_POST__DATA = REQUEST__DATA;
-
-	/**
 	 * The feature id for the '<em><b>Succ Answer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -229,6 +221,15 @@ public interface RestModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int RE_POST__OPERATIONS = REQUEST__OPERATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RE_POST__PARAMETERS = REQUEST__PARAMETERS;
 
 	/**
 	 * The number of structural features of the '<em>Re Post</em>' class.
@@ -268,15 +269,6 @@ public interface RestModelPackage extends EPackage {
 	int RE_PUT__ROUTE = REQUEST__ROUTE;
 
 	/**
-	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RE_PUT__DATA = REQUEST__DATA;
-
-	/**
 	 * The feature id for the '<em><b>Succ Answer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -293,6 +285,15 @@ public interface RestModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int RE_PUT__OPERATIONS = REQUEST__OPERATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RE_PUT__PARAMETERS = REQUEST__PARAMETERS;
 
 	/**
 	 * The number of structural features of the '<em>Re Put</em>' class.
@@ -332,15 +333,6 @@ public interface RestModelPackage extends EPackage {
 	int RE_DELETE__ROUTE = REQUEST__ROUTE;
 
 	/**
-	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RE_DELETE__DATA = REQUEST__DATA;
-
-	/**
 	 * The feature id for the '<em><b>Succ Answer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -357,6 +349,15 @@ public interface RestModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int RE_DELETE__OPERATIONS = REQUEST__OPERATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RE_DELETE__PARAMETERS = REQUEST__PARAMETERS;
 
 	/**
 	 * The number of structural features of the '<em>Re Delete</em>' class.
@@ -387,13 +388,13 @@ public interface RestModelPackage extends EPackage {
 	int ROUTE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Segment</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Segments</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTE__SEGMENT = 0;
+	int ROUTE__SEGMENTS = 0;
 
 	/**
 	 * The number of structural features of the '<em>Route</em>' class.
@@ -451,43 +452,6 @@ public interface RestModelPackage extends EPackage {
 	int SEGMENT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link restModel.impl.DataImpl <em>Data</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see restModel.impl.DataImpl
-	 * @see restModel.impl.RestModelPackageImpl#getData()
-	 * @generated
-	 */
-	int DATA = 7;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA__NAME = 0;
-
-	/**
-	 * The number of structural features of the '<em>Data</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Data</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link restModel.impl.ParameterImpl <em>Parameter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -495,7 +459,7 @@ public interface RestModelPackage extends EPackage {
 	 * @see restModel.impl.RestModelPackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 8;
+	int PARAMETER = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -504,7 +468,7 @@ public interface RestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__NAME = DATA__NAME;
+	int PARAMETER__NAME = 0;
 
 	/**
 	 * The number of structural features of the '<em>Parameter</em>' class.
@@ -513,7 +477,7 @@ public interface RestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_FEATURE_COUNT = DATA_FEATURE_COUNT + 0;
+	int PARAMETER_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Parameter</em>' class.
@@ -522,81 +486,7 @@ public interface RestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_OPERATION_COUNT = DATA_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link restModel.impl.AttachmentsImpl <em>Attachments</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see restModel.impl.AttachmentsImpl
-	 * @see restModel.impl.RestModelPackageImpl#getAttachments()
-	 * @generated
-	 */
-	int ATTACHMENTS = 9;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTACHMENTS__NAME = DATA__NAME;
-
-	/**
-	 * The number of structural features of the '<em>Attachments</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTACHMENTS_FEATURE_COUNT = DATA_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Attachments</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTACHMENTS_OPERATION_COUNT = DATA_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link restModel.impl.RandomImpl <em>Random</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see restModel.impl.RandomImpl
-	 * @see restModel.impl.RestModelPackageImpl#getRandom()
-	 * @generated
-	 */
-	int RANDOM = 10;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RANDOM__NAME = DATA__NAME;
-
-	/**
-	 * The number of structural features of the '<em>Random</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RANDOM_FEATURE_COUNT = DATA_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Random</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RANDOM_OPERATION_COUNT = DATA_OPERATION_COUNT + 0;
+	int PARAMETER_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link restModel.impl.OperationImpl <em>Operation</em>}' class.
@@ -606,7 +496,7 @@ public interface RestModelPackage extends EPackage {
 	 * @see restModel.impl.RestModelPackageImpl#getOperation()
 	 * @generated
 	 */
-	int OPERATION = 11;
+	int OPERATION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Failed Answer</b></em>' reference.
@@ -661,7 +551,7 @@ public interface RestModelPackage extends EPackage {
 	 * @see restModel.impl.RestModelPackageImpl#getOpCreate()
 	 * @generated
 	 */
-	int OP_CREATE = 12;
+	int OP_CREATE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Failed Answer</b></em>' reference.
@@ -691,13 +581,13 @@ public interface RestModelPackage extends EPackage {
 	int OP_CREATE__ID = OPERATION__ID;
 
 	/**
-	 * The feature id for the '<em><b>Fieldset</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Fieldsets</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OP_CREATE__FIELDSET = OPERATION_FEATURE_COUNT + 0;
+	int OP_CREATE__FIELDSETS = OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Op Create</em>' class.
@@ -725,7 +615,7 @@ public interface RestModelPackage extends EPackage {
 	 * @see restModel.impl.RestModelPackageImpl#getFieldSet()
 	 * @generated
 	 */
-	int FIELD_SET = 13;
+	int FIELD_SET = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -737,13 +627,13 @@ public interface RestModelPackage extends EPackage {
 	int FIELD_SET__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Expr</b></em>' attribute.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_SET__EXPR = 1;
+	int FIELD_SET__VALUE = 1;
 
 	/**
 	 * The number of structural features of the '<em>Field Set</em>' class.
@@ -771,7 +661,7 @@ public interface RestModelPackage extends EPackage {
 	 * @see restModel.impl.RestModelPackageImpl#getOpRead()
 	 * @generated
 	 */
-	int OP_READ = 14;
+	int OP_READ = 11;
 
 	/**
 	 * The feature id for the '<em><b>Failed Answer</b></em>' reference.
@@ -801,13 +691,13 @@ public interface RestModelPackage extends EPackage {
 	int OP_READ__ID = OPERATION__ID;
 
 	/**
-	 * The feature id for the '<em><b>Field</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Fields</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OP_READ__FIELD = OPERATION_FEATURE_COUNT + 0;
+	int OP_READ__FIELDS = OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Op Read</em>' class.
@@ -835,7 +725,7 @@ public interface RestModelPackage extends EPackage {
 	 * @see restModel.impl.RestModelPackageImpl#getOpUpdate()
 	 * @generated
 	 */
-	int OP_UPDATE = 15;
+	int OP_UPDATE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Failed Answer</b></em>' reference.
@@ -865,13 +755,13 @@ public interface RestModelPackage extends EPackage {
 	int OP_UPDATE__ID = OPERATION__ID;
 
 	/**
-	 * The feature id for the '<em><b>Fieldset</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Fieldsets</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OP_UPDATE__FIELDSET = OPERATION_FEATURE_COUNT + 0;
+	int OP_UPDATE__FIELDSETS = OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Op Update</em>' class.
@@ -899,7 +789,7 @@ public interface RestModelPackage extends EPackage {
 	 * @see restModel.impl.RestModelPackageImpl#getOpDelete()
 	 * @generated
 	 */
-	int OP_DELETE = 16;
+	int OP_DELETE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Failed Answer</b></em>' reference.
@@ -954,7 +844,7 @@ public interface RestModelPackage extends EPackage {
 	 * @see restModel.impl.RestModelPackageImpl#getAnswer()
 	 * @generated
 	 */
-	int ANSWER = 17;
+	int ANSWER = 14;
 
 	/**
 	 * The feature id for the '<em><b>Status</b></em>' attribute.
@@ -975,13 +865,22 @@ public interface RestModelPackage extends EPackage {
 	int ANSWER__RETURN = 1;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANSWER__NAME = 2;
+
+	/**
 	 * The number of structural features of the '<em>Answer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANSWER_FEATURE_COUNT = 2;
+	int ANSWER_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Answer</em>' class.
@@ -1000,7 +899,7 @@ public interface RestModelPackage extends EPackage {
 	 * @see restModel.impl.RestModelPackageImpl#getStruct()
 	 * @generated
 	 */
-	int STRUCT = 18;
+	int STRUCT = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1046,34 +945,34 @@ public interface RestModelPackage extends EPackage {
 	 * @see restModel.impl.RestModelPackageImpl#getRestSystem()
 	 * @generated
 	 */
-	int REST_SYSTEM = 19;
+	int REST_SYSTEM = 16;
 
 	/**
-	 * The feature id for the '<em><b>Request</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Requests</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REST_SYSTEM__REQUEST = 0;
+	int REST_SYSTEM__REQUESTS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Struct</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Structs</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REST_SYSTEM__STRUCT = 1;
+	int REST_SYSTEM__STRUCTS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Answer</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Answers</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REST_SYSTEM__ANSWER = 2;
+	int REST_SYSTEM__ANSWERS = 2;
 
 	/**
 	 * The number of structural features of the '<em>Rest System</em>' class.
@@ -1101,7 +1000,7 @@ public interface RestModelPackage extends EPackage {
 	 * @see restModel.impl.RestModelPackageImpl#getField()
 	 * @generated
 	 */
-	int FIELD = 20;
+	int FIELD = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1153,17 +1052,6 @@ public interface RestModelPackage extends EPackage {
 	EReference getRequest_Route();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link restModel.Request#getData <em>Data</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Data</em>'.
-	 * @see restModel.Request#getData()
-	 * @see #getRequest()
-	 * @generated
-	 */
-	EReference getRequest_Data();
-
-	/**
 	 * Returns the meta object for the reference '{@link restModel.Request#getSuccAnswer <em>Succ Answer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1184,6 +1072,17 @@ public interface RestModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRequest_Operations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link restModel.Request#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see restModel.Request#getParameters()
+	 * @see #getRequest()
+	 * @generated
+	 */
+	EReference getRequest_Parameters();
 
 	/**
 	 * Returns the meta object for class '{@link restModel.ReGet <em>Re Get</em>}'.
@@ -1236,15 +1135,15 @@ public interface RestModelPackage extends EPackage {
 	EClass getRoute();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link restModel.Route#getSegment <em>Segment</em>}'.
+	 * Returns the meta object for the containment reference list '{@link restModel.Route#getSegments <em>Segments</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Segment</em>'.
-	 * @see restModel.Route#getSegment()
+	 * @return the meta object for the containment reference list '<em>Segments</em>'.
+	 * @see restModel.Route#getSegments()
 	 * @see #getRoute()
 	 * @generated
 	 */
-	EReference getRoute_Segment();
+	EReference getRoute_Segments();
 
 	/**
 	 * Returns the meta object for class '{@link restModel.Segment <em>Segment</em>}'.
@@ -1268,27 +1167,6 @@ public interface RestModelPackage extends EPackage {
 	EAttribute getSegment_Value();
 
 	/**
-	 * Returns the meta object for class '{@link restModel.Data <em>Data</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Data</em>'.
-	 * @see restModel.Data
-	 * @generated
-	 */
-	EClass getData();
-
-	/**
-	 * Returns the meta object for the attribute '{@link restModel.Data#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see restModel.Data#getName()
-	 * @see #getData()
-	 * @generated
-	 */
-	EAttribute getData_Name();
-
-	/**
 	 * Returns the meta object for class '{@link restModel.Parameter <em>Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1299,24 +1177,15 @@ public interface RestModelPackage extends EPackage {
 	EClass getParameter();
 
 	/**
-	 * Returns the meta object for class '{@link restModel.Attachments <em>Attachments</em>}'.
+	 * Returns the meta object for the attribute '{@link restModel.Parameter#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Attachments</em>'.
-	 * @see restModel.Attachments
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see restModel.Parameter#getName()
+	 * @see #getParameter()
 	 * @generated
 	 */
-	EClass getAttachments();
-
-	/**
-	 * Returns the meta object for class '{@link restModel.Random <em>Random</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Random</em>'.
-	 * @see restModel.Random
-	 * @generated
-	 */
-	EClass getRandom();
+	EAttribute getParameter_Name();
 
 	/**
 	 * Returns the meta object for class '{@link restModel.Operation <em>Operation</em>}'.
@@ -1372,15 +1241,15 @@ public interface RestModelPackage extends EPackage {
 	EClass getOpCreate();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link restModel.OpCreate#getFieldset <em>Fieldset</em>}'.
+	 * Returns the meta object for the containment reference list '{@link restModel.OpCreate#getFieldsets <em>Fieldsets</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Fieldset</em>'.
-	 * @see restModel.OpCreate#getFieldset()
+	 * @return the meta object for the containment reference list '<em>Fieldsets</em>'.
+	 * @see restModel.OpCreate#getFieldsets()
 	 * @see #getOpCreate()
 	 * @generated
 	 */
-	EReference getOpCreate_Fieldset();
+	EReference getOpCreate_Fieldsets();
 
 	/**
 	 * Returns the meta object for class '{@link restModel.FieldSet <em>Field Set</em>}'.
@@ -1404,15 +1273,15 @@ public interface RestModelPackage extends EPackage {
 	EAttribute getFieldSet_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link restModel.FieldSet#getExpr <em>Expr</em>}'.
+	 * Returns the meta object for the attribute '{@link restModel.FieldSet#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Expr</em>'.
-	 * @see restModel.FieldSet#getExpr()
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see restModel.FieldSet#getValue()
 	 * @see #getFieldSet()
 	 * @generated
 	 */
-	EAttribute getFieldSet_Expr();
+	EAttribute getFieldSet_Value();
 
 	/**
 	 * Returns the meta object for class '{@link restModel.OpRead <em>Op Read</em>}'.
@@ -1425,15 +1294,15 @@ public interface RestModelPackage extends EPackage {
 	EClass getOpRead();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link restModel.OpRead#getField <em>Field</em>}'.
+	 * Returns the meta object for the reference list '{@link restModel.OpRead#getFields <em>Fields</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Field</em>'.
-	 * @see restModel.OpRead#getField()
+	 * @return the meta object for the reference list '<em>Fields</em>'.
+	 * @see restModel.OpRead#getFields()
 	 * @see #getOpRead()
 	 * @generated
 	 */
-	EReference getOpRead_Field();
+	EReference getOpRead_Fields();
 
 	/**
 	 * Returns the meta object for class '{@link restModel.OpUpdate <em>Op Update</em>}'.
@@ -1446,15 +1315,15 @@ public interface RestModelPackage extends EPackage {
 	EClass getOpUpdate();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link restModel.OpUpdate#getFieldset <em>Fieldset</em>}'.
+	 * Returns the meta object for the containment reference list '{@link restModel.OpUpdate#getFieldsets <em>Fieldsets</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Fieldset</em>'.
-	 * @see restModel.OpUpdate#getFieldset()
+	 * @return the meta object for the containment reference list '<em>Fieldsets</em>'.
+	 * @see restModel.OpUpdate#getFieldsets()
 	 * @see #getOpUpdate()
 	 * @generated
 	 */
-	EReference getOpUpdate_Fieldset();
+	EReference getOpUpdate_Fieldsets();
 
 	/**
 	 * Returns the meta object for class '{@link restModel.OpDelete <em>Op Delete</em>}'.
@@ -1499,6 +1368,17 @@ public interface RestModelPackage extends EPackage {
 	EAttribute getAnswer_Return();
 
 	/**
+	 * Returns the meta object for the attribute '{@link restModel.Answer#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see restModel.Answer#getName()
+	 * @see #getAnswer()
+	 * @generated
+	 */
+	EAttribute getAnswer_Name();
+
+	/**
 	 * Returns the meta object for class '{@link restModel.Struct <em>Struct</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1541,37 +1421,37 @@ public interface RestModelPackage extends EPackage {
 	EClass getRestSystem();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link restModel.RestSystem#getRequest <em>Request</em>}'.
+	 * Returns the meta object for the containment reference list '{@link restModel.RestSystem#getRequests <em>Requests</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Request</em>'.
-	 * @see restModel.RestSystem#getRequest()
+	 * @return the meta object for the containment reference list '<em>Requests</em>'.
+	 * @see restModel.RestSystem#getRequests()
 	 * @see #getRestSystem()
 	 * @generated
 	 */
-	EReference getRestSystem_Request();
+	EReference getRestSystem_Requests();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link restModel.RestSystem#getStruct <em>Struct</em>}'.
+	 * Returns the meta object for the containment reference list '{@link restModel.RestSystem#getStructs <em>Structs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Struct</em>'.
-	 * @see restModel.RestSystem#getStruct()
+	 * @return the meta object for the containment reference list '<em>Structs</em>'.
+	 * @see restModel.RestSystem#getStructs()
 	 * @see #getRestSystem()
 	 * @generated
 	 */
-	EReference getRestSystem_Struct();
+	EReference getRestSystem_Structs();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link restModel.RestSystem#getAnswer <em>Answer</em>}'.
+	 * Returns the meta object for the containment reference list '{@link restModel.RestSystem#getAnswers <em>Answers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Answer</em>'.
-	 * @see restModel.RestSystem#getAnswer()
+	 * @return the meta object for the containment reference list '<em>Answers</em>'.
+	 * @see restModel.RestSystem#getAnswers()
 	 * @see #getRestSystem()
 	 * @generated
 	 */
-	EReference getRestSystem_Answer();
+	EReference getRestSystem_Answers();
 
 	/**
 	 * Returns the meta object for class '{@link restModel.Field <em>Field</em>}'.
@@ -1636,14 +1516,6 @@ public interface RestModelPackage extends EPackage {
 		EReference REQUEST__ROUTE = eINSTANCE.getRequest_Route();
 
 		/**
-		 * The meta object literal for the '<em><b>Data</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REQUEST__DATA = eINSTANCE.getRequest_Data();
-
-		/**
 		 * The meta object literal for the '<em><b>Succ Answer</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1658,6 +1530,14 @@ public interface RestModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REQUEST__OPERATIONS = eINSTANCE.getRequest_Operations();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUEST__PARAMETERS = eINSTANCE.getRequest_Parameters();
 
 		/**
 		 * The meta object literal for the '{@link restModel.impl.ReGetImpl <em>Re Get</em>}' class.
@@ -1710,12 +1590,12 @@ public interface RestModelPackage extends EPackage {
 		EClass ROUTE = eINSTANCE.getRoute();
 
 		/**
-		 * The meta object literal for the '<em><b>Segment</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Segments</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROUTE__SEGMENT = eINSTANCE.getRoute_Segment();
+		EReference ROUTE__SEGMENTS = eINSTANCE.getRoute_Segments();
 
 		/**
 		 * The meta object literal for the '{@link restModel.impl.SegmentImpl <em>Segment</em>}' class.
@@ -1736,24 +1616,6 @@ public interface RestModelPackage extends EPackage {
 		EAttribute SEGMENT__VALUE = eINSTANCE.getSegment_Value();
 
 		/**
-		 * The meta object literal for the '{@link restModel.impl.DataImpl <em>Data</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see restModel.impl.DataImpl
-		 * @see restModel.impl.RestModelPackageImpl#getData()
-		 * @generated
-		 */
-		EClass DATA = eINSTANCE.getData();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA__NAME = eINSTANCE.getData_Name();
-
-		/**
 		 * The meta object literal for the '{@link restModel.impl.ParameterImpl <em>Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1764,24 +1626,12 @@ public interface RestModelPackage extends EPackage {
 		EClass PARAMETER = eINSTANCE.getParameter();
 
 		/**
-		 * The meta object literal for the '{@link restModel.impl.AttachmentsImpl <em>Attachments</em>}' class.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see restModel.impl.AttachmentsImpl
-		 * @see restModel.impl.RestModelPackageImpl#getAttachments()
 		 * @generated
 		 */
-		EClass ATTACHMENTS = eINSTANCE.getAttachments();
-
-		/**
-		 * The meta object literal for the '{@link restModel.impl.RandomImpl <em>Random</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see restModel.impl.RandomImpl
-		 * @see restModel.impl.RestModelPackageImpl#getRandom()
-		 * @generated
-		 */
-		EClass RANDOM = eINSTANCE.getRandom();
+		EAttribute PARAMETER__NAME = eINSTANCE.getParameter_Name();
 
 		/**
 		 * The meta object literal for the '{@link restModel.impl.OperationImpl <em>Operation</em>}' class.
@@ -1828,12 +1678,12 @@ public interface RestModelPackage extends EPackage {
 		EClass OP_CREATE = eINSTANCE.getOpCreate();
 
 		/**
-		 * The meta object literal for the '<em><b>Fieldset</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Fieldsets</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OP_CREATE__FIELDSET = eINSTANCE.getOpCreate_Fieldset();
+		EReference OP_CREATE__FIELDSETS = eINSTANCE.getOpCreate_Fieldsets();
 
 		/**
 		 * The meta object literal for the '{@link restModel.impl.FieldSetImpl <em>Field Set</em>}' class.
@@ -1854,12 +1704,12 @@ public interface RestModelPackage extends EPackage {
 		EAttribute FIELD_SET__NAME = eINSTANCE.getFieldSet_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Expr</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FIELD_SET__EXPR = eINSTANCE.getFieldSet_Expr();
+		EAttribute FIELD_SET__VALUE = eINSTANCE.getFieldSet_Value();
 
 		/**
 		 * The meta object literal for the '{@link restModel.impl.OpReadImpl <em>Op Read</em>}' class.
@@ -1872,12 +1722,12 @@ public interface RestModelPackage extends EPackage {
 		EClass OP_READ = eINSTANCE.getOpRead();
 
 		/**
-		 * The meta object literal for the '<em><b>Field</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Fields</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OP_READ__FIELD = eINSTANCE.getOpRead_Field();
+		EReference OP_READ__FIELDS = eINSTANCE.getOpRead_Fields();
 
 		/**
 		 * The meta object literal for the '{@link restModel.impl.OpUpdateImpl <em>Op Update</em>}' class.
@@ -1890,12 +1740,12 @@ public interface RestModelPackage extends EPackage {
 		EClass OP_UPDATE = eINSTANCE.getOpUpdate();
 
 		/**
-		 * The meta object literal for the '<em><b>Fieldset</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Fieldsets</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OP_UPDATE__FIELDSET = eINSTANCE.getOpUpdate_Fieldset();
+		EReference OP_UPDATE__FIELDSETS = eINSTANCE.getOpUpdate_Fieldsets();
 
 		/**
 		 * The meta object literal for the '{@link restModel.impl.OpDeleteImpl <em>Op Delete</em>}' class.
@@ -1934,6 +1784,14 @@ public interface RestModelPackage extends EPackage {
 		EAttribute ANSWER__RETURN = eINSTANCE.getAnswer_Return();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ANSWER__NAME = eINSTANCE.getAnswer_Name();
+
+		/**
 		 * The meta object literal for the '{@link restModel.impl.StructImpl <em>Struct</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1970,28 +1828,28 @@ public interface RestModelPackage extends EPackage {
 		EClass REST_SYSTEM = eINSTANCE.getRestSystem();
 
 		/**
-		 * The meta object literal for the '<em><b>Request</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Requests</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REST_SYSTEM__REQUEST = eINSTANCE.getRestSystem_Request();
+		EReference REST_SYSTEM__REQUESTS = eINSTANCE.getRestSystem_Requests();
 
 		/**
-		 * The meta object literal for the '<em><b>Struct</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Structs</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REST_SYSTEM__STRUCT = eINSTANCE.getRestSystem_Struct();
+		EReference REST_SYSTEM__STRUCTS = eINSTANCE.getRestSystem_Structs();
 
 		/**
-		 * The meta object literal for the '<em><b>Answer</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Answers</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REST_SYSTEM__ANSWER = eINSTANCE.getRestSystem_Answer();
+		EReference REST_SYSTEM__ANSWERS = eINSTANCE.getRestSystem_Answers();
 
 		/**
 		 * The meta object literal for the '{@link restModel.impl.FieldImpl <em>Field</em>}' class.

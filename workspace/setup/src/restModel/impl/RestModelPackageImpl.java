@@ -10,8 +10,6 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import restModel.Answer;
-import restModel.Attachments;
-import restModel.Data;
 import restModel.Field;
 import restModel.FieldSet;
 import restModel.OpCreate;
@@ -20,7 +18,6 @@ import restModel.OpRead;
 import restModel.OpUpdate;
 import restModel.Operation;
 import restModel.Parameter;
-import restModel.Random;
 import restModel.ReDelete;
 import restModel.ReGet;
 import restModel.RePost;
@@ -94,28 +91,7 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass dataEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass parameterEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass attachmentsEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass randomEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -271,7 +247,7 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRequest_Data() {
+	public EReference getRequest_SuccAnswer() {
 		return (EReference)requestEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -280,7 +256,7 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRequest_SuccAnswer() {
+	public EReference getRequest_Operations() {
 		return (EReference)requestEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -289,7 +265,7 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRequest_Operations() {
+	public EReference getRequest_Parameters() {
 		return (EReference)requestEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -343,7 +319,7 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoute_Segment() {
+	public EReference getRoute_Segments() {
 		return (EReference)routeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -370,24 +346,6 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getData() {
-		return dataEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getData_Name() {
-		return (EAttribute)dataEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getParameter() {
 		return parameterEClass;
 	}
@@ -397,17 +355,8 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAttachments() {
-		return attachmentsEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getRandom() {
-		return randomEClass;
+	public EAttribute getParameter_Name() {
+		return (EAttribute)parameterEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -460,7 +409,7 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOpCreate_Fieldset() {
+	public EReference getOpCreate_Fieldsets() {
 		return (EReference)opCreateEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -487,7 +436,7 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFieldSet_Expr() {
+	public EAttribute getFieldSet_Value() {
 		return (EAttribute)fieldSetEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -505,7 +454,7 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOpRead_Field() {
+	public EReference getOpRead_Fields() {
 		return (EReference)opReadEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -523,7 +472,7 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOpUpdate_Fieldset() {
+	public EReference getOpUpdate_Fieldsets() {
 		return (EReference)opUpdateEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -568,6 +517,15 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getAnswer_Name() {
+		return (EAttribute)answerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getStruct() {
 		return structEClass;
 	}
@@ -604,7 +562,7 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRestSystem_Request() {
+	public EReference getRestSystem_Requests() {
 		return (EReference)restSystemEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -613,7 +571,7 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRestSystem_Struct() {
+	public EReference getRestSystem_Structs() {
 		return (EReference)restSystemEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -622,7 +580,7 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRestSystem_Answer() {
+	public EReference getRestSystem_Answers() {
 		return (EReference)restSystemEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -674,9 +632,9 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 		// Create classes and their features
 		requestEClass = createEClass(REQUEST);
 		createEReference(requestEClass, REQUEST__ROUTE);
-		createEReference(requestEClass, REQUEST__DATA);
 		createEReference(requestEClass, REQUEST__SUCC_ANSWER);
 		createEReference(requestEClass, REQUEST__OPERATIONS);
+		createEReference(requestEClass, REQUEST__PARAMETERS);
 
 		reGetEClass = createEClass(RE_GET);
 
@@ -687,19 +645,13 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 		reDeleteEClass = createEClass(RE_DELETE);
 
 		routeEClass = createEClass(ROUTE);
-		createEReference(routeEClass, ROUTE__SEGMENT);
+		createEReference(routeEClass, ROUTE__SEGMENTS);
 
 		segmentEClass = createEClass(SEGMENT);
 		createEAttribute(segmentEClass, SEGMENT__VALUE);
 
-		dataEClass = createEClass(DATA);
-		createEAttribute(dataEClass, DATA__NAME);
-
 		parameterEClass = createEClass(PARAMETER);
-
-		attachmentsEClass = createEClass(ATTACHMENTS);
-
-		randomEClass = createEClass(RANDOM);
+		createEAttribute(parameterEClass, PARAMETER__NAME);
 
 		operationEClass = createEClass(OPERATION);
 		createEReference(operationEClass, OPERATION__FAILED_ANSWER);
@@ -707,32 +659,33 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 		createEAttribute(operationEClass, OPERATION__ID);
 
 		opCreateEClass = createEClass(OP_CREATE);
-		createEReference(opCreateEClass, OP_CREATE__FIELDSET);
+		createEReference(opCreateEClass, OP_CREATE__FIELDSETS);
 
 		fieldSetEClass = createEClass(FIELD_SET);
 		createEAttribute(fieldSetEClass, FIELD_SET__NAME);
-		createEAttribute(fieldSetEClass, FIELD_SET__EXPR);
+		createEAttribute(fieldSetEClass, FIELD_SET__VALUE);
 
 		opReadEClass = createEClass(OP_READ);
-		createEReference(opReadEClass, OP_READ__FIELD);
+		createEReference(opReadEClass, OP_READ__FIELDS);
 
 		opUpdateEClass = createEClass(OP_UPDATE);
-		createEReference(opUpdateEClass, OP_UPDATE__FIELDSET);
+		createEReference(opUpdateEClass, OP_UPDATE__FIELDSETS);
 
 		opDeleteEClass = createEClass(OP_DELETE);
 
 		answerEClass = createEClass(ANSWER);
 		createEAttribute(answerEClass, ANSWER__STATUS);
 		createEAttribute(answerEClass, ANSWER__RETURN);
+		createEAttribute(answerEClass, ANSWER__NAME);
 
 		structEClass = createEClass(STRUCT);
 		createEAttribute(structEClass, STRUCT__NAME);
 		createEReference(structEClass, STRUCT__FIELDS);
 
 		restSystemEClass = createEClass(REST_SYSTEM);
-		createEReference(restSystemEClass, REST_SYSTEM__REQUEST);
-		createEReference(restSystemEClass, REST_SYSTEM__STRUCT);
-		createEReference(restSystemEClass, REST_SYSTEM__ANSWER);
+		createEReference(restSystemEClass, REST_SYSTEM__REQUESTS);
+		createEReference(restSystemEClass, REST_SYSTEM__STRUCTS);
+		createEReference(restSystemEClass, REST_SYSTEM__ANSWERS);
 
 		fieldEClass = createEClass(FIELD);
 		createEAttribute(fieldEClass, FIELD__NAME);
@@ -770,9 +723,6 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 		rePostEClass.getESuperTypes().add(this.getRequest());
 		rePutEClass.getESuperTypes().add(this.getRequest());
 		reDeleteEClass.getESuperTypes().add(this.getRequest());
-		parameterEClass.getESuperTypes().add(this.getData());
-		attachmentsEClass.getESuperTypes().add(this.getData());
-		randomEClass.getESuperTypes().add(this.getData());
 		opCreateEClass.getESuperTypes().add(this.getOperation());
 		opReadEClass.getESuperTypes().add(this.getOperation());
 		opUpdateEClass.getESuperTypes().add(this.getOperation());
@@ -781,9 +731,9 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 		// Initialize classes, features, and operations; add parameters
 		initEClass(requestEClass, Request.class, "Request", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRequest_Route(), this.getRoute(), null, "route", null, 1, 1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRequest_Data(), this.getData(), null, "data", null, 0, -1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRequest_SuccAnswer(), this.getAnswer(), null, "succAnswer", null, 1, 1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRequest_Operations(), this.getOperation(), null, "operations", null, 0, -1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequest_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reGetEClass, ReGet.class, "ReGet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -794,19 +744,13 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 		initEClass(reDeleteEClass, ReDelete.class, "ReDelete", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(routeEClass, Route.class, "Route", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRoute_Segment(), this.getSegment(), null, "segment", null, 1, -1, Route.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRoute_Segments(), this.getSegment(), null, "segments", null, 1, -1, Route.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(segmentEClass, Segment.class, "Segment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSegment_Value(), ecorePackage.getEString(), "value", null, 0, 1, Segment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(dataEClass, Data.class, "Data", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getData_Name(), ecorePackage.getEString(), "name", null, 0, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(attachmentsEClass, Attachments.class, "Attachments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(randomEClass, Random.class, "Random", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationEClass, Operation.class, "Operation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOperation_FailedAnswer(), this.getAnswer(), null, "failedAnswer", null, 1, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -814,38 +758,59 @@ public class RestModelPackageImpl extends EPackageImpl implements RestModelPacka
 		initEAttribute(getOperation_Id(), ecorePackage.getEString(), "id", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(opCreateEClass, OpCreate.class, "OpCreate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOpCreate_Fieldset(), this.getFieldSet(), null, "fieldset", null, 0, -1, OpCreate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOpCreate_Fieldsets(), this.getFieldSet(), null, "fieldsets", null, 0, -1, OpCreate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fieldSetEClass, FieldSet.class, "FieldSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFieldSet_Name(), ecorePackage.getEString(), "name", null, 0, 1, FieldSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFieldSet_Expr(), ecorePackage.getEString(), "expr", null, 0, 1, FieldSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFieldSet_Value(), ecorePackage.getEString(), "value", null, 0, 1, FieldSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(opReadEClass, OpRead.class, "OpRead", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOpRead_Field(), this.getField(), null, "field", null, 0, -1, OpRead.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOpRead_Fields(), this.getField(), null, "fields", null, 0, -1, OpRead.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(opUpdateEClass, OpUpdate.class, "OpUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOpUpdate_Fieldset(), this.getFieldSet(), null, "fieldset", null, 0, -1, OpUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOpUpdate_Fieldsets(), this.getFieldSet(), null, "fieldsets", null, 0, -1, OpUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(opDeleteEClass, OpDelete.class, "OpDelete", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(answerEClass, Answer.class, "Answer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAnswer_Status(), ecorePackage.getEInt(), "status", null, 0, 1, Answer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAnswer_Status(), ecorePackage.getEInt(), "status", null, 1, 1, Answer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAnswer_Return(), ecorePackage.getEString(), "return", null, 0, 1, Answer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAnswer_Name(), ecorePackage.getEString(), "name", null, 0, 1, Answer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(structEClass, Struct.class, "Struct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStruct_Name(), ecorePackage.getEString(), "name", null, 0, 1, Struct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStruct_Fields(), this.getField(), null, "fields", null, 0, -1, Struct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(restSystemEClass, RestSystem.class, "RestSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRestSystem_Request(), this.getRequest(), null, "request", null, 0, -1, RestSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRestSystem_Struct(), this.getStruct(), null, "struct", null, 0, -1, RestSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRestSystem_Answer(), this.getAnswer(), null, "answer", null, 0, -1, RestSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRestSystem_Requests(), this.getRequest(), null, "requests", null, 0, -1, RestSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRestSystem_Structs(), this.getStruct(), null, "structs", null, 0, -1, RestSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRestSystem_Answers(), this.getAnswer(), null, "answers", null, 0, -1, RestSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fieldEClass, Field.class, "Field", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getField_Name(), ecorePackage.getEString(), "name", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/OCL/Import
+		createImportAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/OCL/Import</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createImportAnnotations() {
+		String source = "http://www.eclipse.org/OCL/Import";
+		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "ecore", "http://www.eclipse.org/emf/2002/Ecore"
+		   });
 	}
 
 } //RestModelPackageImpl

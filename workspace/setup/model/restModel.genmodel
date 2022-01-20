@@ -7,57 +7,55 @@
   <genPackages prefix="RestModel" disposableProviderFactory="true" ecorePackage="restModel.ecore#/">
     <genClasses image="false" ecoreClass="restModel.ecore#//Request">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//Request/route"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//Request/data"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference restModel.ecore#//Request/succAnswer"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//Request/operations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//Request/parameters"/>
     </genClasses>
     <genClasses ecoreClass="restModel.ecore#//ReGet"/>
     <genClasses ecoreClass="restModel.ecore#//RePost"/>
     <genClasses ecoreClass="restModel.ecore#//RePut"/>
     <genClasses ecoreClass="restModel.ecore#//ReDelete"/>
     <genClasses ecoreClass="restModel.ecore#//Route">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//Route/segment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//Route/segments"/>
     </genClasses>
     <genClasses ecoreClass="restModel.ecore#//Segment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restModel.ecore#//Segment/value"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="restModel.ecore#//Data">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restModel.ecore#//Data/name"/>
+    <genClasses ecoreClass="restModel.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restModel.ecore#//Parameter/name"/>
     </genClasses>
-    <genClasses ecoreClass="restModel.ecore#//Parameter"/>
-    <genClasses ecoreClass="restModel.ecore#//Attachments"/>
-    <genClasses ecoreClass="restModel.ecore#//Random"/>
     <genClasses image="false" ecoreClass="restModel.ecore#//Operation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference restModel.ecore#//Operation/failedAnswer"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference restModel.ecore#//Operation/struct"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restModel.ecore#//Operation/id"/>
     </genClasses>
     <genClasses ecoreClass="restModel.ecore#//OpCreate">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//OpCreate/fieldset"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//OpCreate/fieldsets"/>
     </genClasses>
     <genClasses ecoreClass="restModel.ecore#//FieldSet">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restModel.ecore#//FieldSet/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restModel.ecore#//FieldSet/expr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restModel.ecore#//FieldSet/value"/>
     </genClasses>
     <genClasses ecoreClass="restModel.ecore#//OpRead">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//OpRead/field"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference restModel.ecore#//OpRead/fields"/>
     </genClasses>
     <genClasses ecoreClass="restModel.ecore#//OpUpdate">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//OpUpdate/fieldset"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//OpUpdate/fieldsets"/>
     </genClasses>
     <genClasses ecoreClass="restModel.ecore#//OpDelete"/>
     <genClasses ecoreClass="restModel.ecore#//Answer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restModel.ecore#//Answer/status"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restModel.ecore#//Answer/return"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restModel.ecore#//Answer/name"/>
     </genClasses>
     <genClasses ecoreClass="restModel.ecore#//Struct">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restModel.ecore#//Struct/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//Struct/fields"/>
     </genClasses>
     <genClasses ecoreClass="restModel.ecore#//RestSystem">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//RestSystem/request"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//RestSystem/struct"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//RestSystem/answer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//RestSystem/requests"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//RestSystem/structs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restModel.ecore#//RestSystem/answers"/>
     </genClasses>
     <genClasses ecoreClass="restModel.ecore#//Field">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restModel.ecore#//Field/name"/>

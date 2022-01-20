@@ -8,7 +8,7 @@
 [template public generateElement(aRestSystem : RestSystem)]
 [comment @main/]
 [generateMainFile(aRestSystem)/]
-[for (aStruct : Struct | aRestSystem.struct)]
+[for (aStruct : Struct | aRestSystem.structs)]
 [generateStructFile(aStruct)/]
 [/for]
 

@@ -96,20 +96,8 @@ public class RestModelAdapterFactory extends AdapterFactoryImpl {
 				return createSegmentAdapter();
 			}
 			@Override
-			public Adapter caseData(Data object) {
-				return createDataAdapter();
-			}
-			@Override
 			public Adapter caseParameter(Parameter object) {
 				return createParameterAdapter();
-			}
-			@Override
-			public Adapter caseAttachments(Attachments object) {
-				return createAttachmentsAdapter();
-			}
-			@Override
-			public Adapter caseRandom(Random object) {
-				return createRandomAdapter();
 			}
 			@Override
 			public Adapter caseOperation(Operation object) {
@@ -270,20 +258,6 @@ public class RestModelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link restModel.Data <em>Data</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see restModel.Data
-	 * @generated
-	 */
-	public Adapter createDataAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link restModel.Parameter <em>Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -294,34 +268,6 @@ public class RestModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createParameterAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link restModel.Attachments <em>Attachments</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see restModel.Attachments
-	 * @generated
-	 */
-	public Adapter createAttachmentsAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link restModel.Random <em>Random</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see restModel.Random
-	 * @generated
-	 */
-	public Adapter createRandomAdapter() {
 		return null;
 	}
 

@@ -21,7 +21,7 @@ import restModel.RestModelPackage;
  * </p>
  * <ul>
  *   <li>{@link restModel.impl.FieldSetImpl#getName <em>Name</em>}</li>
- *   <li>{@link restModel.impl.FieldSetImpl#getExpr <em>Expr</em>}</li>
+ *   <li>{@link restModel.impl.FieldSetImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,24 +48,24 @@ public class FieldSetImpl extends MinimalEObjectImpl.Container implements FieldS
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getExpr() <em>Expr</em>}' attribute.
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getExpr()
+	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String EXPR_EDEFAULT = null;
+	protected static final String VALUE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getExpr() <em>Expr</em>}' attribute.
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getExpr()
+	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected String expr = EXPR_EDEFAULT;
+	protected String value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,8 +112,8 @@ public class FieldSetImpl extends MinimalEObjectImpl.Container implements FieldS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getExpr() {
-		return expr;
+	public String getValue() {
+		return value;
 	}
 
 	/**
@@ -121,11 +121,11 @@ public class FieldSetImpl extends MinimalEObjectImpl.Container implements FieldS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setExpr(String newExpr) {
-		String oldExpr = expr;
-		expr = newExpr;
+	public void setValue(String newValue) {
+		String oldValue = value;
+		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RestModelPackage.FIELD_SET__EXPR, oldExpr, expr));
+			eNotify(new ENotificationImpl(this, Notification.SET, RestModelPackage.FIELD_SET__VALUE, oldValue, value));
 	}
 
 	/**
@@ -138,8 +138,8 @@ public class FieldSetImpl extends MinimalEObjectImpl.Container implements FieldS
 		switch (featureID) {
 			case RestModelPackage.FIELD_SET__NAME:
 				return getName();
-			case RestModelPackage.FIELD_SET__EXPR:
-				return getExpr();
+			case RestModelPackage.FIELD_SET__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -155,8 +155,8 @@ public class FieldSetImpl extends MinimalEObjectImpl.Container implements FieldS
 			case RestModelPackage.FIELD_SET__NAME:
 				setName((String)newValue);
 				return;
-			case RestModelPackage.FIELD_SET__EXPR:
-				setExpr((String)newValue);
+			case RestModelPackage.FIELD_SET__VALUE:
+				setValue((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -173,8 +173,8 @@ public class FieldSetImpl extends MinimalEObjectImpl.Container implements FieldS
 			case RestModelPackage.FIELD_SET__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case RestModelPackage.FIELD_SET__EXPR:
-				setExpr(EXPR_EDEFAULT);
+			case RestModelPackage.FIELD_SET__VALUE:
+				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -190,8 +190,8 @@ public class FieldSetImpl extends MinimalEObjectImpl.Container implements FieldS
 		switch (featureID) {
 			case RestModelPackage.FIELD_SET__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case RestModelPackage.FIELD_SET__EXPR:
-				return EXPR_EDEFAULT == null ? expr != null : !EXPR_EDEFAULT.equals(expr);
+			case RestModelPackage.FIELD_SET__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -208,8 +208,8 @@ public class FieldSetImpl extends MinimalEObjectImpl.Container implements FieldS
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", expr: ");
-		result.append(expr);
+		result.append(", value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

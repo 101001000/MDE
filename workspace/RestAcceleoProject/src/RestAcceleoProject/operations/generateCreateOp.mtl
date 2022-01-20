@@ -5,6 +5,9 @@
 [import RestAcceleoProject::common::utilities /] 
 
 [template public generateCreateOp(anOp : OpCreate)]
-[sName(anOp)/] [oName(anOp)/] = new [anOp.struct.name/]([for (par : Parameter | anOp.ancestors(Request).oclAsType(Request).data) separator (', ')][par.name/][/for]);
+Random random = new Random();
+[sName(anOp)/] [oName(anOp)/] = new [anOp.struct.name/]([for (field : FieldSet | anOp.oclAsType(OpCreate).fieldsets) separator (', ')][field.value/][/for]);
+int id = random.nextInt(Integer.MAX_VALUE);
+books.put(String.valueOf(id), book);
 [succAnswer(anOp)/]
 [/template]

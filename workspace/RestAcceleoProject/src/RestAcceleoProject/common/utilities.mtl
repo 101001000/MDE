@@ -7,12 +7,12 @@
 [query public lName(anOp : Operation) : String = anOp.struct.name.toLowerCase().concat('s')/]
 
 [template public generateParams(anOp : Operation)]
-[for (seg : Segment | anOp.ancestors(Request).oclAsType(Request).route.segment)][if seg.value.contains(':')]String [seg.value.substring(2)/] = request.params("[seg.value/]");[/if]
+[for (seg : Segment | anOp.ancestors(Request).oclAsType(Request).route.segments)][if seg.value.contains(':')]String [seg.value.substring(2)/] = request.params("[seg.value/]");[/if]
 [/for]
 [/template]
 
 [template public generateQueryParams(anOp : Operation)]
-[for (par : Parameter | anOp.ancestors(Request).oclAsType(Request).data)]String [par.name/] = request.queryParams("[par.name/]");
+[for (par : Parameter | anOp.ancestors(Request).oclAsType(Request).parameters)]String [par.name/] = request.queryParams("[par.name/]");
 [/for]
 [/template]
 

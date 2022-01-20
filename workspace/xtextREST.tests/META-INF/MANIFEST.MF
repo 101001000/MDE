@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: xtextREST.tests
+Bundle-ManifestVersion: 2
+Bundle-Name: xtextREST.tests
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: xtextREST.tests; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: xtextREST,
+ setup,
+ org.junit.jupiter.api;bundle-version="[5.1.0,6.0.0)",
+ org.eclipse.xtext.testing,
+ org.eclipse.xtext.xbase.testing,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: rest.tests;x-internal=true

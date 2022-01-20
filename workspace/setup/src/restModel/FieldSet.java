@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link restModel.FieldSet#getName <em>Name</em>}</li>
- *   <li>{@link restModel.FieldSet#getExpr <em>Expr</em>}</li>
+ *   <li>{@link restModel.FieldSet#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see restModel.RestModelPackage#getFieldSet()
@@ -45,25 +45,25 @@ public interface FieldSet extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Expr</b></em>' attribute.
+	 * Returns the value of the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Expr</em>' attribute.
-	 * @see #setExpr(String)
-	 * @see restModel.RestModelPackage#getFieldSet_Expr()
+	 * @return the value of the '<em>Value</em>' attribute.
+	 * @see #setValue(String)
+	 * @see restModel.RestModelPackage#getFieldSet_Value()
 	 * @model
 	 * @generated
 	 */
-	String getExpr();
+	String getValue();
 
 	/**
-	 * Sets the value of the '{@link restModel.FieldSet#getExpr <em>Expr</em>}' attribute.
+	 * Sets the value of the '{@link restModel.FieldSet#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Expr</em>' attribute.
-	 * @see #getExpr()
+	 * @param value the new value of the '<em>Value</em>' attribute.
+	 * @see #getValue()
 	 * @generated
 	 */
-	void setExpr(String value);
+	void setValue(String value);
 
 } // FieldSet
