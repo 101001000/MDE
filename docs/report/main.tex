@@ -1,131 +1,126 @@
-% This is samplepaper.tex, a sample chapter demonstrating the
-% LLNCS macro package for Springer Computer Science proceedings;
-% Version 2.20 of 2017/10/04
-%
 \documentclass[runningheads]{llncs}
-%
+
 \usepackage{graphicx}
-% Used for displaying a sample figure. If possible, figure files should
-% be included in EPS format.
-%
-% If you use the hyperref package, please uncomment the following line
-% to display URLs in blue roman font according to Springer's eBook style:
-% \renewcommand\UrlFont{\color{blue}\rmfamily}
+\usepackage[spanish]{babel}
+\usepackage{tikz}
 
 \begin{document}
-%
-\title{Contribution Title\thanks{Supported by organization x.}}
-%
-%\titlerunning{Abbreviated paper title}
-% If the paper title is too long for the running head, you can set
-% an abbreviated paper title here
-%
-\author{First Author\inst{1}\orcidID{0000-1111-2222-3333} \and
-Second Author\inst{2,3}\orcidID{1111-2222-3333-4444} \and
-Third Author\inst{3}\orcidID{2222--3333-4444-5555}}
-%
+
+\title{A DSL to create REST services}
+
+\author{Enrique de la Calle Montilla\and
+Jorge Blázquez Saborido}
 \authorrunning{F. Author et al.}
-% First names are abbreviated in the running head.
-% If there are more than two authors, 'et al.' is used.
-%
-\institute{Princeton University, Princeton NJ 08544, USA \and
-Springer Heidelberg, Tiergartenstr. 17, 69121 Heidelberg, Germany
-\email{lncs@springer.com}\\
-\url{http://www.springer.com/gp/computer-science/lncs} \and
-ABC Institute, Rupert-Karls-University Heidelberg, Heidelberg, Germany\\
-\email{\{abc,lncs\}@uni-heidelberg.de}}
-%
-\maketitle              % typeset the header of the contribution
-%
+\institute{Universidad Complutense de Madrid}
+
+\maketitle
+
 \begin{abstract}
 The abstract should briefly summarize the contents of the paper in
 150--250 words.
 
 \keywords{First keyword  \and Second keyword \and Another keyword.}
 \end{abstract}
-%
-%
-%
-\section{First Section}
-\subsection{A Subsection Sample}
-Please note that the first paragraph of a section or subsection is
-not indented. The first paragraph that follows a table, figure,
-equation etc. does not need an indent, either.
 
-Subsequent paragraphs, however, are indented.
+\section{Introducción}
 
-\subsubsection{Sample Heading (Third Level)} Only two levels of
-headings should be numbered. Lower level headings remain unnumbered;
-they are formatted as run-in headings.
+% - información sobre REST
+%   - un poco del contexto en el que nacen
+%   - QUÉ es una API REST
+% - introducción a los DSLs
+% - por qué hacer un DSL para apis rest
 
-\paragraph{Sample Heading (Fourth Level)}
-The contribution should contain no more than four levels of
-headings. Table~\ref{tab1} gives a summary of all heading levels.
+Las \emph{APIs REST} son una arquitectura de software para el diseño
+de servicios web que está muy extendida en internet desde cerca de
+sus inicios. Con ella podemos diseñar la interfaz que muestra una web
+al resto de la red. Esta arquitectura se fundamenta en la arquitectura
+cliente-servidor, como se ve en la Figura~\ref{fig:arq-cliente-serv},
+en la que el cliente y el servidor se envían mensajes. Concretamente,
+en una API REST el cliente envía una petición (\emph{request}) al
+servidor que este contesta en forma de respuesta (\emph{response}). Las
+peticiones pueden ser de cuatro tipos, que corresponden a las
+cuatro operaciones CRUD:
 
-\begin{table}
-\caption{Table captions should be placed above the
-tables.}\label{tab1}
-\begin{tabular}{|l|l|l|}
-\hline
-Heading level &  Example & Font size and style\\
-\hline
-Title (centered) &  {\Large\bfseries Lecture Notes} & 14 point, bold\\
-1st-level heading &  {\large\bfseries 1 Introduction} & 12 point, bold\\
-2nd-level heading & {\bfseries 2.1 Printing Area} & 10 point, bold\\
-3rd-level heading & {\bfseries Run-in Heading in Bold.} Text follows & 10 point, bold\\
-4th-level heading & {\itshape Lowest Level Heading.} Text follows & 10 point, italic\\
-\hline
-\end{tabular}
-\end{table}
+\newcommand\POST{\texttt{POST}}
+\newcommand\GET{\texttt{GET}}
+\newcommand\PUT{\texttt{PUT}}
+\newcommand\DELETE{\texttt{DELETE}}
 
+\newcommand\CREATE{\texttt{CREATE}}
+\newcommand\READ{\texttt{READ}}
+\newcommand\UPDATE{\texttt{UPDATE}}
 
-\noindent Displayed equations are centered and set on a separate
-line.
-\begin{equation}
-x + y = z
-\end{equation}
-Please try to avoid rasterized images for line-art diagrams and
-schemas. Whenever possible, use vector graphics instead (see
-Fig.~\ref{fig1}).
+\begin{itemize}
+    \item \POST: es el equivalente a la operación \CREATE, con el que podemos
+        crear un nuevo recurso.
+    \item \GET: es el equivalente a la operación \READ, con el que podemos
+        leer el contenido de un recurso ya existente.
+    \item \PUT: es el equivalente a la operación \UPDATE, con el que podemos
+        modificar un recurso que ya existe.
+    \item \DELETE: es el equivalente a la operación \DELETE, con el que podemos
+        eliminar un recurso.
+\end{itemize}
 
 \begin{figure}
-\includegraphics[width=\textwidth]{fig1.eps}
-\caption{A figure caption is always placed below the illustration.
-Please note that short captions are centered, while long ones are
-justified by the macro package automatically.} \label{fig1}
+\begin{center}
+    \scalebox{1.3}{
+        \begin{tikzpicture}[node distance = 10em]
+            \node[draw, fill = red!20, minimum size = 15mm, circle] (c) {Client};
+            \node[draw, fill = blue!20, minimum size = 15mm, circle, right of = c] (s) {Server};
+            \draw[-stealth]
+              (c.north east)
+                to[out = 33, in = 90+66]
+              node[above] (request) {\small request}
+              node[below] {\tiny JSON/...}
+              (s.north west);
+            \draw[-stealth]
+              (s.south west)
+                to[out = 180+33, in = -33]
+              node[below] (response) {\small response}
+              node[above] {\tiny JSON/...}
+              (c.south east);
+        \end{tikzpicture}
+    }
+\end{center}
+\caption{Arquitectura cliente servidor}
+\label{fig:arq-cliente-serv}
 \end{figure}
 
-\begin{theorem}
-This is a sample theorem. The run-in heading is set in bold, while
-the following text appears in italics. Definitions, lemmas,
-propositions, and corollaries are styled the same way.
-\end{theorem}
+\section{Método}
+
+% y si lo paso a después de herramientas?
+
+% el procseo ha comenzado con una boceto sobre cómo queríamos que fuese
+% nuestro lenguaje y luego han venido unas etapas de implementación
+% que han ido modificando ligeramente el lenguaje con las limitaciones
+% que encontrábamos en nuestra capacidad de implementar lenguajes. Estas
+% etapas han sido:
 %
-% the environments 'definition', 'lemma', 'proposition', 'corollary',
-% 'remark', and 'example' are defined in the LLNCS documentclass as well.
-%
-\begin{proof}
-Proofs, examples, and remarks have the initial word in italics,
-while the following text appears in normal font.
-\end{proof}
-For citations of references, we prefer the use of square brackets
-and consecutive numbers. Citations using labels or the author/year
-convention are also acceptable. The following bibliography provides
-a sample reference list with entries for journal
-articles~\cite{ref_article1}, an LNCS chapter~\cite{ref_lncs1}, a
-book~\cite{ref_book1}, proceedings without editors~\cite{ref_proc1},
-and a homepage~\cite{ref_url1}. Multiple citations are grouped
-\cite{ref_article1,ref_lncs1,ref_book1},
-\cite{ref_article1,ref_book1,ref_proc1,ref_url1}.
-%
-% ---- Bibliography ----
-%
-% BibTeX users should specify bibliography style 'splncs04'.
-% References will then be sorted and formatted in the correct style.
-%
-% \bibliographystyle{splncs04}
-% \bibliography{mybibliography}
-%
+% - Creación del metamodelo en EMF
+% - Pasar el metamodelo a XText para que nuestro DSL pueda escribirse
+%   en texto.
+% - (a parte) crear el proyecto de Acceleo y generar código de Spark
+%   Java desde instancias del metamodelo
+
+\section{Herramientas}
+
+% Usamos el framework de Eclipse
+% Usamos herramientas dentro de Eclipse:
+% - EMF
+% - xtext
+% - acceleo
+
+\section{Evaluación}
+
+% hablar de las pruebas que le hemos hecho al código
+
+\section{Trabajo relacionado}
+
+% quizá quitarlo xD
+
+\section{Conclusiones}
+
+
 \begin{thebibliography}{8}
 \bibitem{ref_article1}
 Author, F.: Article title. Journal \textbf{2}(5), 99--110 (2016)
@@ -147,4 +142,5 @@ on Proceedings, pp. 1--2. Publisher, Location (2010)
 LNCS Homepage, \url{http://www.springer.com/lncs}. Last accessed 4
 Oct 2017
 \end{thebibliography}
+
 \end{document}
