@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 \usepackage[spanish]{babel}
 \usepackage{tikz}
+\usepackage{listings}
 
 \begin{document}
 
@@ -86,11 +87,63 @@ cuatro operaciones CRUD:
 \label{fig:arq-cliente-serv}
 \end{figure}
 
+Un diseñador de una API REST cuenta con numeras bibliotecas de código
+para su implementación, pero algunas veces puede ser tedioso escribir a
+mano todo el código que necesita un servidor REST. Es por esto que viene
+a la cabeza el concepto de \emph{DSL} (\emph{domain-specific language}),
+lenguajes con un propósito muy acotado que pueden ayudarnos a automatizar
+o acelerar determinadas tareas.
+
+Este trabajo ha consistido en el diseño e implementación de un DSL para
+la elaboración de APIs con la arquitectura REST. Con las herramientas
+que hemos creado es posible traducir un archivo de texto que describe
+la API (escrito en el DSL) a una implementación del servidor REST en
+Java que hace uso de la biblioteca Spark.
+
+En las siguientes secciones explicaremos las herramientas que hemos
+usado (Sección~\ref{sc:herramientas}) durante el proceso de diseño
+e implementación de nuestro DSL (Sección~\ref{sc:metodo}).
+%
+%En las siguientes secciones vamos a describir el proceso de diseño
+%e implementación de nuestro DSL (Sección~\ref{sc:metodo}),
+%además de explicar las herramientas que hemos utilizado
+%(Sección~\ref{sc:herramientas}).
+%
+Para terminar, evaluaremos el
+DSL que hemos desarrollado (Sección~\ref{sc:eval}) y concluiremos
+(Sección~\ref{sc:concl}).
+
+\section{Herramientas}
+\label{sc:herramientas}
+
+% Usamos el framework de Eclipse
+% Usamos herramientas dentro de Eclipse:
+% - EMF
+% - xtext
+% - acceleo
+
+% TODO: citar eclipse?
+
+El entorno de desarrollo elegido para este trabajo ha sido Eclipse, un
+entorno de desarrollo integrado con soporte para modelos. Dentro de este
+entorno hemos usado el \emph{Framework de Modelado de Eclipse} (EMF),
+que nos da todo un abanico de herramientas para la ingeniería dirigida
+por modelos. En concreto hemos usado dos de ellas: Xtext y Acceleo.
+
+Xtext es una herramienta para el desarrollo de lenguajes de programación
+y de DSLs. Gracias a su integración total con Eclipse y con el EMF,
+es posible darle una sintaxis textual a nuestro metamodelo de forma
+sencilla y rápida.
+
+Acceleo es una herramienta de generación de código que también está
+integrado en Eclipse y EMF. Mediante la elaboración de plantillas
+podemos describir cómo queremos transformar instancias del metamodelo
+a código en el lenguaje que queramos.
+
 \section{Método}
+\label{sc:metodo}
 
-% y si lo paso a después de herramientas?
-
-% el procseo ha comenzado con una boceto sobre cómo queríamos que fuese
+% el proceso ha comenzado con una boceto sobre cómo queríamos que fuese
 % nuestro lenguaje y luego han venido unas etapas de implementación
 % que han ido modificando ligeramente el lenguaje con las limitaciones
 % que encontrábamos en nuestra capacidad de implementar lenguajes. Estas
@@ -102,23 +155,128 @@ cuatro operaciones CRUD:
 % - (a parte) crear el proyecto de Acceleo y generar código de Spark
 %   Java desde instancias del metamodelo
 
-\section{Herramientas}
+El proceso de desarrollo comenzó con una exploración inicial sobre
+el concepto de APIs REST y de su implementación. Nos informamos de
+cómo funciona esta arquitectura e investigamos diferentes bibliotecas
+y lenguajes con las que se pueden implementar servidores que la siguen.
+Entre los lenguajes que encontramos estaban Python y Java. A pesar de que
+teníamos más experiencia en el lenguaje Python y que es un lenguaje
+fácil con el que trabajar, finalmente elegimos Java como lenguaje
+debido al su elevado nivel de soporte en Eclipse. Entre las bibliotecas
+de Java para servidores REST que discutimos estaban \emph{Spark} y
+\emph{Jersey}. Ya que Spark es una biblioteca muy sencilla con la que
+no se necesita de mucho código para expresar la API REST decidimos
+usarla. Elegir una biblioteca que no requiera de mucho código facilita
+el trabajo en las siguientes fases de desarrollo, concretamente en la
+de generación de código.
 
-% Usamos el framework de Eclipse
-% Usamos herramientas dentro de Eclipse:
-% - EMF
-% - xtext
-% - acceleo
+El siguiente paso fue diseñar una API REST e implementarla con
+Spark Java. En nuestro caso el código de implementación
+ya se nos proporcionaba y lo hemos incluido en el
+Apéndice~\ref{app:codigo-inicial}. La API de ese código es la siguiente:
+
+\begin{itemize}
+    \item Las peticiones \POST\ a la dirección
+        \texttt{/books} crean un nuevo recurso \emph{libro} con el autor
+        y título proporcionados mediante parámetros. La respuesta
+        que devuelve el servidor es el identificador del recurso.
+    \item Una petición \GET\ a la dirección \texttt{/books/:id}, donde
+        \texttt{:id} es el identificador de un libro, devuelve el título
+        y autor del libro. Si el identificador no es válido se devolverá
+        una respuesta con código de error 404.
+    \item Una petición \PUT\ a la dirección \texttt{/books/:id}, donde
+        \texttt{:id} es el identificador de un libro, cambia el título
+        y autor del libro asignado al recurso con el identificador dado. Los
+        nuevos valores de título y autor son los pasado por parámetro. Si
+        el identificador no se encuentra se devuelve un error.
+    \item Una petición \DELETE\ a la dirección \texttt{/books/:id}
+        elimina el recurso con el identificador dado y falla si no
+        se encuentra.
+    \item Una petición \GET\ a la dirección \texttt{/books} devuelve todos
+        los identificadores de recursos de libros.
+\end{itemize}
+
+Ahora que ya teníamos un ejemplo sobre el que trabajar nos dispusimos
+a escribir en nuestro lenguaje la misma API. Como el lenguaje todavía
+no existía, íbamos creando la sintaxis sobre la marcha. De esta manera
+obtuvimos el primer prototipo conceptual (sin implementación) de nuestro
+DSL. El resultado está en la Figura~\ref{fig:codigo-rest} y no cumple
+exactamente la misma interfaz debido a las diferentes exploraciones que
+hacíamos sobre la sintaxis.
+
+\lstdefinelanguage{rest}{
+    morekeywords={struct,field,post,get,put,delete,create,read,update,status,return,param,random,field,with,if,fail},
+    sensitive=false,
+    morestring=[b]",
+}
+
+\begin{figure}
+    \begin{lstlisting}[language=rest, basicstyle=\scriptsize]
+struct Page {
+  field num;
+}
+
+struct Book {
+  field author;
+  field title;
+  field pageId;
+}
+
+post "book" {
+  param author;
+  param title;
+  param pageId;
+  random id;
+  create Book(author: author, title: title, pageId: pageId) with id;
+  status 201;
+  return "{id}";
+}
+
+get "books" id {
+  read Book(author, title, pageId) with id if fail {
+    status 404;
+    return "Book not found"
+  };
+  return "Title: {title}, Author: {author}";
+}
+
+get "books" id "name" {
+  read Book(author, title, pageId) with id if fail {
+    status 404;
+    return "Book not found"
+  };
+  return title;
+}
+
+put "books" id {
+  param newAuthor;
+  param newTitle;
+  update Book(author: newAuthor, title: newTitle) with id if fail {
+    status 404;
+    return "Book not found";
+  };
+  return "Book with id '{id}' updated";
+}
+    \end{lstlisting}
+
+\caption{Primer prototipo de API REST}
+\label{fig:codigo-rest}
+\end{figure}
+
+% - Spark
+% - boceto
 
 \section{Evaluación}
+\label{sc:eval}
 
 % hablar de las pruebas que le hemos hecho al código
 
-\section{Trabajo relacionado}
+%\section{Trabajo relacionado}
 
 % quizá quitarlo xD
 
 \section{Conclusiones}
+\label{sc:concl}
 
 
 \begin{thebibliography}{8}
@@ -142,5 +300,107 @@ on Proceedings, pp. 1--2. Publisher, Location (2010)
 LNCS Homepage, \url{http://www.springer.com/lncs}. Last accessed 4
 Oct 2017
 \end{thebibliography}
+
+\newpage
+
+\appendix
+\section{Code}
+\label{app:codigo-inicial}
+
+\begin{center}
+\begin{lstlisting}[language=java, basicstyle = \footnotesize, xleftmargin=-.1\textwidth]
+import static spark.Spark.*;
+import java.util.*;
+import spark.Request;
+import spark.Response;
+import spark.Route;
+// A simple RESTful example showing howto create, get, update and delete
+// book resources.
+public class Books {
+  // Map holding the books
+  private static Map < String, Book > books = new HashMap < String, Book > ();
+  public static void main(String[] args) {
+    // Creates a new book resource, will return the ID to the created resource
+    // author and title are sent as query parameters
+    // e.g. /books?author=Foo&title=Bar
+    post(new Route("/books") {
+      Random random = new Random();
+      @Override
+      public Object handle(Request request, Response response) {
+        String author = request.queryParams("author");
+        String title = request.queryParams("title");
+        Book book = new Book(author, title);
+        int id = random.nextInt(Integer.MAX_VALUE);
+        books.put(String.valueOf(id), book);
+        response.status(201); // 201 Created
+        return id;
+      }
+    });
+    // Gets the book resource for the provided id
+    get(new Route("/books/:id") {
+      @Override
+      public Object handle(Request request, Response response) {
+        Book book = books.get(request.params(":id"));
+        if (book != null) {
+          return "Title: " + book.getTitle() + ", Author: " + book.getAuthor();
+        } else {
+          response.status(404); // 404 Not found
+          return "Book not found";
+        }
+      }
+    });
+    // Updates the book resource for the provided id with new information
+    // author and title are sent as query parameters
+    // e.g. /books/<id>?author=Foo&title=Bar
+    put(new Route("/books/:id") {
+      @Override
+      public Object handle(Request request, Response response) {
+        String id = request.params(":id");
+        Book book = books.get(id);
+        if (book != null) {
+          String newAuthor = request.queryParams("author");
+          String newTitle = request.queryParams("title");
+          if (newAuthor != null) {
+            book.setAuthor(newAuthor);
+          }
+          if (newTitle != null) {
+            book.setTitle(newTitle);
+          }
+          return "Book with id '" + id + "' updated";
+        } else {
+          response.status(404); // 404 Not found
+          return "Book not found";
+        }
+      }
+    });
+    // Deletes the book resource for the provided id
+    delete(new Route("/books/:id") {
+      @Override
+      public Object handle(Request request, Response response) {
+        String id = request.params(":id");
+        Book book = books.remove(id);
+        if (book != null) {
+          return "Book with id '" + id + "' deleted";
+        } else {
+          response.status(404); // 404 Not found
+          return "Book not found";
+        }
+      }
+    });
+    // Gets all available book resources (id's)
+    get(new Route("/books") {
+      @Override
+      public Object handle(Request request, Response response) {
+        String ids = "";
+        for (String id: books.keySet())
+          ids += id + " ";
+        return ids;
+      }
+    });
+  }
+}
+\end{lstlisting}
+\end{center}
+
 
 \end{document}
