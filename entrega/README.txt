@@ -1,1 +1,1 @@
-Files are located in their own projects, but we've included a copy of all the relevant model files into the folder "files" for faster access.
+Files are located in their own projects, but we've included a copy of all the relevant model files into the folder "files" for quicker access.
