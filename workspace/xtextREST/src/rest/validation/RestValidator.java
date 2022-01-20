@@ -3,6 +3,17 @@
  */
 package rest.validation;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.validation.Check;
+
+import restModel.Struct;
+import restModel.Field;
+import restModel.FieldSet;
+import restModel.OpCreate;
+import restModel.OpRead;
+import restModel.OpUpdate;
+import restModel.Operation;
+import restModel.RestModelPackage;
 
 /**
  * This class contains custom validation rules. 
@@ -11,15 +22,71 @@ package rest.validation;
  */
 public class RestValidator extends AbstractRestValidator {
 	
-//	public static final String INVALID_NAME = "invalidName";
-//
-//	@Check
-//	public void checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.getName().charAt(0))) {
-//			warning("Name should start with a capital",
-//					RestPackage.Literals.GREETING__NAME,
-//					INVALID_NAME);
-//		}
-//	}
+	
+	@Check
+	public void structWithCaptital(Struct struct) {
+		if (!Character.isUpperCase(struct.getName().charAt(0))) {
+			error("Struct name should start with a capital", RestModelPackage.Literals.STRUCT__NAME, "invalidName");
+		}
+	}
+	
+	@Check
+	public void correctConstructor(OpCreate opCreate) {
+		
+		boolean correct = true;
+		
+		EList<FieldSet> fs = opCreate.getFieldsets();
+		EList<Field> f  = opCreate.getStruct().getFields();
+		
+		if(f.size() != fs.size())
+			correct = false;
+		
+		for(int i = 0; i < opCreate.getFieldsets().size(); i++) {
+			if(!fs.get(i).getName().equals(fs.get(i).getName()))
+				correct = false;
+		}
+		
+		if (!correct) {
+			error("Fieldset inside Creation operation should contains all the struct fields", RestModelPackage.Literals.OP_CREATE__FIELDSETS, "invalidConstructor");
+		}
+	}
+
+	
+	public boolean containsFieldName(String name, Struct struct) {
+		
+		EList<Field> fields = struct.getFields();
+		
+		boolean contains = false;
+		
+		for(Field f : fields) {
+			if(f.getName().equals(name))
+				contains = true;
+		}
+		
+		return contains;
+	}
+	
+	@Check
+	public void correctFieldSet(OpUpdate opUpdate) {
+		
+		EList<FieldSet> fs = opUpdate.getFieldsets();
+		
+		for(FieldSet f : fs) {
+			if(!containsFieldName(f.getName(), opUpdate.getStruct()))
+				error("FieldSet contains a field which is not in the struct", RestModelPackage.Literals.OP_UPDATE__FIELDSETS, "invalidFieldSet");
+		}
+	}
+	
+	@Check
+	public void correctFields(OpRead opRead) {
+		
+		EList<Field> fs = opRead.getFields();
+		
+		for(Field f : fs) {
+			if(!containsFieldName(f.getName(), opRead.getStruct()))
+				error("OpRead contains a field which is not in the struct", RestModelPackage.Literals.OP_READ__FIELDS, "invalidFields");
+		}
+	}
+	
 	
 }

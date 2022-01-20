@@ -43,11 +43,12 @@ public class Main {
 			// create empty xmi resource
 			
 			ResourceSet xmiRS = new ResourceSetImpl();
-			Resource xmiOutput = xmiRS.createResource(URI.createURI("file:/" + selectedFile.getAbsolutePath() + ".xmi"));
+			Resource xmiOutput = xmiRS.createResource(URI.createURI("file:/" + selectedFile.getAbsolutePath().substring(0, selectedFile.getAbsolutePath().lastIndexOf('.')) + ".xmi"));
 			// save xtext resource in xmi resource
 			xmiOutput.getContents().add(xtextInput.getContents().get(0));
 			xmiOutput.save(null);
-		 
+			
+			System.out.println("file converted.");
 		}
 	
 

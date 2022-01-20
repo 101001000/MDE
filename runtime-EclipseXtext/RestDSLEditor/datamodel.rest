@@ -1,9 +1,8 @@
 RestSystem
 {
-
 	requests {
 		RePost {
-			succAnswer id201
+			succAnswer post
 				
 			route Route{ 
 				segments{
@@ -126,7 +125,7 @@ RestSystem
 	
 	answers {
 		
-		Answer id201 {
+		Answer post {
 			status 201
 			return "id"
 		},

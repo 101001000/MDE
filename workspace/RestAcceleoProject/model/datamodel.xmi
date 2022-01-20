@@ -41,7 +41,7 @@
     <fields name="author"/>
     <fields name="title"/>
   </structs>
-  <answers status="201" return="id" name="id201"/>
+  <answers status="201" return="id" name="post"/>
   <answers status="200" return="&quot;Title: &quot; + title + &quot;, Author: &quot; + author" name="read"/>
   <answers status="404" return="&quot;error&quot;" name="fail"/>
   <answers status="200" return="&quot;Book with id &quot; + id + &quot; updated&quot;" name="up"/>
