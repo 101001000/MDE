@@ -17,10 +17,16 @@ Jorge Blázquez Saborido}
 \maketitle
 
 \begin{abstract}
-The abstract should briefly summarize the contents of the paper in
-150--250 words.
+En este trabajo hemos diseñado e implementado un DSL para la descripción
+de APIs REST que se traduce a código ejecutable en Java. El ejecutable
+producido es un servidor REST funcional al que se le pueden mandar
+peticiones y recibir respuestas.
 
-\keywords{First keyword  \and Second keyword \and Another keyword.}
+Para conseguir el resultado hemos usado Eclipse y sus herramientas
+asociadas: EMF, Xtext y Acceleo. Estas herramientas nos proporcionan un
+entorno coherente con el que realizar ingeniería dirigida por modelos.
+
+\keywords{Ingeniería dirigida por modelos \and DSL \and REST \and Eclipse \and EMF \and Xtext \and Acceleo \and Spark}
 \end{abstract}
 
 \section{Introducción}
@@ -333,19 +339,31 @@ se obtiene otro mensaje de error.
 \section{Conclusiones}
 \label{sc:concl}
 
-En este trabajo hemos diseñado e implementado un DSL para la descripción
-de APIs REST que se traduce a código ejecutable en Java. El ejecutable
-producido es un servidor REST funcional al que se le pueden mandar
-peticiones y recibir respuestas.
+El resultado de este trabajo es el diseño e implementación de un DSL
+para describir APIs REST. Hemos implementado un generador de código que
+traduce el DSL a un servidor ejecutable que recibe peticiones y devuelve
+las respuestas especificadas por el usuario.
 
-Para conseguir el resultado hemos usado Eclipse y sus herramientas
-asociadas: EMF, Xtext y Acceleo. Estas herramientas nos proporcionan un
-entorno coherente con el que realizar ingeniería dirigida por modelos.
+Para conseguir ello hemos usado Eclipse, concretamente el entorno EMF
+y las herramientas que se utilizan con él: EMF, Xtext y Acceleo. En
+conjunto, hemos usado un entorno de desarrollo para realizar ingeniería
+dirigida por modelos.
+
+Planteamos distintas extensiones o modificaciones a nuestro lenguaje:
+
+\begin{itemize}
+    \item Modificar la sintaxis en Xtext para no tener que escribir tantos
+        corchetes y tantas palabras claves.
+    \item Ampliar el DSL para poder escribir expresiones y sentencias
+        de Java.
+    \item Mejorar las restricciones para detectar más casos de código
+        erróneo.
+\end{itemize}
 
 \newpage
 
 \appendix
-\section{Code}
+\section{Código inicial}
 \label{app:codigo-inicial}
 
 \begin{center}
