@@ -1,0 +1,142 @@
+%% Creator: Inkscape 1.1.1 (3bf5ae0d25, 2021-09-20), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'restModel.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{1176.85546875bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.57391287)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{restModel.pdf}}%
+    \put(0.78077172,0.29187951){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{Request}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{restModel.pdf}}%
+    \put(0.95666418,0.18991287){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}ReGet\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{restModel.pdf}}%
+    \put(0.84067712,0.18991287){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RePost\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{restModel.pdf}}%
+    \put(0.61316405,0.18991287){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RePut\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{restModel.pdf}}%
+    \put(0.72150361,0.18991287){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}ReDelete\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{restModel.pdf}}%
+    \put(0.78459547,0.43208364){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Route\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{restModel.pdf}}%
+    \put(0.77949714,0.5627284){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Segment\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{restModel.pdf}}%
+    \put(0.76675131,0.5480707){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}value : EString\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{restModel.pdf}}%
+    \put(0.94901668,0.29697784){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Parameter\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{restModel.pdf}}%
+    \put(0.93882001,0.28232014){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}name : EString\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{restModel.pdf}}%
+    \put(0.1594125,0.30143888){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{Operation}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{restModel.pdf}}%
+    \put(0.14857854,0.28678118){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}id : EString\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{restModel.pdf}}%
+    \put(0.38055265,0.18991287){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}OpCreate\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{restModel.pdf}}%
+    \put(0.4372716,0.0528952){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}FieldSet\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{restModel.pdf}}%
+    \put(0.42261389,0.03823749){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}name : EString\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{restModel.pdf}}%
+    \put(0.42261389,0.02804083){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}value : EString\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{restModel.pdf}}%
+    \put(0.16323625,0.18672641){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}OpRead\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{restModel.pdf}}%
+    \put(0.48443117,0.18991287){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}OpUpdate\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{restModel.pdf}}%
+    \put(0.26902664,0.18672641){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}OpDelete\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{restModel.pdf}}%
+    \put(0.3467762,0.35879512){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Answer\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=21]{restModel.pdf}}%
+    \put(0.3314812,0.34413742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{status : EInt}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=22]{restModel.pdf}}%
+    \put(0.3314812,0.33394075){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}return : EString\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=23]{restModel.pdf}}%
+    \put(0.3314812,0.32374409){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}name : EString\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=24]{restModel.pdf}}%
+    \put(0.33530495,0.52449091){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Struct\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=25]{restModel.pdf}}%
+    \put(0.31746079,0.5104705){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}name : EString\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=26]{restModel.pdf}}%
+    \put(0.5417874,0.52449091){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RestSystem\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=27]{restModel.pdf}}%
+    \put(0.03832711,0.52767737){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Field\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=28]{restModel.pdf}}%
+    \put(0.01793378,0.51301967){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}name : EString\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=29]{restModel.pdf}}%
+    \put(0.7444461,0.33648992){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{[1..1] route}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=30]{restModel.pdf}}%
+    \put(0.56982823,0.2855066){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{[1..1] succAnswer}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=31]{restModel.pdf}}%
+    \put(0.72915111,0.47350759){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{[1..*] segments}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=32]{restModel.pdf}}%
+    \put(0.20720936,0.34413742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{[1..1] failedAnswer}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=33]{restModel.pdf}}%
+    \put(0.25309435,0.49198905){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{[1..1] struct}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=34]{restModel.pdf}}%
+    \put(0.36653224,0.09559373){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}[0..*] fieldsets\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=35]{restModel.pdf}}%
+    \put(0.4672243,0.09559373){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}[0..*] fieldsets\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=36]{restModel.pdf}}%
+    \put(0.66032362,0.36644262){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}[0..*] requests\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=37]{restModel.pdf}}%
+    \put(0.42580035,0.50664675){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}[0..*] structs\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=38]{restModel.pdf}}%
+    \put(0.47805825,0.36644262){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}[0..*] answers\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=39]{restModel.pdf}}%
+    \put(0.51884491,0.26829973){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}[0..*] operations\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=40]{restModel.pdf}}%
+    \put(0.1664227,0.52257904){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}[0..*] fields\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=41]{restModel.pdf}}%
+    \put(0.84577545,0.28678118){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}[0..*] parameters\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=42]{restModel.pdf}}%
+    \put(-0.00054767,0.34095096){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}[0..*] fields\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=43]{restModel.pdf}}%
+  \end{picture}%
+\endgroup%

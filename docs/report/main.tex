@@ -7,7 +7,7 @@
 
 \begin{document}
 
-\title{A DSL to create REST services}
+\title{Un DSL para crear servicios REST}
 
 \author{Enrique de la Calle Montilla\and
 Jorge Blázquez Saborido}
@@ -263,8 +263,58 @@ put "books" id {
 \label{fig:codigo-rest}
 \end{figure}
 
-% - Spark
-% - boceto
+Con esta exploración inicial ya podíamos empezar a diseñar
+nuestro metamodelo.  Después de varias iteraciones (de los pasos
+que vendrán a continuación) se quedó en lo que aparece en la
+Figura~\ref{fig:metamodelo}. Una vez tenemos un metamodelo ya podemos
+empezar tanto con la gramática del lenguaje como con la generación de
+código. Para lo primero usamos Xtext, que nos generó una gramática
+por defecto. Para lo segundo usamos las plantillas de Acceleo con las
+que generamos código Java que usa la biblioteca Spark.
+
+\begin{figure}
+    \centering
+    %\def\svgwidth{\columnwidth}
+    \rotatebox{90}{\scalebox{0.5}{\input{restModel.pdf_tex}}}
+    \caption{Metamodelo del DSL}
+    \label{fig:metamodelo}
+\end{figure}
+
+Hemos escrito el ejemplo con el que hemos empezado esta sección en
+nuestra sintaxis final (la generada por Xtext). Se puede ver en el
+Apéndice~\ref{app:ejemplo-xtext}. Debe notarse que dejamos para trabajo
+futuro pulir la sintaxis de nuestro lenguaje, ya que en esta fase de
+desarrollo nos hemos centrado en la semántica y en que la generación
+de código funcione correctamente.
+
+La generación de código con Acceleo funciona con una serie de
+plantillas, como se ve en la Figura~\ref{fig:acceleo-files}. Cada una
+de ellas tiene una función específica, para así tener un código
+de generación modular. En la Figura~\ref{fig:gen-read} mostramos la
+plantilla de generación de código de la operación \READ. El código generado
+es sencillo:
+
+\begin{itemize}
+    \item Primero se busca el recurso solicitado con el identificador dado.
+    \item Si el recurso se encuentra se guardará el nombre de cada atributo
+        en variables locales para que puedan ser usados en otras
+        operaciones o en la respuesta.
+    \item Si el recurso no se encuentra se devolverá la respuesta de fallo.
+\end{itemize}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\textwidth]{acceleo-files}
+    \caption{Plantillas de Acceleo}
+    \label{fig:acceleo-files}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{generateReadOp}
+    \caption{Generación de código de la operación \READ}
+    \label{fig:gen-read}
+\end{figure}
 
 \section{Evaluación}
 \label{sc:eval}
@@ -402,5 +452,162 @@ public class Books {
 \end{lstlisting}
 \end{center}
 
+\newpage
+
+\section{Código con sintaxis final}
+\label{app:ejemplo-xtext}
+
+\begin{center}
+\begin{lstlisting}[basicstyle = \scriptsize]
+RestSystem
+{
+    requests {
+        RePost {
+            succAnswer post
+
+            route Route{ 
+                segments{
+                    Segment{
+                        value books
+                    }
+                } 
+            }
+
+            operations {
+                OpCreate {
+                    failedAnswer fail
+                    struct Book
+                    fieldsets {
+                        FieldSet author {
+                            value author
+                        },
+                        FieldSet title {
+                            value title
+                        }
+                    }
+                }
+            }
+
+            parameters {
+                Parameter author,
+                Parameter title
+            }
+        },
+
+        ReGet {
+            succAnswer read
+
+            route Route {
+                segments {
+                    Segment {
+                        value books
+                    },
+                    Segment {
+                        value ':id'
+                    }
+                } 
+            }
+
+            operations {
+                OpRead {
+                    id 'id'
+                    failedAnswer fail
+                    struct Book
+                    fields ("Book.author", "Book.title")    
+                }
+            }
+        },
+
+        ReDelete {
+            succAnswer del
+
+            route Route { 
+                segments {
+                    Segment {
+                        value books
+                    },
+                    Segment{
+                        value ':id'
+                    }
+                } 
+            }
+
+            operations {
+                OpDelete {
+                    id 'id'
+                    failedAnswer fail
+                    struct Book
+                }
+            }
+        },
+
+        RePut {
+            succAnswer up
+
+            route Route { 
+                segments {
+                    Segment {
+                        value books
+                    },
+                    Segment {
+                        value ':id'
+                    }
+                } 
+            }
+
+            operations {
+                OpUpdate {
+                    id 'id'
+                    failedAnswer fail
+                    struct Book
+                    fieldsets {
+                        FieldSet author{
+                            value author
+                        },
+                        FieldSet title{
+                            value title
+                        }
+                    }
+                }
+            }
+
+            parameters {
+                Parameter author,
+                Parameter title
+            }
+        }
+    }
+
+    structs {
+        Struct Book {
+            fields {Field author, Field title}
+        }
+    }
+
+    answers {
+        Answer post {
+            status 201
+            return "id"
+        },
+        Answer read {
+            status 200
+            return '"Title: " + title + ", Author: " + author'
+        },
+        Answer fail {
+            status 404
+            return '"error"'
+        },
+        Answer up {
+            status 200
+            return '"Book with id " + id + " updated"'
+        },
+        Answer del {
+            status 200
+            return '"Book with id " + id + " deleted"'
+        }
+    } 
+}
+\end{lstlisting}
+\end{center}
 
 \end{document}
